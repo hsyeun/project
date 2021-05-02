@@ -1,0 +1,82 @@
+
+명령의 1 행에서 시작하는 중 오류 발생 -
+CREATE TABLE event(
+eno NUMBER(4)
+    CONSTRAINT EVE_ENO_PK PRIMARY KEY,
+list VARCHAR2(20)
+    CONSTRAINT EVE_LIS_NN NOT NULL,
+content VARCHAR2(1000)
+    CONSTRAINT EVE_CON_NN NOT NULL,
+sday DATE,
+eday DATE,
+location VARCHAR2(20)
+    CONSTRAINT EVE_LOC_NN NOT NULL.
+img VARCHAR2(20)
+    CONSTRAINT EVE_IMG_NN NOT NULL
+)
+오류 보고 -
+ORA-00907: missing right parenthesis
+00907. 00000 -  "missing right parenthesis"
+*Cause:    
+*Action:
+
+명령의 17 행에서 시작하는 중 오류 발생 -
+CREATE TABLE member(
+mno NUMBER(4)
+    CONSTRAINT MEMB_NO_PK PRIMARY KEY,
+name VARCHAR2(10)
+    CONSTRAINT MEMB_NAME_NN NOT NULL,
+id VARCHAR2(15)
+    CONSTRAINT MEMB_ID_UK UNIQUE,
+pw VARCHAR2(15) 
+    CONSTRAINT MEMB_PW_NN NOT NULL,
+email VARCHAR2(30)
+    CONSTRAINT MEMB_MAIL_UK UNIQUE,
+gen CHAR(1)
+    CONSTRAINT MEMB_GEN_NN NOT NULL
+    CONSTRAINT MEMB_GEN_CK CHECK(gen IN('M', 'F')),
+jdate DATE,
+birth CHAR(10)
+    CONSTRAINT MEMB_BIR_NN NOT NULL,
+elist NUMBER(4)
+    CONSTRAINT MEMB_EL_FK REFERENCES event(eno),
+isShow CHAR(1)
+    CONSTRAINT MEMB_IS_CK CHECK(isShow IN('Y', 'N'))
+)
+오류 보고 -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+명령의 41 행에서 시작하는 중 오류 발생 -
+CREATE TABLE board(
+bno NUMBER(6)
+    CONSTRAINT BRD_BNO_PK PRIMARY KEY,
+wmno NUMBER(4)
+    CONSTRAINT BRD_MNO_FK REFERENCES member(mno)
+    CONSTRAINT BRD_MNO_NN NOT NULL,
+title VARCHAR2(50)
+    CONSTRAINT BRD_TIT_NN NOT NULL,
+body VARCHAR2(1000)
+    CONSTRAINT BRD_BODY_NN NOT NULL,
+wdate DATE,
+upno NUMBER(6)
+    CONSTRAINT BRD_UNO_FK REFERENCES board(bno)
+)
+오류 보고 -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+커밋 완료.
+
+Table EVENT이(가) 생성되었습니다.
+
+
+Table MEMBER이(가) 생성되었습니다.
+
+
+Table BOARD이(가) 생성되었습니다.
+
+커밋 완료.
