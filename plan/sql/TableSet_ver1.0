@@ -1,5 +1,5 @@
 
-명령의 1 행에서 시작하는 중 오류 발생 -
+
 CREATE TABLE event(
 eno NUMBER(4)
     CONSTRAINT EVE_ENO_PK PRIMARY KEY,
@@ -14,13 +14,8 @@ location VARCHAR2(20)
 img VARCHAR2(20)
     CONSTRAINT EVE_IMG_NN NOT NULL
 )
-오류 보고 -
-ORA-00907: missing right parenthesis
-00907. 00000 -  "missing right parenthesis"
-*Cause:    
-*Action:
 
-명령의 17 행에서 시작하는 중 오류 발생 -
+
 CREATE TABLE member(
 mno NUMBER(4)
     CONSTRAINT MEMB_NO_PK PRIMARY KEY,
@@ -43,13 +38,8 @@ elist NUMBER(4)
 isShow CHAR(1)
     CONSTRAINT MEMB_IS_CK CHECK(isShow IN('Y', 'N'))
 )
-오류 보고 -
-ORA-00942: table or view does not exist
-00942. 00000 -  "table or view does not exist"
-*Cause:    
-*Action:
 
-명령의 41 행에서 시작하는 중 오류 발생 -
+
 CREATE TABLE board(
 bno NUMBER(6)
     CONSTRAINT BRD_BNO_PK PRIMARY KEY,
@@ -64,19 +54,5 @@ wdate DATE,
 upno NUMBER(6)
     CONSTRAINT BRD_UNO_FK REFERENCES board(bno)
 )
-오류 보고 -
-ORA-00942: table or view does not exist
-00942. 00000 -  "table or view does not exist"
-*Cause:    
-*Action:
-커밋 완료.
-
-Table EVENT이(가) 생성되었습니다.
 
 
-Table MEMBER이(가) 생성되었습니다.
-
-
-Table BOARD이(가) 생성되었습니다.
-
-커밋 완료.
