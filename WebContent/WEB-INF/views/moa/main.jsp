@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>cls Main</title>
-<link rel="stylesheet" type="text/css" href="/cafe/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/cafe/css/user.css">
-<script type="text/javascript" src="/cafe/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/cafe/js/w3color.js"></script>
+<link rel="stylesheet" type="text/css" href="/moa/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/moa/css/user.css">
+<script type="text/javascript" src="/moa/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/moa/js/w3color.js"></script>
 <style type="text/css"></style>
 <script type="text/javascript">
 	
