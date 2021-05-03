@@ -1,53 +1,117 @@
+DROP TABLE account;
+DROP TABLE place;
+DROP TABLE board;
+DROP TABLE exhibit;
+DROP TABLE member;
 
-
-CREATE TABLE event(
-eno NUMBER(4)
-    CONSTRAINT EVE_ENO_PK PRIMARY KEY,
-list VARCHAR2(50)
-    CONSTRAINT EVE_LIS_NN NOT NULL,
-content VARCHAR2(4000)
-    CONSTRAINT EVE_CON_NN NOT NULL,
-sday DATE,
-eday DATE,
-location VARCHAR2(20),
-img VARCHAR2(20)
-)
-
+-- 멤버정보 --
 
 CREATE TABLE member(
-mno NUMBER(4)
+mno NUMBER(4)											--회원번호							
     CONSTRAINT MEMB_NO_PK PRIMARY KEY,
-name VARCHAR2(20)
+name VARCHAR2(20)										--이름
     CONSTRAINT MEMB_NAME_NN NOT NULL,
-id VARCHAR2(20)
+id VARCHAR2(20)											--아이디
     CONSTRAINT MEMB_ID_UK UNIQUE,
-pw VARCHAR2(20) 
-    CONSTRAINT MEMB_PW_NN NOT NULL,
-email VARCHAR2(30)
-    CONSTRAINT MEMB_MAIL_UK UNIQUE,
-gen CHAR(1)
+pw VARCHAR2(20) 										--비밀번호	
+    CONSTRAINT MEMB_PW_NN NOT NULL,                     
+tel VARCHAR2(20)                                        --전화번호
+    CONSTRAINT MEMB_TEL_UK UNIQUE,
+email VARCHAR2(30)										--이메일
+    CONSTRAINT MEMB_MAI_UK UNIQUE,
+gen CHAR(1)												--성별
     CONSTRAINT MEMB_GEN_NN NOT NULL
     CONSTRAINT MEMB_GEN_CK CHECK(gen IN('M', 'F')),
-jdate DATE,
-birth CHAR(10)
+birth CHAR(10)											--생년월일
     CONSTRAINT MEMB_BIR_NN NOT NULL,
-elist NUMBER(4)
-    CONSTRAINT MEMB_EL_FK REFERENCES event(eno),
-isShow CHAR(1)
+joindate DATE default sysdate,							--가입일
+                                                        --회원유효성
+isShow CHAR(1) default 'Y'						
     CONSTRAINT MEMB_IS_CK CHECK(isShow IN('Y', 'N'))
-)
+);
+
+
+-- 전시정보 --
+
+CREATE TABLE exhibit(
+eno NUMBER(4)											--공연번호
+    CONSTRAINT EXH_NO_PK PRIMARY KEY,
+ex_title VARCHAR2(50)									--제목
+    CONSTRAINT EXH_TIT_NN NOT NULL,
+ex_body VARCHAR2(4000)									--내용
+    CONSTRAINT EXH_BODY_NN NOT NULL,
+sday DATE												--시작일
+	CONSTRAINT EXH_SDAY_NN NOT NULL,
+eday DATE												--종료일
+	CONSTRAINT EXH_EDAY_NN NOT NULL,
+stime DATE												--시작시간
+	CONSTRAINT EXH_STIME_NN NOT NULL,
+etime DATE												--종료시간
+	CONSTRAINT EXH_ETIME_NN NOT NULL,
+price NUMBER(10)										--가격
+	CONSTRAINT EXH_PRI_NN NOT NULL,
+pay_mno NUMBER(4)										--구매한 자 (payment)
+    CONSTRAINT EXH_PMNO_FK REFERENCES member(mno),
+sel_mno NUMBER(4)										--찜한 자 (selection)
+    CONSTRAINT EXH_SMNO_FK REFERENCES member(mno),
+img VARCHAR2(50)										--사진	
+	CONSTRAINT EXH_IMG_NN NOT NULL
+);
+
+
+-- 전시장 정보 -
+
+CREATE TABLE place(
+pno NUMBER(4)											--전시장 번호
+    CONSTRAINT PLA_NO_PK PRIMARY KEY,
+pl_eno NUMBER(4)										--공연번호
+    CONSTRAINT PLA_ENO_FK REFERENCES exhibit(eno),
+loc VARCHAR2(20)										--위치
+	CONSTRAINT PLA_LOC_NN NOT NULL,
+locd VARCHAR2(100)										--위치데이터
+	CONSTRAINT PLA_LOCD_NN NOT NULL
+);
+
+
+-- 구매내역 --
+
+CREATE TABLE account(
+ano NUMBER(6)											--구매번호	
+    CONSTRAINT ACC_NO_PK PRIMARY KEY,
+ac_mno NUMBER(4)										--회원번호
+    CONSTRAINT ACC_MNO_FK REFERENCES member(mno)
+    CONSTRAINT ACC_MNO_NN NOT NULL,
+                                                        --총금액(현재)
+money NUMBER(10) default 10000	 						
+	CONSTRAINT ACC_MON_NN NOT NULL,
+                                                        --포인트(현재)
+point NUMBER(10) default 0	 							
+	CONSTRAINT ACC_POI_NN NOT NULL,
+ac_eno NUMBER(4)										--공연번호
+    CONSTRAINT ACC_ENO_FK REFERENCES exhibit(eno)
+);
+
+
+-- 리뷰게시판 --
 
 CREATE TABLE board(
-bno NUMBER(6)
+bno NUMBER(6)										    --리뷰번호	
     CONSTRAINT BRD_BNO_PK PRIMARY KEY,
-wmno NUMBER(4)
+bo_mno NUMBER(4)								        --작성자
     CONSTRAINT BRD_MNO_FK REFERENCES member(mno)
     CONSTRAINT BRD_MNO_NN NOT NULL,
-title VARCHAR2(50)
+bo_eno NUMBER(4)										--공연번호
+    CONSTRAINT BRD_ENO_FK REFERENCES exhibit(eno),
+bo_title VARCHAR2(50)									--제목
     CONSTRAINT BRD_TIT_NN NOT NULL,
-body VARCHAR2(1000)
+bo_body VARCHAR2(4000)									--내용	
     CONSTRAINT BRD_BODY_NN NOT NULL,
-wdate DATE,
-upno NUMBER(6)
-    CONSTRAINT BRD_UNO_FK REFERENCES board(bno)
-)
+grade NUMBER(1)											--평점	
+    CONSTRAINT BRD_GRA_NN NOT NULL,
+                                                        --작성일                
+bo_date DATE default sysdate,							
+up_bno NUMBER(6)										--원글번호
+    CONSTRAINT BRD_UPNO_FK REFERENCES board(bno)
+);
+
+COMMIT;

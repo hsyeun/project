@@ -560,9 +560,9 @@ function lunarCalc(year, month, day, type, leapmonth)
 
 
  /* range check */
- if (year < 1800 || year > 2101)
+ if (year <  || year > 2101)
  {
-  alert('1800년부터 2101년까지만 지원합니다');
+  alert('1900년부터 2101년까지만 지원합니다');
   return;
  }
  /* 속도 개선을 위해 기준 일자를 여러개로 한다 */
@@ -776,10 +776,10 @@ function lunarCalc(year, month, day, type, leapmonth)
   solMonthDay[1] = 29; /* 1820 년 2월 28일 */
   lunMonthDay = 30; /* 1819년 11월 */
  }
- else if (year >= 1800)
+ else if (year >= 1900)
  {
-  /* 기준일자 양력 1800년 1월 1일 (음력 1799년 12월 7일) */
-  solYear = 1800;
+  /* 기준일자 양력 1900년 1월 1일 (음력 1799년 12월 7일) */
+  solYear = 1900;
   solMonth = 1;
   solDay = 1;
   lunYear = 1799;
@@ -788,7 +788,7 @@ function lunarCalc(year, month, day, type, leapmonth)
   lunLeapMonth = 0;
 
 
-  solMonthDay[1] = 28; /* 1800 년 2월 28일 */
+  solMonthDay[1] = 28; /* 1900 년 2월 28일 */
   lunMonthDay = 30; /* 1799년 12월 */
  }
 
@@ -968,7 +968,7 @@ function getGanjiD(year, month, day)
            '壬子','癸丑','甲寅','乙卯','丙辰','丁巳','戊午','己未','庚申','辛酉','壬戌','癸亥');
 
  var date = new Date(year, month - 1, day);
- //1701년 1월 14일을 기준일로 한다. 1800년 이후의 오류를 방지하기 위해 1799년 12월 31일 이전으로 기준일을 정한다.
+ //1701년 1월 14일을 기준일로 한다. 1900년 이후의 오류를 방지하기 위해 1799년 12월 31일 이전으로 기준일을 정한다.
  var basicDate = new Date(1701, 0, 14);
 
 
@@ -1224,7 +1224,7 @@ function prevMonth()
  var monthTmp = parseInt(document.getElementById('monthSelect').value, 10);
 
 
- if (yearTmp >= 1800 && monthTmp >= 1) {
+ if (yearTmp >= 1900 && monthTmp >= 1) {
   var date = new Date(yearTmp, monthTmp - 2);
   document.getElementById('yearSelect').value = date.getFullYear();
   document.getElementById('monthSelect').value = date.getMonth() + 1;
@@ -1259,7 +1259,7 @@ function currentMonth()
  var yearTmp = parseInt(document.getElementById('yearSelect').value, 10);
  var monthTmp = parseInt(document.getElementById('monthSelect').value, 10);
 
- if (yearTmp >= 1800 && monthTmp >= 1 && yearTmp <= 2101 && monthTmp <= 12) {
+ if (yearTmp >= 1900 && monthTmp >= 1 && yearTmp <= 2101 && monthTmp <= 12) {
   var todayDate = new Date();
 
   document.getElementById('yearSelect').value = todayDate.getFullYear();
@@ -1593,7 +1593,7 @@ color:#000;
 
 
          <script type=text/javascript>
- for (var i = 1800, selectStr = ""; i <= 2101; i++)
+ for (var i = 1900, selectStr = ""; i <= 2101; i++)
   selectStr += "<option value='" + i + "'>" + i + " 년</option>";
  selectStr += "</select>";
  document.write(selectStr);
@@ -1694,7 +1694,7 @@ color:#000;
 
 
 
- if (typeof(rege_0_1) != "undefined" && 1800 <= rege_0_1 && rege_0_1 <= 2101)
+ if (typeof(rege_0_1) != "undefined" && 1900 <= rege_0_1 && rege_0_1 <= 2101)
  {
   ayear = rege_0_1;
   amonth = 1;

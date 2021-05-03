@@ -12,7 +12,11 @@ public class Main implements Controller {
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String view = "main";
+		
+		
+		
+		
 		return view;
-	}
+	} 
 
 }
