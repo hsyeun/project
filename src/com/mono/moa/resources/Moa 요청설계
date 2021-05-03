@@ -1,0 +1,6 @@
+
+# 메인 화면 요청 설계
+	요청내용	:	http://localhost/moa/main.moa
+	파라미터	:	무
+	컨트롤러	:	com.mono.moa.controller.Main
+	뷰			:	/WEB-INF/views/moa/main.jsp
