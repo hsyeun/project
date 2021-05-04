@@ -19,14 +19,16 @@
 </head>
 <body>
 <c:forEach var="data" items="${LIST}">
-	<span>${data.name}</span>
-	<span>${data.id}</span>
-	<span>${data.pw}</span>
-	<span>${data.tel}</span>
-	<span>${data.email}</span>
-	<span>${data.gen}</span>
-	<span>${data.birth}</span>
-	<span>${data.sdate}</span>
+	<ol>
+	<li>이름: ${data.name}</li>
+	<li>아이디: ${data.id}</li>
+	<li>패스워드: ${data.pw}</li>
+	<li>전화번호: ${data.tel}</li>
+	<li>이메일: ${data.email}</li>
+	<li>성별: ${data.gen}</li>
+	<li>생년월일: ${data.birth}</li>
+	<li>가입일: ${data.sdate}</li>
+	</ol>
 </c:forEach>
 </body>
 </html>
