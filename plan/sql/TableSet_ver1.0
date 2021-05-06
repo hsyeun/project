@@ -36,9 +36,9 @@ isShow CHAR(1) default 'Y'
 CREATE TABLE exhibit(
 eno NUMBER(4)											--공연번호
     CONSTRAINT EXH_NO_PK PRIMARY KEY,
-ex_title VARCHAR2(50)									--제목
+title VARCHAR2(50)									--제목
     CONSTRAINT EXH_TIT_NN NOT NULL,
-ex_body VARCHAR2(4000)									--내용
+body VARCHAR2(4000)									--내용
     CONSTRAINT EXH_BODY_NN NOT NULL,
 sday DATE												--시작일
 	CONSTRAINT EXH_SDAY_NN NOT NULL,
@@ -50,9 +50,9 @@ etime DATE												--종료시간
 	CONSTRAINT EXH_ETIME_NN NOT NULL,
 price NUMBER(10)										--가격
 	CONSTRAINT EXH_PRI_NN NOT NULL,
-pay_mno NUMBER(4)										--구매한 자 (payment)
+paymno NUMBER(4)										--구매한 자 (payment)
     CONSTRAINT EXH_PMNO_FK REFERENCES member(mno),
-sel_mno NUMBER(4)										--찜한 자 (selection)
+selmno NUMBER(4)										--찜한 자 (selection)
     CONSTRAINT EXH_SMNO_FK REFERENCES member(mno),
 img VARCHAR2(50)										--사진	
 	CONSTRAINT EXH_IMG_NN NOT NULL
@@ -64,7 +64,7 @@ img VARCHAR2(50)										--사진
 CREATE TABLE place(
 pno NUMBER(4)											--전시장 번호
     CONSTRAINT PLA_NO_PK PRIMARY KEY,
-pl_eno NUMBER(4)										--공연번호
+peno NUMBER(4)										--공연번호
     CONSTRAINT PLA_ENO_FK REFERENCES exhibit(eno),
 loc VARCHAR2(20)										--위치
 	CONSTRAINT PLA_LOC_NN NOT NULL,
@@ -78,7 +78,7 @@ locd VARCHAR2(100)										--위치데이터
 CREATE TABLE account(
 ano NUMBER(6)											--구매번호	
     CONSTRAINT ACC_NO_PK PRIMARY KEY,
-ac_mno NUMBER(4)										--회원번호
+amno NUMBER(4)										--회원번호
     CONSTRAINT ACC_MNO_FK REFERENCES member(mno)
     CONSTRAINT ACC_MNO_NN NOT NULL,
                                                         --총금액(현재)
@@ -87,7 +87,7 @@ money NUMBER(10) default 10000
                                                         --포인트(현재)
 point NUMBER(10) default 0	 							
 	CONSTRAINT ACC_POI_NN NOT NULL,
-ac_eno NUMBER(4)										--공연번호
+aeno NUMBER(4)										--공연번호
     CONSTRAINT ACC_ENO_FK REFERENCES exhibit(eno)
 );
 

@@ -17,7 +17,6 @@
 			$(location).attr('href', '/moa/member/join.moa')
 		});
 	});
-
 </script>
 
 </head>
