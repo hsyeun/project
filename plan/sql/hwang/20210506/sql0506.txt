@@ -64,7 +64,7 @@ isShow CHAR(1) default 'Y'
 
 
 --공지사항--
-CREATE TABLE notice(
+CREATE TABLE nboard(
 nno NUMBER(4)											--공지번호							
     CONSTRAINT NOT_NO_PK PRIMARY KEY,
 ntitle VARCHAR2(50)										--제목
