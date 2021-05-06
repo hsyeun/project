@@ -48,7 +48,7 @@ loname VARCHAR2(20)     								--지역이름
 
 
 --자주하는 질문--
-CREATE TABLE faq(
+CREATE TABLE fboard(
 qno NUMBER(4)											--문의번호							
     CONSTRAINT FAQ_NO_PK PRIMARY KEY,
 qtitle VARCHAR2(50)										--제목

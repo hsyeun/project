@@ -260,7 +260,7 @@
 											"top": 805,
 											"width": 647.05078125,
 											"height": 40,
-											"text": "FAQ"
+											"text": "Fboard"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -811,7 +811,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5GN7LNIlYGZ4="
 							},
-							"name": "FAQ",
+							"name": "Fboard",
 							"columns": [
 								{
 									"_type": "ERDColumn",
