@@ -12,11 +12,6 @@ public class Main implements Controller {
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String view = "main";
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> branch 'branch' of https://github.com/sooyeun-han/project.git
 		return view;
 	} 
 
