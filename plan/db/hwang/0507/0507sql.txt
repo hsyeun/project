@@ -1,0 +1,89 @@
+--멤버-
+CREATE TABLE member(
+mno NUMBER(4)						--회원번호							
+    CONSTRAINT MEM_NO_PK PRIMARY KEY,
+name VARCHAR2(20)					--이름
+    CONSTRAINT MEM_NAME_NN NOT NULL,
+id VARCHAR2(20)						--아이디
+    CONSTRAINT MEM_ID_UK UNIQUE
+    CONSTRAINT MEM_ID_NN NOT NULL,
+pw VARCHAR2(20) 					--비밀번호	
+    CONSTRAINT MEM_PW_NN NOT NULL,                     
+tel NUMBER(11)                                         		 --전화번호
+    CONSTRAINT MEM_TEL_UK UNIQUE
+    CONSTRAINT MEM_TEL_NN NOT NULL,
+email VARCHAR2(30)					--이메일
+    CONSTRAINT MEM_MAI_UK UNIQUE
+    CONSTRAINT MEM_MAI_NN NOT NULL,
+gen CHAR(1)						--성별
+    CONSTRAINT MEM_GEN_NN NOT NULL
+    CONSTRAINT MEM_GEN_CK CHECK(gen IN('M', 'F')),
+birth CHAR(10)                 					--생년월일
+    CONSTRAINT MEM_BIR_NN NOT NULL,
+jdate DATE default sysdate,					--가입일
+                                                        --유효성
+isShow CHAR(1) default 'Y'						
+    CONSTRAINT MEM_IS_CK CHECK(isShow IN('Y', 'N'))
+);
+
+
+--이미지--
+CREATE TABLE image(
+ino NUMBER(4)						--이미지번호							
+    CONSTRAINT IMG_NO_PK PRIMARY KEY,
+isavename VARCHAR2(50)					--저장이름
+    CONSTRAINT IMG_NAME_NN NOT NULL,
+idir VARCHAR2(20)						--저장위치
+    CONSTRAINT IMG_DIR_NN NOT NULL
+);
+
+
+--위치--
+CREATE TABLE loc(
+lono NUMBER(4)						--지역번호							
+    CONSTRAINT LOC_NO_PK PRIMARY KEY,
+loname VARCHAR2(20)     					--지역이름
+    CONSTRAINT LOC_NAME_NN NOT NULL
+);
+
+
+--자주하는 질문--
+CREATE TABLE fboard(
+fbno NUMBER(4)						--문의번호							
+    CONSTRAINT FAQ_NO_PK PRIMARY KEY,
+fbtitle VARCHAR2(50)					--제목
+    CONSTRAINT FAQ_TIT_NN NOT NULL,
+fbbody VARCHAR2(4000)					--본문
+    CONSTRAINT FAQ_BOD_NN NOT NULL,
+fbdate DATE default sysdate					--등록일
+    CONSTRAINT FAQ_DAT_NN NOT NULL,
+                                                       			 --유효성
+isShow CHAR(1) default 'Y'						
+    CONSTRAINT FAQ_IS_CK CHECK(isShow IN('Y', 'N'))
+);
+
+
+--공지사항--
+CREATE TABLE nboard(
+nno NUMBER(4)						--공지번호							
+    CONSTRAINT NOT_NO_PK PRIMARY KEY,
+ntitle VARCHAR2(50)					--제목
+    CONSTRAINT NOT_TIT_NN NOT NULL,
+nbody VARCHAR2(4000)					--본문
+    CONSTRAINT NOT_BOD_NN NOT NULL,
+ndate DATE default sysdate					--등록일
+    CONSTRAINT NOT_DAT_NN NOT NULL,
+                                                        			--유효성
+isShow CHAR(1) default 'Y'						
+    CONSTRAINT NOT_IS_CK CHECK(isShow IN('Y', 'N'))
+);
+
+
+-전시클래스-
+CREATE TABLE exhclass(
+ecno NUMBER(1)						--전시클랙스번호							
+    CONSTRAINT EXC_NO_PK PRIMARY KEY,
+ecnaming VARCHAR2(8)					--이름
+    CONSTRAINT EXC_NAME_NN NOT NULL
+
+COMMIT;
