@@ -13,9 +13,6 @@ public class Main implements Controller {
 		
 		String view = "main";
 		
-		
-		
-		
 		return view;
 	} 
 
