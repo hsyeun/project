@@ -201,7 +201,7 @@
 				<div class="col-lg-8 mb-4">
 					<h3>회원정보를 입력해주세요</h3>
 					<br> <br>
-					<form method="post" id="frm" name="frm" action="/moa/joinProc.moa">
+					<form method="post" id="frm" name="frm" action="/moa/member/joinProc.moa">
 
 						<div class="control-group form-group">
 							<div class="controls">

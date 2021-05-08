@@ -54,32 +54,7 @@ public class MemberDao {
 		return cnt;
 	}
 	
-	public int addMember(MemberVO mVO) {
 		
-		int cnt = 0 ;
-		con = db.getCon();
-		String sql = mSQL.getSQL(mSQL.ADD_MEMB);
-		pstmt = db.getPSTMT(con, sql);
-		
-		try {
-			pstmt.setString(1, mVO.getName());
-			pstmt.setString(2, mVO.getId());
-			pstmt.setString(3, mVO.getPw());
-			pstmt.setString(4, mVO.getTel());
-			pstmt.setString(5, mVO.getEmail());
-			pstmt.setString(6, mVO.getGen());
-			pstmt.setString(7, mVO.getBirth());
-			cnt = pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			db.close(pstmt);
-			db.close(con);
-		}
-		return cnt;
-	}
-	
-	
 	public ArrayList<MemberVO> getMembList(){		
 		
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
@@ -112,5 +87,31 @@ public class MemberDao {
 			db.close(con);
 		}
 		return list;
+	}
+	
+	
+	public int addMember(MemberVO mVO) {
+		
+		int cnt = 0 ;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.ADD_MEMB);
+		pstmt = db.getPSTMT(con, sql);
+		
+		try {
+			pstmt.setString(1, mVO.getName());
+			pstmt.setString(2, mVO.getId());
+			pstmt.setString(3, mVO.getPw());
+			pstmt.setString(4, mVO.getTel());
+			pstmt.setString(5, mVO.getEmail());
+			pstmt.setString(6, mVO.getGen());
+			pstmt.setString(7, mVO.getBirth());
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
 	}
 }
