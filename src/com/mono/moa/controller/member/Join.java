@@ -10,9 +10,14 @@ import com.mono.moa.controller.Controller;
 
 public class Join implements Controller {
 
-	public String exec(HttpServletRequest req, HttpServletResponse resp) {
-		
+	@Override
+	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String view = "member/join";
+		if(req.getSession().getAttribute("SID") != null) {
+			req.setAttribute("isRedirect", true);
+			view = "/moa/main.moa";
+		}
+		
 		return view;
 	}
 

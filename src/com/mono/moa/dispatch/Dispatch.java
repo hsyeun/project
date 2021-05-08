@@ -103,7 +103,7 @@ public class Dispatch extends HttpServlet {
 			resp.sendRedirect(view);
 		} else {
 			
-			String prefix = "/WEB-INF/views/moa/";
+			String prefix = "/WEB-INF/views/";
 			String surffix = ".jsp";
 			
 			RequestDispatcher rd = req.getRequestDispatcher(prefix + view + surffix);
