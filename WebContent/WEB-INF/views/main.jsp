@@ -21,7 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="/moa/member/Login.moa">로그인</a></li>                  
-                        <li class="nav-item"><a class="nav-link" href="/moa/member/Join.moa"">회원가입</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/moa/member/Join.moa">회원가입</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
