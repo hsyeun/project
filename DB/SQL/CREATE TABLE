@@ -288,3 +288,22 @@ isShow CHAR(1)
 );
 
 
+---여기 추가해주세용~
+-----------point table타입,재약조건 수정--------
+ALTER TABLE point 
+MODIFY spoint VARCHAR2(10); 
+
+ALTER TABLE point 
+MODIFY depoint VARCHAR2(10); 
+
+ALTER TABLE point 
+MODIFY repoint VARCHAR2(10); 
+
+ALTER TABLE point DROP CONSTRAINT PNT_SAVEP_NN;
+
+ALTER TABLE point DROP CONSTRAINT PNT_DEDUCP_NN;
+
+ALTER TABLE point DROP CONSTRAINT PNT_RETENP_NN;
+
+-------------------------------------
+CCOMMIT;
