@@ -29,6 +29,31 @@ public class MemberDao {
 		mSQL = new MemberSQL();
 	}
 	
+	public int getIdCnt(String id) {
+		int cnt = 0;
+		
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_ID_CHECK);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				db.close(rs);
+				db.close(pstmt);
+				db.close(con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return cnt;
+	}
+	
 	public int addMember(MemberVO mVO) {
 		
 		int cnt = 0 ;
