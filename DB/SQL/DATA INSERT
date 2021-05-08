@@ -1,0 +1,723 @@
+SET DEFINE OFF;
+
+--회원정보 데이터--
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '최다연','yeon1', 'yeon123!', '010-2120-1238', 'yeon@google.com','F','1997-01-05',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '김기은','kim1', 'kim123!', '010-9510-2367', 'kim@google.com','M','1999-08-21',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '황진석','jin1', 'jin123!', '010-8874-9632', 'jin@google.com','M','1989-07-11',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '한수연','soo1', 'soo123!', '010-1221-2366', 'soo@google.com','F','1993-11-06',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '우병환','woo1', 'woo123!', '010-3564-7845', 'woo@google.com','M','1996-02-07',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '남궁','nam1', 'nam123!', '010-2597-1213', 'nam@naver.com','M','1981-12-09',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '오정일','oh1', 'oh123!', '010-5555-5555', 'oh@naver.com','M','1971-05-07',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '김혜림','lim1', 'lim123!', '010-2214-2678', 'lim@naver.com','F','1985-07-16',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '강형욱','kang1', 'kang123!', '010-2671-0026', 'kang@naver.com','M','1975-09-09',sysdate,'N' 
+);
+
+INSERT INTO
+    member(mno, name, id, pw,tel,email,gen,birth,jdate,isshow)
+VALUES(
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), 
+    '김현아','kima1', 'kima123!', '010-7761-9801', 'kima@hanmail.com','F','1992-01-25',sysdate,'N' 
+);
+
+--지역 데이터--------------------------------------------------------------------
+INSERT INTO
+    loc(lono, loname)
+VALUES(
+        10, '서울'
+);        
+
+INSERT INTO
+    loc(lono, loname)
+VALUES(
+        20, '경기'
+); 
+
+
+INSERT INTO
+    loc(lono, loname)
+VALUES(
+        30, '부산'
+); 
+
+INSERT INTO
+    loc(lono, loname)
+VALUES(
+        40, '대구'
+); 
+
+
+--이미지 데이터----!!!!!!!!!!!!!!!!1-------------------------------------------------------------
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image), 
+        '2021 딜라이트 서울', 'img>전시이미지'
+); 
+
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '공명 자연이 주는 울림', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '김현주', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '데이비드걸스타인', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '민택기', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '보더리스 사이트', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '볼로냐 일러스트원화전', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '사람 모양 재료', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '색채의 마술사, 앙리마티스', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '수연 개인전', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '수퍼 네이처', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '아마도 우리를 이끄는 것은', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '여행갈까요', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '웁쓰양', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '유예림 개인전', 'img>전시이미지'
+); 
+
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '이영미', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '이토록 아름다운', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '이현주 개인전 물질의 일일드라마', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '장 줄리앙 개인전', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '전술들', 'img>전시이미지'
+); 
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '조해나 개인전', 'img>전시이미지'
+);
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '찰나의 인천', 'img>전시이미지'
+);
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '초대의 감각', 'img>전시이미지'
+);
+INSERT INTO
+    image(ino, isavename, idir)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '친근하고도 신비한 아세안의 동물들', 'img>전시이미지'
+);
+
+
+
+--공지사항 데이터--
+INSERT INTO
+    nboard(nno, ntitle, nbody, ndate, isshow)
+VALUES(
+        (SELECT NVL(MAX(nno) + 1, 1001) FROM nboard),
+            ('MOA(모아),'||' 웹사이트'||' 오픈...'),
+                                    ('MOA(모아)가'||' 웹사이트를 '||'오픈했다.'
+                                    )
+                ,sysdate, 'Y'                                         
+); 
+
+--자주 묻는 질문 데이터--
+INSERT INTO
+    fboard(fbno, fbtitle, fbbody, fbdate, isshow)
+VALUES(
+        (SELECT NVL(MAX(fbno) + 1, 1001) FROM fboard),
+            ('환불에 관련된 사항'),
+                                    ('환불은 저희 모아 환불 정책에 따라서....'
+                                    )
+                ,sysdate, 'Y'                                         
+); 
+
+--전시분류 데이터--
+INSERT INTO
+    exclass(ecno, ecnaming)
+VALUES(1, '미술'                                                    
+); 
+
+INSERT INTO
+    exclass(ecno, ecnaming)
+VALUES(2, '사진'                                                    
+); 
+
+INSERT INTO
+    exclass(ecno, ecnaming)
+VALUES(3, '테마'                                                    
+); 
+
+
+
+--전시장 데이터--
+SET DEFINE OFF;
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '플레이스막1',
+            '12:00~19:00','http://www.placemak.com/', '010-9838-5768',
+            '서울특별시 마포구 성미산로 198 동진시장내 플레이스막1'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '피비갤러리',
+            '11:00~18:00','http://www.pibigallery.com/', '',
+            '서울특별시 종로구 북촌로 125-6'
+); 
+-----
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '쉬프트',
+            '13:00~19:00','https://www.instagram.com/shift_artspace/','',
+            '서울특별시 중구 을지로 105 이화빌딩 3층 301호'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '예술의전당한가람미술관',
+            '10:00~19:00','https://bolognaillustrators.modoo.at/','02-837-6611',
+            '서울특별시 서초구 남부순환로 2406'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '알부스갤러리',
+            '10:00~18:00','http://albusgallery.com/','',
+            '서울특별시 용산구 한남대로28길 26'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '프로젝트 스페이스 영등포',
+            '12:00~19:00','instagram.com/projectspaceyeongdeungpo/','010-7148-2805',
+            '서울특별시 영등포구 영신로 22-4'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '라라앤',
+            '11:00~18:00','http://lalanseoul.com/','',
+            '서울특별시 서초구 서래로 31 제일빌딩 3층 라라앤'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '호림박물관',
+            '10:30~18:00','http://horimmuseum.org/','02-541-3523',
+            '서울특별시 관악구 남부순환로152길 53 호림박물관 신사'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '문화역서울 284',
+            '10:00~19:00','https://www.seoul284.org','02-3407-3566',
+            '서울특별시 중구 통일로 1 문화역서울 284'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '탈영역우정국',
+            '13:00~19:00','http://ujeongguk.com/','',
+            '서울특별시 마포구 독막로20길 42 탈영역우정국'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, 'show and tell',
+            '13:00~19:00','www.showandtell.kr','010-3422-4562',
+            '서울특별시 영등포구 선유로53길 10 전시장 : 영등포구 양평로18길 8 지하1층'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, 'd/p',
+            '11:00~18:00','http://www.dslashp.org/','',
+            '서울특별시 종로구 삼일대로 428 낙원상가 417호 d/p'
+); 
+
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '전시공간',
+            '10:00~18:00','','070-8845-4099',
+            '서울특별시 마포구 홍익로5길 59 전시공간'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 10, '안녕인사동',
+            '10:00~20:00','http://delightseoul.com/','02-1588-7890',
+            '서울특별시 종로구 인사동길 49 지하1층 인사센트럴뮤지엄'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 20, '백남준아트센터',
+            '10:00~18:00','https://njp.ggcf.kr','031-201-8500',
+            '경기도 용인시 기흥구 백남준로 10 제 2전시실'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 20, '리빙파워센터',
+            '10:00~20:00','http://www.livingpowercenter.com/','031-282-5580',
+            '경기도 용인시 기흥구 신고매로 59 B3F 아이뮤지엄'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 20, '병원안갤러리',
+            '10:00~19:00','www.artvaccine.com','',
+            '경기도 이천시 경충대로 2560-2 1층'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 30, '아세안문화원',
+            '10:00~18:00','https://www.ach.or.kr/user/main','',
+            '부산 해운대구 APEC로 58 부산시립미술관'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 30, '뮤지엄 다',
+            '10:00~19:00','https://www.museumdah.com/','051-731-3302',
+            '부산광역시 해운대구 센텀서로 20 뮤지엄 다 월석아트홀'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 30, '부산시립미술관',
+            '10:00~18:00','https://art.busan.go.kr','051-744-2602',
+            '부산광역시 해운대구 APEC로 58 부산시립미술관 본관 3층'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 40, '갤러리 여울',
+            '10:00~18:00','http://www.instagram.com/galleryyeooul','',
+            '대구 수성구 국채보상로162길 26 2층 갤러리 여울'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 40, '대구문화예술회관',
+            '10:00~17:50','https://artcenter.daegu.go.kr/mobile/content.html?md=0041&mode=view&seq=1466',
+            '?053-606-6114','대구문화예술회관 미술관 1-5 전시실'
+); 
+
+INSERT INTO
+    explace(expno, explono, expname, exptime, expsite, exptel, exploc)
+VALUES(
+        (SELECT NVL(MAX(expno) +1 ,1001) FROM explace), 40, '히든스페이스',
+            '10:00~18:00','http://hiddenspace.kr/','053-751-5005',
+            '대구광역시 수성구 동대구로74길 71'
+); 
+
+
+
+--전시정보 데이터----------
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '웁쓰양', '웁쓰양 개인전- 그림 좋다', 
+        TO_DATE('2021-04-17 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-12-17 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        12000, '전체', 1001, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '이명미', '이명미 개인전- I am a person', 
+        TO_DATE('2021-03-13 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-09-08 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        11000, '전체', 1002, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '이현주', '이현주 개인전- 물질의 일일드라마', 
+        TO_DATE('2021-04-22 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-08-09 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        19000, '전체', 1003, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, 'Kate Winter', '볼로냐 일러스트 원화전2020', 
+        TO_DATE('2021-02-11 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-08-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        12000, '전체', 1004, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '장줄리앙', '장 줄리앙 개인전: 다시 안녕', 
+        TO_DATE('2021-04-01 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-07-28 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        17000, '전체', 1005, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '곽아람', '아마도 우리를 이끄는 것은 단지 불길한 예감일지도 모른다.', 
+        TO_DATE('2021-04-22 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-08-05 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        12000, '전체', 1006, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '김대운,김동섭', '사람 모양 재료', 
+        TO_DATE('2021-04-17 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-10-15 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        25000, '전체', 1007, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '오윤선', '공명: 자연이 주는 울림', 
+        TO_DATE('2021-03-16 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-11-11 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        22000, '전체', 1008, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 3, '박성태', '보더리스 사이트', 
+        TO_DATE('2021-05-07 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-07-28 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        17000, '전체', 1009, 'Y'
+);
+--------------------------------------------------------------------------------------------------------
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '구은정,양승옥', '초대의 감각', 
+        TO_DATE('2021-03-20 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-12-01 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        19000, '전체', 1010, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '유예림', '유예림 개인전 : 나는 밤새 푹 자고 종일 일한다네', 
+        TO_DATE('2021-02-05 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-08-16 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        20000, '전체', 1011, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '조해나', '조해나 개인전 : Vertigo', 
+        TO_DATE('2021-04-20 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-09-15 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        15000, '전체', 1012, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '수연', '수연 개인전 : 부드러운 미래', 
+        TO_DATE('2021-05-10 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-07-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        12000, '전체', 1013, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 3, '디자인실버', '2021 딜라이트 서울', 
+        TO_DATE('2021-04-15 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-11-10 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        18000, '전체', 1014, 'Y'
+);
+-------------------------------
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '구민자,송민정', '전술들 ( Tactics )', 
+        TO_DATE('2021-03-04 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-10-01 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        20000, '전체', 1015, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '앙리마티스', '색채의 마술사', 
+        TO_DATE('2021-05-09 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-10-19 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        12000, '전체', 1016, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '김현주', 'it'||'s your paradise', 
+        TO_DATE('2021-04-17 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-12-17 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        19000, '전체', 1017, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '조한진, 조현민', '친근하고도 신비한 아세안의 동물들', 
+        TO_DATE('2021-05-15 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-09-01 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        22000, '전체', 1018, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '이상훈,이세현', '수퍼 네이처 (Super Nature)', 
+        TO_DATE('2021-04-07 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-11-20 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        25000, '전체', 1019, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '강태훈,김이박', '이토록 아름다운 ( The Nature Art )', 
+        TO_DATE('2021-05-01 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-07-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        24000, '전체', 1020, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '데이비드', '데이비드 걸스타인전', 
+        TO_DATE('2021-03-20 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-07-20 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        16000, '전체', 1021, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '김덕기,조현익', '가정의 달 기념전'||'일상은 아름다워', 
+        TO_DATE('2021-04-01 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-06-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        17000, '전체', 1022, 'Y'
+);
+
+INSERT INTO
+    exinfo(exino, exiecno, exiperson, exiname,exisdate,exiedate, exiprice, exiage, exiexpno, isShow)
+VALUES( 
+        (SELECT NVL(MAX(exino)+1,10001) FROM exinfo), 1, '민택기', '민택기 : 多彩하여 多彩하니', 
+        TO_DATE('2021-05-01 00:00:00','YYYY-MM-DD hh24:mi:ss'), TO_DATE('2021-09-15 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        20000, '전체', 1023, 'Y'
+);
+
+
+---포인트 데이터--
+
+INSERT INTO
+    point(pcode, pmno, spoint, depoint, repoint, pdate)
+VALUES(
+        (SELECT NVL(MAX(pcode)+1, 100001) FROM point), 1001, '10000','','10000',sysdate
+);
+
+
+
+
+--리뷰게시판 데이터---
+INSERT INTO
+    rboard(rbno, rbmno, rbdate, rbtitle, rbbody, rbview, star, isShow)
+VALUES(
+        (SELECT NVL(MAX(rbno)+1,10001) FROM rboard), 1001, SYSDATE, 
+            '조해나 개인전 리뷰','재밌음',2 ,4,'Y'
+);     
+
+
+--문의 데이터--
+INSERT INTO
+    iqboard(iqbno, iqmno, iqtitle, iqbody, isShow)
+VALUES(
+        (SELECT NVL(MAX(iqbno)+1, 10001) FROM iqboard), 1001, 
+            '환불해줘염','환불해줘염~','Y'        
+);
+
+--찜 목록 데이터--
+INSERT INTO
+    interested(intno, intmno, intexno, isShow)
+VALUES(
+        (SELECT NVL(MAX(intno)+1 , 10001)FROM interested), 1001, 10005,'Y'
+);        
+
+--이벤트 데이터--
+INSERT INTO
+   event( evtno, evtexino, evtcode, evtcontent, sdate, edate, isShow)
+VALUES(
+            (SELECT NVL(MAX(evtno) +1, 1001) FROM event),10005,'D','50% 할인이벤트',
+            TO_DATE('2021-05-01 00:00:00','YYYY-MM-DD hh24:mi:ss'),TO_DATE('2021-05-10 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+            'Y'
+);
+            
+
+commit;
