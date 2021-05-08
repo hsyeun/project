@@ -12,8 +12,13 @@ public class Join implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return null;
+		String view = "member/join";
+		if(req.getSession().getAttribute("SID") != null) {
+			req.setAttribute("isRedirect", true);
+			view = "/moa/main.moa";
+		}
+		
+		return view;
 	}
 
 }

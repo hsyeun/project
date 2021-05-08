@@ -4,3 +4,15 @@
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.Main
 	뷰			:	/WEB-INF/views/moa/main.jsp
+	
+---------------------------------------------------------------------
+
+# 회원 관련 요청 설계
+
+1. 로그인 폼보기 요청
+
+2. 회원가입 폼보기 요청
+	요청내용	:	http://localhost/moa/member/join.moa
+	파라미터	:	무
+	컨트롤러	:	com.mono.moa.controller.Join
+	뷰			:	/WEB-INF/views/moa/member/join.jsp
