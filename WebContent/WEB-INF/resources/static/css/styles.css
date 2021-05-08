@@ -4146,6 +4146,7 @@ input[type=button].btn-block {
 }
 @media (min-width: 992px) {
   .navbar-expand-lg {
+  height: 150px;
     flex-flow: row nowrap;
     justify-content: flex-start;
   }
