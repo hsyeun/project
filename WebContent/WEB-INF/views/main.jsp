@@ -1,18 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-		<jsp:include page="nav/head.jsp">
-			<jsp:param name="root" value="/moa/static" />
-		</jsp:include>
+<html lang="ko"><head>
+   <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Moa</title>
+        <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/moa/static/css/w3.css"></script>
+        <link href="/moa/static/css/styles.css" rel="stylesheet"> 
     </head>
-    
-    <body>        
+    <body>
+        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">Moa</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
@@ -55,27 +59,27 @@
         <header>
             <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li class="" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://via.placeholder.com/1900x600" alt="..." />
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/moa/img/main/img_avatar1.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>First Slide</h3>
                             <p>This is a description for the first slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="https://via.placeholder.com/1900x600" alt="..." />
+                        <img class="d-block w-100" src="/moa/img/main/img_avatar2.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Second Slide</h3>
                             <p>This is a description for the second slide.</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://via.placeholder.com/1900x600" alt="..." />
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="/moa/img/main/img_avatar3.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Third Slide</h3>
                             <p>This is a description for the third slide.</p>
@@ -122,7 +126,7 @@
                 </div>
             </div>
         </section>
-        <hr class="my-0" />
+        <hr class="my-0">
         <!-- Portfolio Section-->
         <section class="py-5 bg-light">
             <div class="container">
@@ -130,7 +134,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project One</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
@@ -139,7 +143,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project Two</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
@@ -148,7 +152,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project Three</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
@@ -157,7 +161,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project Four</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
@@ -166,7 +170,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project Five</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
@@ -175,7 +179,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
-                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#!">Project Six</a></h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
@@ -185,7 +189,7 @@
                 </div>
             </div>
         </section>
-        <hr class="my-0" />
+        <hr class="my-0">
         <!-- Features Section-->
         <section class="py-5">
             <div class="container">
@@ -202,11 +206,11 @@
                         </ul>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
                     </div>
-                    <div class="col-lg-6"><img class="img-fluid rounded" src="https://via.placeholder.com/700x450" alt="..." /></div>
+                    <div class="col-lg-6"><img class="img-fluid rounded" src="https://via.placeholder.com/700x450" alt="..."></div>
                 </div>
             </div>
         </section>
-        <hr class="my-0" />
+        <hr class="my-0">
         <!-- Call to Action-->
         <aside class="py-5 bg-light">
             <div class="container">
@@ -218,257 +222,13 @@
         </aside>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright © Your Website 2021</p></div>
         </footer>
-        
-        
-    </body>
-</html>
-=======
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>MONO Artfair</title>
-<link rel="stylesheet" type="text/css" href="/moa/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/moa/css/user.css">
-<script type="text/javascript" src="/moa/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/moa/js/w3color.js"></script>
-<style type="text/css"></style>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/moa/static/js/scripts.js"></script>
+    
 
-<script type="text/javascript">
-/* 	$(function(){
-		$('#board').click(function(){
-			$(location).attr('href', '/moa/member/join.moa')
-		});
-	}); */
-</script>
-
-</head>
-<body>
-	
-<!-- Top Header Bar -->
-<header class="top-header-bar-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="top-header-bar">
-					<!-- Email -->
-					<li class="top-email">
-						<i class="fa fa-envelope-o"></i> <!-- <?php echo esc_html( get_theme_mod( 'tyche_top_bar_email', get_option( 'admin_email' ) ) ); ?> -->
-					</li>
-					<!-- / Email -->
-					<!-- <!-- <?php if ( class_exists( 'WooCommerce' ) ) : ?> -->
-						<!-- Cart -->
-						<li class="top-cart">
-							<a href="<!-- <?php echo esc_url( Tyche_Helper::get_woocommerge_page( 'cart' ) ); ?> -->"><i class="fa fa-shopping-cart"></i> <!-- <?php echo esc_html__( 'My Cart', 'tyche' ); ?> -->
-								<!-- <?php echo esc_html( get_woocommerce_currency_symbol( get_woocommerce_currency() ) ) . ' <span class="price">' . esc_html( Tyche_WooCommerce_Hooks::get_cart_total() ) . '</span>'; ?> -->
-							</a>
-						</li> <!-- / Cart -->
-					<!-- <!-- <?php endif; ?> -->
-
-					<!-- <?php if ( class_exists( 'WooCommerce' ) ) : ?> -->
-						<!-- Account -->
-						<li class="top-account">
-							<a href="<!-- <?php echo esc_url( Tyche_Helper::get_woocommerge_page( 'account' ) ); ?> -->"><i class="fa fa-user"></i> <!-- <?php echo esc_html__( 'Account', 'tyche' ); ?> -->
-							</a>
-						</li><!-- / Account -->
-					<!-- <?php endif; ?> -->
-
-					<!-- <?php if ( function_exists( 'pll_the_languages' ) ) : ?> -->
-						<!-- Multi language picker -->
-						<li class="top-multilang">
-							<!-- <?php
-							$current_lang = pll_current_language( 'name' );
-							$current_flag = pll_current_language( 'flag' );
-							?> -->
-							<a href="#" class="multilang-toggle" id="multilang-toggle"> <!-- <?php echo $current_flag . esc_html( $current_lang ); ?> --> </a>
-							<ul class="tyche-multilang-menu" data-menu data-menu-toggle="#multilang-toggle">
-								<!-- <?php
-								$args = array(
-									'show_flags' => 1,
-									'show_names' => 1,
-								);
-
-								pll_the_languages( $args );
-								?> -->
-							</ul>
-						</li><!-- / Multi language picker -->
-					<!-- <?php endif; ?> -->
-					<!-- <?php
-					$enable_search_bar = get_theme_mod( 'tyche_enable_top_bar_search', 'enabled' );
-					?> -->
-					<!-- <?php if ( 'enabled' === $enable_search_bar ) : ?> -->
-						<!-- Top Search -->
-						<li class="top-search">
-							<!-- Search Form -->
-							<form role="search" method="get" class="pull-right" id="searchform_topbar" action="<!-- <?php echo esc_url( home_url( '/' ) ); ?> -->">
-								<label>
-									<span class="screen-reader-text"><!-- <?php esc_html__( 'Search for:', 'tyche' ); ?> --></span>
-									<input class="search-field-top-bar" id="search-field-top-bar" placeholder="<!-- <?php echo esc_attr__( 'Search ...', 'tyche' ); ?> -->" value="" name="s" type="search">
-								</label>
-								<button id="search-top-bar-submit" type="submit" class="search-top-bar-submit">
-									<span class="fa fa-search"></span>
-								</button>
-							</form>
-						</li><!-- / Top Search -->
-					<!-- <?php endif; ?> -->
-				</ul>
-			</div>
-		</div>
-	</div>
-</header><!-- /Top Header Bar -->
-
-<!-- Main Slider -->
-<section class="main-slider">
-	<!-- <?php if ( empty( $images ) ) : ?> -->
-		<div class="owl-carousel owl-theme" id="main-slider">
-			<div class="item">
-				<img src="<!-- <?php echo get_template_directory_uri(); ?> -->/assets/images/hero.jpg"/>
-				<div class="hero-caption left hidden-xs hidden-sm">
-					<span class="year"><!-- <?php echo esc_html( date( 'Y' ) ); ?> --></span>
-					<span class="caption"><!-- <?php echo esc_html__( 'Autumn Collection', 'tyche' ); ?> --></span>
-					<div class="btn-group">
-						<a href="#"><!-- <?php echo esc_html__( 'Shop Now', 'tyche' ); ?> --></a>
-						<a href="#"><!-- <?php echo esc_html__( 'Learn More', 'tyche' ); ?> --></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- <?php else : ?> -->
-		<div class="owl-carousel owl-theme" id="main-slider">
-			<!-- <?php foreach ( $images as $image ) : ?> -->
-				<div class="item">
-					<!-- <?php echo wp_get_attachment_image( $image['image_bg'], 'tyche-slider-image' ); ?> -->
-					<div class="hero-caption <!-- <?php echo esc_attr( get_theme_mod( 'tyche_slider_layout', 'left' ) ); ?> --> hidden-xs hidden-sm">
-						<!-- <?php if ( ! empty( $image['cta_text'] ) ) : ?> -->
-							<span class="year"><!-- <?php echo esc_html( $image['cta_text'] ); ?> --></span>
-						<!-- <?php endif; ?> -->
-						<!-- <?php if ( ! empty( $image['cta_subtext'] ) ) : ?> -->
-							<span class="caption"><!-- <?php echo esc_html( $image['cta_subtext'] ); ?> --></span>
-						<!-- <?php endif; ?> -->
-						<div class="btn-group">
-							<!-- <?php if ( ! empty( $image['button_one_text'] ) && ! empty( $image['button_one_url'] ) ) : ?> -->
-								<a href="<!-- <?php echo esc_url( $image['button_one_url'] ); ?> -->"><!-- <?php echo esc_html( $image['button_one_text'] ); ?> --></a>
-							<!-- <?php endif; ?> -->
-							<!-- <?php if ( ! empty( $image['button_two_text'] ) && ! empty( $image['button_two_url'] ) ) : ?> -->
-								<a href="<!-- <?php echo esc_url( $image['button_two_url'] ); ?> -->"><!-- <?php echo esc_html( $image['button_two_text'] ); ?> --></a>
-							<!-- <?php endif; ?> -->
-						</div>
-					</div>
-				</div>
-			<!-- <?php endforeach; ?> -->
-		</div>
-	<!-- <?php endif; ?> -->
-	<div class="main-slider-bar hidden-xs">
-		<div class="container">
-			<ul class="main-slider-info">
-				<li class="col-sm-4 col-xs-12">
-					<div class="main-slider-info-cell">
-						<div class="cell-icon">
-							<!-- <?php
-							$icon = get_theme_mod( 'info_section_one_icon', 'store' );
-							?> -->
-							<i class="dashicons dashicons-<!-- <?php echo esc_attr( $icon ); ?> -->"></i>
-						</div>
-						<div class="cell-content">
-							<span class="cell-caption">
-								<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_one_text', 'FREE SHIPPING' ) ); ?> -->
-							</span> <span class="cell-subcaption">
-								<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_one_subtext', 'On all orders over 90$' ) ); ?> -->
-							</span>
-						</div>
-					</div>
-				</li>
-				<li class="col-sm-4 col-xs-12">
-					<div class="main-slider-info-cell">
-						<div class="cell-icon">
-							<!-- <?php
-							$icon = get_theme_mod( 'info_section_two_icon', 'phone' );
-							?> -->
-							<i class="dashicons dashicons-<!-- <?php echo esc_attr( $icon ); ?> -->"></i>
-						</div>
-						<div class="cell-content">
-							<span class="cell-caption">
-								<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_two_text', 'CALL US ANYTIME' ) ); ?> -->
-							</span> <span class="cell-subcaption">
-								<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_two_subtext', '+04786445953' ) ); ?> -->
-							</span>
-						</div>
-
-					</div>
-				</li>
-				<li class="col-sm-4 col-xs-12">
-					<div class="main-slider-info-cell">
-						<div class="cell-icon">
-							<!-- <?php
-							$icon = get_theme_mod( 'info_section_three_icon', 'location-alt' );
-							?> -->
-							<i class="dashicons dashicons-<!-- <?php echo esc_attr( $icon ); ?> -->"></i>
-						</div>
-						<div class="cell-content">
-						<span class="cell-caption">
-							<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_three_text', 'OUR LOCATION' ) ); ?> -->
-						</span> <span class="cell-subcaption">
-							<!-- <?php echo wp_kses_post( get_theme_mod( 'info_section_three_subtext', '557-6308 Lacinia Road. NYC' ) ); ?> -->
-						</span>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-</section><!-- / Main Slider -->
-
-<footer class="site-copyright">
-	<div class="site-info ">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<!-- <?php
-					if ( has_nav_menu( 'social' ) ) {
-
-							wp_nav_menu(
-								array(
-									'theme_location'  => 'social',
-									'container'       => 'div',
-									'container_id'    => 'menu-social',
-									'container_class' => 'menu pull-left',
-									'menu_id'         => 'menu-social-items',
-									'menu_class'      => 'menu-items',
-									'depth'           => 1,
-									'link_before'     => '<span class="screen-reader-text">',
-									'link_after'      => '</span>',
-									'fallback_cb'     => '',
-								)
-							);
-						}
-						?> -->
-
-					<div class="copyright-text pull-right">
-						<!-- <?php
-						echo wp_kses_post(
-								get_theme_mod(
-									'tyche_copyright_contents',
-									vsprintf(
-										// Translators: 1 is current year, 2 is separator, 3 is theme link.
-										__( 'Copyright &copy; %1$s %2$s %3$s %2$s Powered by WordPress.', 'tyche' ),
-										array(
-											date_i18n( __( 'Y', 'tyche' ) ),
-											'<span class="sep">|</span>',
-											sprintf( '<a href="https://colorlib.com/tyche">%s</a>', __( 'Theme: Tyche', 'tyche' ) ),
-										)
-									)
-								)
-							);
-							?> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer><!-- / Copyright -->
-</body>
-</html>
->>>>>>> branch 'branch' of https://github.com/sooyeun-han/project.git
+</body></html>
