@@ -3,7 +3,8 @@ package com.mono.moa.sql;
 public class MemberSQL {
 	
 	public final int SEL_ID_CHECK 	= 1001;
-	public final int SEL_MEMB_LIST 	= 1002;
+	public final int SEL_LOGIN 		= 1002;
+	public final int SEL_MEMB_LIST 	= 1003;
 	
 	public final int ADD_MEMB 		= 3001;
 
@@ -12,6 +13,17 @@ public class MemberSQL {
 		StringBuffer buff = new StringBuffer();
 		
 		switch(code) {
+		
+		case SEL_LOGIN:
+			buff.append("SELECT ");
+			buff.append("count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("member ");
+			buff.append("WHERE ");
+			buff.append("isShow = 'Y' ");
+			buff.append("AND id = ? ");
+			buff.append("AND pw = ? ");
+			break;
 		
 		case SEL_ID_CHECK:
 			buff.append("SELECT ");
