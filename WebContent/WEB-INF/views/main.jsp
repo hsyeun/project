@@ -65,21 +65,21 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/moa/img/main/img_avatar1.png" alt="...">
+                        <img class="d-block w-100" src="/moa/img/main/main1.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>First Slide</h3>
                             <p>This is a description for the first slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/moa/img/main/img_avatar2.png" alt="...">
+                        <img class="d-block w-100" src="/moa/img/main/main2.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Second Slide</h3>
                             <p>This is a description for the second slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="/moa/img/main/img_avatar3.png" alt="...">
+                        <img class="d-block w-100" src="/moa/img/main/main3.png" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Third Slide</h3>
                             <p>This is a description for the third slide.</p>
