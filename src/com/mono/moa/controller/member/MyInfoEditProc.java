@@ -15,9 +15,14 @@ public class MyInfoEditProc implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		MemberVO mVO = new MemberVO();
-		
+				
 		String sid = (String) req.getSession().getAttribute("SID");
+		if(sid == null) {
+			req.setAttribute("isRedirect", true);
+			return "/moa/main.moa";
+		}
+		
+		MemberVO mVO = new MemberVO();
 		
 		mVO.setName(req.getParameter("name"));
 		mVO.setId(sid);
