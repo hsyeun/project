@@ -30,8 +30,7 @@
 
 	<!-- Page Content-->
 	<section class="py-5">
-		<div class="container">
-
+		<div class="container">		
 			<div class="row">
 				<div class="col-lg-8 mb-4">
 					<h3>로그인 정보를 입력해 주세요</h3>

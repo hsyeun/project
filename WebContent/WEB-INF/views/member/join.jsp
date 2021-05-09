@@ -9,7 +9,6 @@
 
 <script>
 	$(document).ready(function() {
-
 		
 	function nameCk(){
 		var sname = $('#name').val();
@@ -69,15 +68,14 @@
 		return exp.test(spw);
 	}	
 	$('#pw').keyup(function(){
-		
+			
 		if(pwCk()){
-			if(!repwCk()){
-			$('#repwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('비밀번호가 일치하지 않습니다.');	
-			};
 			$('#pwmsg').removeClass('w3-text-red').addClass('w3-text-green').html('유효한 패스워드 입니다.');
+			$('#repw').val('');
 		} else {
 			$('#pwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('4~20자리의 문자를 입력하세요. ');
 		}
+		
 	});
 	
 	function repwCk(){
@@ -103,7 +101,7 @@
 		if(telCk()){
 			$('#telmsg').removeClass('w3-text-red').addClass('w3-text-green').html('올바른 핸드폰 번호입니다.');
 		} else {
-			$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('첫자리 0을 제외한 휴대폰 번호 10자리(숫자만) 를 입력하세요 ');
+			$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('휴대폰 번호 11자리(숫자만) 를 입력하세요 ');
 		}
 	});
 	
@@ -195,11 +193,17 @@
 	</jsp:include>
 
 	<!-- Page Content-->
+	
 	<section class="py-5">
 		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-8 mb-4">
+		<!-- 이용약관 -->
+					<div id="joinCheck">	
+						<jsp:include page="joinCheck.jsp">
+							<jsp:param name="" value=""/> 
+						</jsp:include>
+					</div>	
+			<div class="row" id="joinForm">
+				<div class="col-lg-8 mb-4">	
 					<h3>회원정보를 입력해주세요</h3>
 					<br> <br>
 					<form method="post" id="frm" name="frm" action="/moa/member/joinProc.moa">

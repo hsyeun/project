@@ -31,15 +31,14 @@
 			return exp.test(spw);
 		}	
 		$('#pw').keyup(function(){
-			
+				
 			if(pwCk()){
-				if(!repwCk()){
-				$('#repwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('비밀번호가 일치하지 않습니다.');	
-				};
 				$('#pwmsg').removeClass('w3-text-red').addClass('w3-text-green').html('유효한 패스워드 입니다.');
+				$('#repw').val('');
 			} else {
 				$('#pwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('4~20자리의 문자를 입력하세요. ');
 			}
+			
 		});
 		
 		function repwCk(){
