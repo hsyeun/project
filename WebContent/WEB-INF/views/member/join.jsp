@@ -26,7 +26,7 @@
 
 	function idCk(){
 		var sid = $('#id').val();
-		var exp = /^[a-zA-Z0-9]{5,20}$/;
+		var exp = /^[a-zA-Z0-9]{3,20}$/;
 		return exp.test(sid);
 	}		
 	$('#id').keyup(function() {
@@ -35,7 +35,7 @@
 			$('#idck').addClass('w3-button');
 			$('#idck').prop('disabled', false);
 		} else {
-			$('#idmsg').removeClass('w3-text-green').addClass('w3-text-red').html('특수문자를 제외한 5~20자리를 입력하세요. ');
+			$('#idmsg').removeClass('w3-text-green').addClass('w3-text-red').html('특수문자를 제외한 3~20자리를 입력하세요. ');
 			$('#idck').prop('disabled', true);
 			}
 	});

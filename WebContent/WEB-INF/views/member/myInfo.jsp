@@ -68,7 +68,7 @@
 						<div class="control-group form-group">
 							<div class="controls">
 								<label for="tel">전화번호 :</label> <input class="form-control"
-									type="text" id="tel" name="tel" value="0${DATA.tel}" disabled>
+									type="text" id="tel" name="tel" value="${DATA.tel}" disabled>
 								<p class="help-block" id="telmsg"></p>
 							</div>
 						</div>

@@ -1,7 +1,8 @@
 package com.mono.moa.vo;
 
-import java.text.*;
-import java.sql.*;
+import java.sql.Date;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 
 public class MemberVO {
 	private int mno;
@@ -56,7 +57,7 @@ public class MemberVO {
 		return birth;
 	}
 	public void setBirth(String birth) {
-		this.birth = birth;
+		this.birth = birth.trim();
 	}
 	public String getSdate() {
 		return sdate;

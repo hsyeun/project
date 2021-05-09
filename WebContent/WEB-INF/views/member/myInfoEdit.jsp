@@ -64,7 +64,7 @@
 			if(telCk()){
 				$('#telmsg').removeClass('w3-text-red').addClass('w3-text-green').html('올바른 핸드폰 번호입니다.');
 			} else {
-				$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('첫자리 0을 제외한 휴대폰 번호 10자리(숫자만) 를 입력하세요 ');
+				$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('휴대폰 번호 11자리(숫자만) 를 입력하세요 ');
 			}
 		});
 		
@@ -82,7 +82,7 @@
 		});
 		
 		function birthCk(){
-			var sbirth = $('#birth').val();
+			var sbirth = $('#birth').val().trim();
 			var exp = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
 			return exp.test(sbirth);
 		}
@@ -125,6 +125,7 @@
 				$('#birth').focus();
 				return;
 			}
+			
 			
 			if(!(nameCk() && pwCk() && repwCk() && telCk() && emailCk() && birthCk())){
 				alert('유효하지 않은 입력값이 있습니다. 다시 확인해주세요');
@@ -191,7 +192,7 @@
 						<div class="control-group form-group">
 							<div class="controls">
 								<label for="tel">전화번호 :</label> <input class="form-control"
-									type="text" id="tel" name="tel" value="0${DATA.tel}" >
+									type="text" id="tel" name="tel" value="${DATA.tel.replaceAll("-","")}" >
 								<p class="help-block" id="telmsg"></p>
 							</div>
 						</div>
@@ -220,7 +221,7 @@
 						<div class="control-group form-group">
 							<div class="controls">
 								<label for="birth">생년월일 :</label> <input class="form-control"
-									type="text" id="birth" name="birth" value="${DATA.birth}" >
+									type="text" id="birth" name="birth" value="${DATA.birth.replaceAll("-","")}" >
 								<p class="help-block" id="birthmsg"></p>
 							</div>
 						</div>
