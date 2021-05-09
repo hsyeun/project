@@ -13,7 +13,7 @@
 		
 	function nameCk(){
 		var sname = $('#name').val();
-		var exp = /^[a-zA-Z0-9가-힣]{3,6}$/;
+		var exp = /^[a-zA-Z0-9가-힣]{3,10}$/;
 		return exp.test(sname);
 	}	
 	$('#name').keyup(function() {
@@ -69,10 +69,11 @@
 		return exp.test(spw);
 	}	
 	$('#pw').keyup(function(){
-		var spw = $('#pw').val();
-		var exp = /^.{4,16}$/;
 		
 		if(pwCk()){
+			if(!repwCk()){
+			$('#repwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('비밀번호가 일치하지 않습니다.');	
+			};
 			$('#pwmsg').removeClass('w3-text-red').addClass('w3-text-green').html('유효한 패스워드 입니다.');
 		} else {
 			$('#pwmsg').removeClass('w3-text-green').addClass('w3-text-red').html('4~20자리의 문자를 입력하세요. ');
@@ -95,14 +96,14 @@
 
 	function telCk(){
 		var stel = $('#tel').val();
-		var exp = /^[01]{2}[0-9]{9}$/;
+		var exp = /^01[0-9]{9}$/;
 		return exp.test(stel);
 	}	
 	$('#tel').keyup(function(){
 		if(telCk()){
 			$('#telmsg').removeClass('w3-text-red').addClass('w3-text-green').html('올바른 핸드폰 번호입니다.');
 		} else {
-			$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('휴대폰 번호 11자리(숫자만) 를 입력하세요 ');
+			$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('첫자리 0을 제외한 휴대폰 번호 10자리(숫자만) 를 입력하세요 ');
 		}
 	});
 	
@@ -190,7 +191,7 @@
 <body>
 <!-- Navigator -->
 	<jsp:include page="../a_nav/nav.jsp">
-		<jsp:param name="" value="" />
+		<jsp:param name="active" value="회원가입"/>
 	</jsp:include>
 
 	<!-- Page Content-->

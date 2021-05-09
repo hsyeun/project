@@ -55,6 +55,40 @@ public class MemberDao {
 		return cnt;		
 	}
 	
+	public MemberVO getIdInfo(String id) {
+		MemberVO mVO = new MemberVO();
+		
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_ID_INFO);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			mVO.setMno(rs.getInt("mno"));
+			mVO.setName(rs.getString("name"));
+			mVO.setId(rs.getString("id"));
+			mVO.setPw(rs.getString("pw"));
+			mVO.setTel(rs.getString("tel"));
+			mVO.setEmail(rs.getString("email"));
+			mVO.setGen(rs.getString("gen").equals("M") ? "남자" : "여자");
+			mVO.setBirth(rs.getString("birth"));
+			mVO.setjDate(rs.getDate("jdate"));
+			mVO.setjTime(rs.getTime("jdate"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				db.close(rs);
+				db.close(pstmt);
+				db.close(con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return mVO;
+	}
+	
 	public int getIdCnt(String id) {
 		int cnt = 0;
 		
@@ -115,7 +149,31 @@ public class MemberDao {
 		return list;
 	}
 	
-	
+		public int editMember(MemberVO mVO) {
+		
+		int cnt = 0 ;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.EDIT_MEMB);
+		pstmt = db.getPSTMT(con, sql);
+		
+		try {
+			pstmt.setString(1, mVO.getName());
+			pstmt.setString(2, mVO.getPw());
+			pstmt.setString(3, mVO.getTel());
+			pstmt.setString(4, mVO.getEmail());
+			pstmt.setString(5, mVO.getGen());
+			pstmt.setString(6, mVO.getBirth());
+			pstmt.setString(7, mVO.getId());
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
+
 	public int addMember(MemberVO mVO) {
 		
 		int cnt = 0 ;

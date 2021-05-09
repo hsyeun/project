@@ -4,7 +4,10 @@ public class MemberSQL {
 	
 	public final int SEL_ID_CHECK 	= 1001;
 	public final int SEL_LOGIN 		= 1002;
-	public final int SEL_MEMB_LIST 	= 1003;
+	public final int SEL_ID_INFO 	= 1003;
+	public final int SEL_MEMB_LIST 	= 1004;
+	
+	public final int EDIT_MEMB	 	= 2001;
 	
 	public final int ADD_MEMB 		= 3001;
 
@@ -33,6 +36,16 @@ public class MemberSQL {
 			buff.append("WHERE ");
 			buff.append("isShow = 'Y' ");
 			buff.append("AND id = ? ");
+			break;		
+			
+		case SEL_ID_INFO:
+			buff.append("SELECT ");
+			buff.append("* ");
+			buff.append("FROM ");
+			buff.append("member ");
+			buff.append("WHERE ");
+			buff.append("isShow = 'Y' ");
+			buff.append("AND id = ? ");
 			break;	
 		
 		case SEL_MEMB_LIST:
@@ -45,6 +58,15 @@ public class MemberSQL {
 			buff.append("ORDER BY ");
 			buff.append("    mno DESC ");
 			break;
+		
+		case EDIT_MEMB:
+			buff.append("UPDATE member ");
+			buff.append("SET ");
+			buff.append("    name = ?, pw = ?, tel = ?, email = ?, gen = ?, birth = ? ");
+			buff.append("WHERE ");
+			buff.append("    id = ? ");
+
+			break;	
 			
 		case ADD_MEMB:
 			buff.append("INSERT INTO ");

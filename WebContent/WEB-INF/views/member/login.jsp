@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head>
 	<jsp:include page="../a_nav/head.jsp">
-		<jsp:param name="" value="" />
+		<jsp:param name="" value=""/> 
 	</jsp:include>
 </head>
 
@@ -25,7 +25,7 @@
 <body>
 <!-- Navigator -->
 	<jsp:include page="../a_nav/nav.jsp">
-		<jsp:param name="" value="" />
+		<jsp:param name="active" value="로그인"/>
 	</jsp:include>
 
 	<!-- Page Content-->
