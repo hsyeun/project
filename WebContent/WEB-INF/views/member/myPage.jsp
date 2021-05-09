@@ -16,6 +16,9 @@
 	$('#mbtn').click(function(){
 		$(location).attr('href', '/moa/member/myInfo.moa')
 	});
+	$('#dbtn').click(function(){
+		$(location).attr('href', '/moa/member/myInfoDel.moa')
+	});
 	
 });
 </script>
@@ -37,6 +40,7 @@
 					
 					<button class="btn btn-primary" id="mbtn">나의정보</button>
 					<button class="btn btn-primary" id="ebtn">나의정보수정</button>
+					<button class="btn btn-primary" id="dbtn">회원탈퇴</button>
 				
 				</div>
 			</div>

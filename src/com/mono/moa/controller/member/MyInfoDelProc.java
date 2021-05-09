@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mono.moa.controller.Controller;
 
-public class MemberList implements Controller {
+public class MyInfoDelProc implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
