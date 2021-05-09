@@ -10,22 +10,6 @@
 <script>
 	$(document).ready(function() {		
 		
-		 if ('${MSG}' == 'fail') {
-			$('.modal').css('display', 'block');
-			$('.modalbtn').click(function(){
-			$('.modal').css('display', 'none');	
-			});
-		}
-		
-		
-		$('#sbtn').click(function(){
-			$('#frm').submit();
-		});
-	
-		$('#fbtn').click(function(){
-			 $(location).attr('href', "/moa/member/loginFind.moa");
-		});
-		
 	});
 </script>
 
@@ -61,7 +45,7 @@
 						</div>						
 					</form>
 					
-					<button class="btn btn-primary w3-margin-right" id="sbtn">로그인</button>
+					
 					<button class="btn btn-primary" id="fbtn">아이디 비밀번호 찾기</button>
 									
 				</div>
