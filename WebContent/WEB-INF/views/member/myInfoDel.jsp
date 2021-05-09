@@ -12,7 +12,7 @@ $(document).ready(function(){
 	$('#ebtn').click(function(){
 		
 		if(!(${DATA.pw} == $('#pw').val())){
-			alert('비밀번호를 확인하세요');
+			alert('비밀번호를 다릅니다. 다시 확인하세요');
 		} else {
 			var result = confirm('정말로 탈퇴하시겠습니까?');
 			if(result){
