@@ -12,7 +12,13 @@ public class LoginFind implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String view = "member/loginFind";
+		if(req.getSession().getAttribute("SID") != null) {
+			req.setAttribute("isRedirect", true);
+			view = "/moa/main.moa";
+		}
+
 		return view;
 	}
 

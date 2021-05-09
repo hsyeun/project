@@ -52,6 +52,8 @@
 							</div>
 						</div>
 						
+						
+						
 						<div class="control-group form-group">
 							<div class="controls">
 								<label for="pw">패스워드 :</label> <input class="form-control"

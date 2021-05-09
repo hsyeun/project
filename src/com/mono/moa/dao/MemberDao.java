@@ -114,7 +114,41 @@ public class MemberDao {
 		return cnt;
 	}
 	
+	public MemberVO getTelInfo(String name, String tel) {
+		MemberVO mVO = new MemberVO();
 		
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_TEL_INFO);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, name);
+			pstmt.setString(2, tel);
+			rs = pstmt.executeQuery();
+			rs.next();
+			mVO.setMno(rs.getInt("mno"));
+			mVO.setName(rs.getString("name"));
+			mVO.setId(rs.getString("id"));
+			mVO.setPw(rs.getString("pw"));
+			mVO.setTel(rs.getString("tel"));
+			mVO.setEmail(rs.getString("email"));
+			mVO.setGen(rs.getString("gen").equals("M") ? "남자" : "여자");
+			mVO.setBirth(rs.getString("birth"));
+			mVO.setjDate(rs.getDate("jdate"));
+			mVO.setjTime(rs.getTime("jdate"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				db.close(rs);
+				db.close(pstmt);
+				db.close(con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return mVO;
+	}
+	
 	public ArrayList<MemberVO> getMembList(){		
 		
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
@@ -200,7 +234,7 @@ public class MemberDao {
 	}
 	
 	
-public int delMember(String id) {
+	public int delMember(String id) {
 		
 		int cnt = 0 ;
 		con = db.getCon();
