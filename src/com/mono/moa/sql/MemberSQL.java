@@ -10,6 +10,8 @@ public class MemberSQL {
 	public final int EDIT_MEMB	 	= 2001;
 	
 	public final int ADD_MEMB 		= 3001;
+	
+	public final int DEL_MEMB 		= 4001;
 
 	public String getSQL(int code) {
 		
@@ -54,7 +56,7 @@ public class MemberSQL {
 			buff.append("FROM ");
 			buff.append("    member ");
 			buff.append("WHERE ");
-			buff.append("    isshow = 'Y' ");	// 현재 활동중인 회원만 꺼내온다.
+			buff.append("    isshow = 'Y' ");
 			buff.append("ORDER BY ");
 			buff.append("    mno DESC ");
 			break;
@@ -76,6 +78,14 @@ public class MemberSQL {
 			buff.append("    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), ");
 			buff.append("    ?, ?, ?, ?, ?, ?, ? ");
 			buff.append(") ");
+			break;
+			
+		case DEL_MEMB:
+			buff.append("UPDATE member ");
+			buff.append("SET ");
+			buff.append("	isShow = 'N' ");
+			buff.append("WHERE ");
+			buff.append("	id = ? ");
 			break;
 		}
 		return buff.toString();

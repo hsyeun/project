@@ -198,4 +198,24 @@ public class MemberDao {
 		}
 		return cnt;
 	}
+	
+	
+public int delMember(String id) {
+		
+		int cnt = 0 ;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.DEL_MEMB);
+		pstmt = db.getPSTMT(con, sql);
+		
+		try {
+			pstmt.setString(1, id);
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
 }

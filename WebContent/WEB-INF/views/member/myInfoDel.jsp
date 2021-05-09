@@ -11,12 +11,17 @@
 $(document).ready(function(){
 	$('#ebtn').click(function(){
 		
-		if(!(${DATA.pw} == $('#pw').val())){
-			alert('비밀번호를 다릅니다. 다시 확인하세요');
+		if(!$('#pw').val()){
+			alert('비밀번호를 입력하세요');
+			return;
+		}
+		if(!('${DATA.pw}' == $('#pw').val())) {
+			alert('비밀번호가 맞는지 확인하세요');
 		} else {
 			var result = confirm('정말로 탈퇴하시겠습니까?');
 			if(result){
-				$(location).attr('href', '/moa/main.moa');
+				$('#del4').val($('#del4text').val());
+				$(frm).submit();
 			}
 		}
 	});
@@ -39,31 +44,32 @@ $(document).ready(function(){
 					<br> <br>
 					
 					<h4>탈퇴 사유</h4><br>
-					<form method="post" id="frm" name="frm" action="/moa/main.moa">
-
+					<form method="post" id="frm" name="frm" action="/moa/member/myInfoDelProc.moa">
+					<input type="hidden" name="id" value="${DATA.id}">
+					
 						<div class="form-check w3-margin-bottom">
-						  <input class="form-check-input" type="checkbox" value="del1" id="del1" checked>
+						  <input class="form-check-input" type="checkbox" name="del1" value="del1" id="del1" checked>
 						  <label class="form-check-label" for="del1">
 						    이용빈도 낮음
 						  </label>
 						</div>
 						
 						<div class="form-check w3-margin-bottom">
-						  <input class="form-check-input" type="checkbox" value="del2" id="del2">
+						  <input class="form-check-input" type="checkbox" name="del2" value="del2" id="del2">
 						  <label class="form-check-label" for="del12">
 						    싸이트 이용불편
 						  </label>
 						</div>
 						
 						<div class="form-check w3-margin-bottom">
-						  <input class="form-check-input" type="checkbox" value="del3" id="del3">
+						  <input class="form-check-input" type="checkbox" name="del3" value="del3" id="del3">
 						  <label class="form-check-label" for="del3">
 						   개인정보 노출우려
 						  </label>
 						</div>
 						
 						<div class="form-check w3-margin-bottom">
-						  <input class="form-check-input" type="checkbox" value="$('#del4text').val()" id="del4">
+						  <input class="form-check-input" type="checkbox" name="del4" value="" id="del4">
 						  <label class="form-check-label" for="del4">
 						    기타
 						  </label>
