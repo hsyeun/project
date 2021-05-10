@@ -19,12 +19,18 @@
 .mxw800{
 	max-width: 800px;	
 }
+.mxw900{
+	max-width: 900px;	
+}
 /* 디스플레이 */
 .inblock{
 	display: inline-block;
 }
 /* 마진클래스 */
 
+.mgt0 {
+	margin-top: 0px;
+}
 .mgt10 {
 	margin-top: 10px;
 }
@@ -43,11 +49,17 @@
 .mgb20 {
 	margin-bottom: 20px;
 }
+.mgb60 {
+	margin-bottom: 60px;
+}
 .mgl10 {
 	margin-left: 10px;
 }
 .mgl20 {
 	margin-left: 20px;
+}
+.mgr20 {
+	margin-right: 20px;
 }
 /* 패딩 클래스 */
 .pdAll20 {
@@ -56,12 +68,16 @@
 .pdAll10 {
 	padding: 10px;
 }
+
 .pdb10 {
 	padding-bottom: 10px;
 }
 
 .pdt10 {
 	padding-top: 10px;
+}
+.pdl0 {
+	padding-left: 0px;
 }
 .pdl10 {
 	padding-left: 10px;
