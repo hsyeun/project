@@ -719,5 +719,38 @@ VALUES(
             'Y'
 );
             
+---요기~!!!!!-05/10 수정-----!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+DROP TABLE fboard;
 
+ALTER TABLE nboard ADD (code CHAR(1) CONSTRAINT BRD_CODE_CK CHECK (code IN('N','F')));
+
+DELETE FROM nboard;
+
+INSERT INTO
+    nboard(nno, ntitle, nbody, ndate, isShow, code)
+VALUES(
+    (SELECT NVL(MAX(nno) +1, 1001) FROM nboard), '사이트 개편 안내', 'MOA사이트 개편 안내 공지사항 입니다.',TO_DATE('2021-02-11 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        'N','N'
+);
+INSERT INTO
+    nboard(nno, ntitle, nbody, ndate, isShow, code)
+VALUES(
+    (SELECT NVL(MAX(nno) +1, 1001) FROM nboard), '환불은 어떻게 하나요?', '저희 MOA 환불 정책에 따라 회원님들의 환불을....',TO_DATE('2021-02-20 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        'N','F'
+);
+
+INSERT INTO
+    nboard(nno, ntitle, nbody, ndate, isShow, code)
+VALUES(
+    (SELECT NVL(MAX(nno) +1, 1001) FROM nboard), 'MOA 앱 출시', '안녕하세요. 저희 MOA사이트를 이용해 주시는 회원님들께 진심으로...',TO_DATE('2021-03-05 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        'N','N'
+);
+
+INSERT INTO
+    nboard(nno, ntitle, nbody, ndate, isShow, code)
+VALUES(
+    (SELECT NVL(MAX(nno) +1, 1001) FROM nboard), '비밀번호는 어떻게 변경하나요?', '안녕하세요. 비밀번호 변경은 마이페이지에서 확인하실 수 있습니다.',TO_DATE('2021-05-01 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+        'N','F'
+);
 commit;
+
