@@ -22,7 +22,7 @@
 
 <nav>
     <div class="user-con">
-        <a class="logo" href="index.html">MOA</a>
+        <a class="logo" href="/moa/main.moa">MOA</a>
         <div class="snb">
             <ul class="user-snb navShow">
                 <li class="user-li"><a class="user-a <%=active %>" href="/moa/member/login.moa">로그인</a></li>                  
