@@ -114,6 +114,57 @@ public class MemberDao {
 		return cnt;
 	}
 	
+	public int getTelCnt(String tel) {
+		int cnt = 0;
+		
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_TEL_CHECK);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, tel);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				db.close(rs);
+				db.close(pstmt);
+				db.close(con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return cnt;
+	}
+	
+	public int getIdTelCnt(String id, String tel) {
+		int cnt = 0;
+		
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_IDTEL_CHECK);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, id);
+			pstmt.setString(2, tel);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				db.close(rs);
+				db.close(pstmt);
+				db.close(con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return cnt;
+	}
+	
 	public MemberVO getTelInfo(String name, String tel) {
 		MemberVO mVO = new MemberVO();
 		

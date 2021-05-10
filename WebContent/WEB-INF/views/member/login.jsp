@@ -22,8 +22,12 @@
 			$('#frm').submit();
 		});
 	
+		$('#ibtn').click(function(){
+			 $(location).attr('href', "/moa/member/loginFindId.moa");
+		});
+		
 		$('#fbtn').click(function(){
-			 $(location).attr('href', "/moa/member/loginFind.moa");
+			 $('#frm1').submit();
 		});
 		
 	});
@@ -63,9 +67,11 @@
 						</div>						
 					</form>
 					
-					<button class="btn btn-primary w3-margin-right" id="sbtn">로그인</button>
-					<button class="btn btn-primary" id="fbtn">아이디 비밀번호 찾기</button>
-									
+					<form method="post" id="frm1" name="frm1" action="/moa/member/loginFindPw.moa">				
+						<input type="text" class="btn btn-primary w3-margin-right" id="sbtn" value="로그인">
+						<input type="text" class="btn btn-primary" id="ibtn" value="아이디 찾기">
+						<input type="text" class="btn btn-primary w3-margin-left" id="fbtn" name="fbtn" value="패스워드 찾기">
+					</form>				
 				</div>
 			</div>
 		</div>
