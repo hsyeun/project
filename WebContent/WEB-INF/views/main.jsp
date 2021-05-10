@@ -151,19 +151,21 @@
 
 <!-- Features Section-->
 <section class="py-5">
-    <div class="container">
-        <div class="row">
-        	<!-- 그래프 -->
-            <jsp:include page="a_nav/chart.jsp">
+   
+<%-- 
+      	<!-- 그래프 -->
+        <jsp:include page="a_nav/chart.jsp">
+			<jsp:param name="" value="" />
+		</jsp:include>
+--%>
+		
+		<!-- 달력 -->
+		<div class="calen">
+			<jsp:include page="./a_nav/calendar.jsp">
 				<jsp:param name="" value="" />
 			</jsp:include>
-			
-			<!-- 달력 -->
-			<jsp:include page="a_nav/calendar.jsp">
-				<jsp:param name="" value="" />
-			</jsp:include>
-        </div>
-    </div>
+		</div>
+
 </section>
 <hr class="my-0">
 
