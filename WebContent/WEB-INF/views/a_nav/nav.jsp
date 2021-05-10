@@ -20,8 +20,35 @@
 	
 </script>
 
+<nav>
+    <div class="user-con">
+        <a class="logo" href="index.html">MOA</a>
+        <div class="snb">
+            <ul class="user-snb navShow">
+                <li class="user-li"><a class="user-a <%=active %>" href="/moa/member/login.moa">로그인</a></li>                  
+                <li class="user-li"><a class="user-a <%=active %>" href="/moa/member/logout.moa">로그아웃</a></li>                  
+                <li class="user-li"><a class="user-a <%=active %>" href="/moa/member/join.moa">회원가입</a></li>
+                <li class="user-li"><a class="user-a <%=active %>" href="/moa/member/myPage.moa">마이페이지</a></li>
+                <li class="user-li"><a class="user-a <%=active %>" href="#">고객센터</a></li>
+                <li class="user-li"><a class="user-a <%=active %>" href="#">이벤트</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="user-con user-con-gnb">
+        <div class="gnb">
+            <ul class="user-gnb">
+                <li class="user-li user-orange"><a class="user-a <%=active %>" href="#">일반 전시</a></li>                  
+                <li class="user-li user-orange"><a class="user-a <%=active %>" href="#">미술전</a></li>
+                <li class="user-li user-orange"><a class="user-a <%=active %>" href="#">테마전</a></li>
+            </ul>
+        </div>
+        <div class="user-ipt">
+            <input class="user-input" type="text" placeholder="검색어를 입력하세요.">
+        </div>
+    </div>
+</nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<%-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="f-size" href="/moa/main.moa">MOA</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -43,4 +70,4 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> --%>

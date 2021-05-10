@@ -14,6 +14,8 @@
 <script src="/moa/js/jquery-3.6.0.min.js"></script>
 <link href="/moa/css/w3.css" rel="stylesheet">
 
+<link href="/moa/css/a_nav_style.css" rel="stylesheet">
+
 <!-- 프로젝트  -->
 <script src="/moa/static/js/scripts.js"></script>
 <link href="/moa/static/css/styles.css" rel="stylesheet"> 

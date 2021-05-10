@@ -5,6 +5,13 @@
 	<jsp:include page="a_nav/head.jsp">
 		<jsp:param name="" value="" />
 	</jsp:include>
+	
+<style type="text/css">
+	.inGnbPage{
+		display: none;
+	}
+</style>
+
 </head>
 <body>
 
@@ -43,42 +50,45 @@
     </div>
 </header>
 
-<!-- Page Content-->
-<!-- 
-<section class="py-5">
+<!-- 전시 목록 -->
+<section class="py-5 bg-light">
     <div class="container">
-        <h1 class="mb-4">Welcome to Modern Business</h1>
-        Marketing Icons Section
+        <!-- <h2 class="mb-4">Portfolio Heading</h2> -->
         <div class="row">
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
-                    <div class="card-footer"><a class="btn btn-primary" href="#!">Learn More</a></div>
+                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="#!">Project One</a></h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p></div>
-                    <div class="card-footer"><a class="btn btn-primary" href="#!">Learn More</a></div>
+                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="#!">Project Two</a></h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
-                    <div class="card-footer"><a class="btn btn-primary" href="#!">Learn More</a></div>
+                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="#!">Project Three</a></h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<hr class="my-0"> -->
-<!-- Portfolio Section-->
-<section class="py-5 bg-light">
+<!-- 메뉴별 페이지 -->
+<section class="py-5 bg-light inGnbPage">
     <div class="container">
-        <h2 class="mb-4">Portfolio Heading</h2>
+        <h2 class="mb-4">미술전</h2>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
@@ -138,38 +148,48 @@
     </div>
 </section>
 <hr class="my-0">
+
 <!-- Features Section-->
 <section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <h2 class="mb-4">Modern Business Features</h2>
-                <p>The Modern Business template by Start Bootstrap includes:</p>
-                <ul>
-                    <li><strong>Bootstrap 4.6.0</strong></li>
-                    <li>jQuery 3.5.1</li>
-                    <li>Font Awesome 5.15.3</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-            </div>
-            <div class="col-lg-6"><img class="img-fluid rounded" src="https://via.placeholder.com/700x450" alt="..."></div>
+        	<!-- 그래프 -->
+            <jsp:include page="a_nav/chart.jsp">
+				<jsp:param name="" value="" />
+			</jsp:include>
+			
+			<!-- 달력 -->
+			<jsp:include page="a_nav/calendar.jsp">
+				<jsp:param name="" value="" />
+			</jsp:include>
         </div>
     </div>
 </section>
 <hr class="my-0">
 
+<!-- Page Content-->
 
-<!-- Call to Action-->
-<!-- <aside class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-8"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p></div>
-            <div class="col-md-4"><a class="btn btn-lg btn-secondary btn-block" href="#!">Call to Action</a></div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="card h-100">
+                    <h4 class="card-header">공지사항</h4>
+                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
+                    <div class="card-footer"><a class="btn btn-primary" href="#!">더보기</a></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <h4 class="card-header">이벤트</h4>
+                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
+                    <div class="card-footer"><a class="btn btn-primary" href="#!">더보기</a></div>
+                </div>
+            </div>
         </div>
     </div>
-</aside> -->
+</section>
+<hr class="my-0">
 
 
 <!-- Footer-->
