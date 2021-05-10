@@ -95,6 +95,11 @@
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoDelProc
 	뷰			:	/WEB-INF/views/main.jsp
 
+14. 나의 1:1문의 폼보기 요청
+	요청내용	:	http://localhost/moa/member/review.moa
+	파라미터	:	무
+	컨트롤러	:	com.mono.moa.controller.member.MyInfoDelProc
+	뷰			:	/WEB-INF/views/main.jsp
 
 #####################진                석##########################################
 
