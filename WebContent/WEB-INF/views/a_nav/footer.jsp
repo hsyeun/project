@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<footer>
+
     <div class="user-con">
         <a class="f_logo" href="/moa/main.moa">MOA</a>
         <div class="f_content">
@@ -17,7 +17,7 @@
         </div>
         
     </div>
-</footer>
+
 
 
 <!-- <section class="py-5">
