@@ -52,9 +52,15 @@
 							<div class="controls">
 								<label for="id">아이디 :</label> <input class="form-control"
 									type="text" id="id" name="id">
+							
+							<div class = "w3-margin-top">
+								<input type="text" id="userId" class=""><br>
+								<input type="checkbox" id="idSaveCheck" class="w3-margin-right">아이디 기억하기
+							</div>		
 							<p class="help-block" id="idmsg"></p>
 							</div>
 						</div>
+						
 						
 						
 						

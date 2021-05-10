@@ -11,17 +11,6 @@
 
 <script>
 	$(document).ready(function() {
-	
-	$('#ebtn').click(function(){
-		$(location).attr('href', '/moa/member/myInfoEdit.moa')
-	});
-	$('#mbtn').click(function(){
-		$(location).attr('href', '/moa/member/myInfo.moa')
-	});
-	$('#dbtn').click(function(){
-		$(location).attr('href', '/moa/member/myInfoDel.moa')
-	});
-	
 });
 </script>
 
@@ -36,26 +25,33 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="col-lg-8 mb-4">
-					<h3>마이페이지</h3>
-					<br><br>
-					
-					<button class="btn btn-primary" id="mbtn">나의정보</button>
-					<button class="btn btn-primary" id="ebtn">나의정보수정</button>
-					<button class="btn btn-primary" id="dbtn">회원탈퇴</button>
-					<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
-  <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="">
-  <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked="">
-  <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-</div>
-				</div>
-				
-			
-			</div>
+				<div class="col-lg-12 mb-4">	
+                <!-- Page Heading/Breadcrumbs-->
+                <h1>
+                   My Page
+                </h1>
+                <ol class="breadcrumb mb-4">
+                    
+                </ol>
+                <!-- Content Row-->
+                <div class="row">
+                    <!-- Sidebar Column-->
+                    <div class="col-lg-3 mb-4">
+                    
+                        <jsp:include page="../a_nav/member/SideBar.jsp">
+								<jsp:param name="" value=""/>
+							</jsp:include>
+                   
+					</div>
+                    <!-- Content Column-->
+                    <div class="col-lg-9 mb-4">
+                        <h2>Section Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
+                    </div>
+                </div>
+            </div>
 		</div>
+	</div>
 	</section>
 
 <!-- Footer-->
