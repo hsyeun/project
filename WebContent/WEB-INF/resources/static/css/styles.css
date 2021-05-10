@@ -6168,6 +6168,12 @@ button.bg-danger:focus {
 .bg-light {
   background-color: #f8f9fa !important;
 }
+.bg-blight {
+  background-color: #232323 !important;
+  width: 100%;
+    height: 150px; 
+    position: relative;
+}
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
