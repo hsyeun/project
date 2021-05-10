@@ -19,6 +19,7 @@
 <!-- 메인페이지 -->
 <link href="/moa/css/a_nav_style.css" rel="stylesheet">
 
+<%--
 <!-- 달력 -->
 <link href="/moa/css/calendar/calendar.css" rel="stylesheet">
 <link href='/moa/css/calendar/core-main.css' rel='stylesheet' />
@@ -35,8 +36,12 @@
 <script src="/moa/js/mainchart/export-data.js"></script>
 <script src="/moa/js/mainchart/accessibility.js"></script>
 <script src="/moa/js/mainchart/chart.js"></script>
+ --%>
 
 <!-- 프로젝트  -->
 <script src="/moa/static/js/scripts.js"></script>
 <link href="/moa/static/css/styles.css" rel="stylesheet"> 
 <link href="/moa/static/css/user.css" rel="stylesheet"> 
+
+<!-- 검색페이지 -->
+<link href="/moa/css/search.css" rel="stylesheet"> 
