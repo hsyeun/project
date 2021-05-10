@@ -3,7 +3,7 @@
 
 
 
-# 메인 화면 요청 설계
+# 메인 화면 설계
 	요청내용	:	http://localhost/moa/main.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.Main
@@ -13,93 +13,93 @@
 
 # 회원 관련 요청 설계
 
-1. 회원가입 폼보기 요청
+1. 회원가입 폼보기
 	요청내용	:	http://localhost/moa/member/join.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.Join
 	뷰			:	/WEB-INF/views/member/join.jsp
 
-2. 회원가입 처리 요청
+2. 회원가입 처리
 	요청내용	:	http://localhost/moa/member/joinProc.moa
 	파라미터	:	mVO
 	컨트롤러	:	com.mono.moa.controller.member.JoinProc
 	뷰			:	성공: /WEB-INF/views/main.jsp
 					실패: /WEB-INF/views/member/join.jsp
 	
-3. 회원로그인 폼보기 요청
+3. 회원로그인 폼보기
 	요청내용	:	http://localhost/moa/member/login.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.Login
 	뷰			:	/WEB-INF/views/member/login.jsp
 
-4. 회원로그인 처리 요청
+4. 회원로그인 처리
 	요청내용	:	http://localhost/moa/member/loginProc.moa
 	파라미터	:	id, pw
 	컨트롤러	:	com.mono.moa.controller.member.LoginProc
 	뷰			:	성공: /WEB-INF/views/main.jsp
 					실패: /WEB-INF/views/login.jsp
 
-5. 회원로그아웃 처리
+5. 회원로그아웃 폼보기
 	요청내용	:	http://localhost/moa/member/logout.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.Logout
 	뷰			:	/WEB-INF/views/main.jsp
 
-6. 회원아이디찾기 폼보기 요청
+6. 회원아이디찾기 폼보기
 	요청내용	:	http://localhost/moa/member/loginFindId.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.LoginFindId
 	뷰			:	/WEB-INF/views/member/loginFindId.jsp
 
-7. 회원비번찾기 폼보기 요청
+7. 회원비번찾기 폼보기
 	요청내용	:	http://localhost/moa/member/loginFindPw.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.LoginFindPw
 	뷰			:	/WEB-INF/views/member/loginFindPw.jsp
 
 
-8. 마이페이지 폼보기 요청
+8. 마이페이지 폼보기
 	요청내용	:	http://localhost/moa/member/myPage.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyPage
 	뷰			:	/WEB-INF/views/member/myPage.jsp
 
-9. 나의정보보기 폼보기 요청
+9. 나의정보보기 폼보기
 	요청내용	:	http://localhost/moa/member/myInfo.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyInfo
 	뷰			:	/WEB-INF/views/member/myInfo.jsp
 
-10. 나의정보수정 폼보기 요청
+10. 나의정보수정 폼보기
 	요청내용	:	http://localhost/moa/member/myInfoEdit.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoEdit
 	뷰			:	/WEB-INF/views/member/myInfoEdit.jsp
 
-11. 나의정보수정 처리 요청
+11. 나의정보수정 처리
 	요청내용	:	http://localhost/moa/member/myInfoEditProc.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoEditProc
 	뷰			:	성공: /WEB-INF/views/member/myInfo.jsp
 					실패: /WEB-INF/views/member/myInfoEdit.jsp
 
-12. 회원탈퇴 폼보기 요청
+12. 회원탈퇴 폼보기
 	요청내용	:	http://localhost/moa/member/myInfoDel.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoDel
 	뷰			:	/WEB-INF/views/member/myInfoDel.jsp
 
-13. 회원탈퇴 처리 요청
+13. 회원탈퇴 처리
 	요청내용	:	http://localhost/moa/member/myInfoDelProc.moa
 	파라미터	:	무
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoDelProc
 	뷰			:	/WEB-INF/views/main.jsp
 
-14. 나의 1:1문의 폼보기 요청
-	요청내용	:	http://localhost/moa/member/review.moa
+14. 나의 1:1문의 폼보기
+	요청내용	:	http://localhost/moa/review/qna.moa
 	파라미터	:	무
-	컨트롤러	:	com.mono.moa.controller.member.MyInfoDelProc
-	뷰			:	/WEB-INF/views/main.jsp
+	컨트롤러	:	com.mono.moa.controller.review.Qna
+	뷰			:	/WEB-INF/views/review/qna.jsp
 
 #####################진                석##########################################
 
