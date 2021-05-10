@@ -8,13 +8,25 @@
 </head>
 
 <script>
-	$(document).ready(function() {		
+	$(document).ready(function() {
+	
 		$('#mailbtn').click(function(){
-		
+	
 		var sname = $('#name').val();
 		var stel = $('#tel').val();
-		$.ajax({
-				url : '/moa/member/loginFindProc.cls',
+		
+		if(!sname){
+			alert('이름을 입력하세요');
+			return;
+		}
+		if(!stel){
+			alert('휴대폰번호를 입력하세요');
+			return;
+		}
+		if(telCk()){
+			alert('인증번호가 정상 발송되었습니다.');
+			$.ajax({
+				url : '/moa/member/loginFindIdProc.cls',
 				type : 'post',
 				dataType : 'json',
 				data : {
@@ -22,30 +34,81 @@
 					tel : stel			
 				},
 				success : function(data) {
-					alert(data.result);
+					if(data.result == 'NoCnt'){
+						alert('일치하는 휴대폰번호가 없습니다');
+					} else {
+						$('#result1').val(data.result1);
+						$('#result2').val(data.result2);
+					}
 				},
 				error : function() {
-					alert('### 통신 실패###');
+					alert('### 통신에러.###');
 				}
 		});
+			
+		} else{
+			$('#tel').focus();
+		}
+		
 	});
+		
+	$('#ibtn').click(function(){
+		var sname = $('#name').val();
+		var stel = $('#tel').val();
+		if(!sname){
+			alert('이름을 입력하세요');
+			return;
+		}
+		if(!stel){
+			alert('휴대폰번호를 입력하세요');
+			return;
+		}
+		if($('#result1').val()==$('#mail1').val()){
+			$('#idconfirm').val($('#result2').val());
+		} else{
+			if(!$('#mail1').val()){
+				alert('인증번호를 입력하세요');
+				return;
+			}
+			alert("인증번호가 다릅니다. 다시 한번 확인하세요");
+		}
+	});
+	
+	function telCk(){
+		var stel = $('#tel').val();
+		var exp = /^01[0-9]{9}$/;
+		return exp.test(stel);
+	}
+	
+	$('#tel').keyup(function(){
+		if(telCk()){
+			$('#telmsg').removeClass('w3-text-red').addClass('w3-text-green').html('올바른 핸드폰 번호입니다.');
+		} else {
+			$('#telmsg').removeClass('w3-text-green').addClass('w3-text-red').html('휴대폰 번호 11자리(숫자만) 를 입력하세요 ');
+		}
+	});
+	
 });
 </script>
 
 <body>
+
 <!-- Navigator -->
 	<jsp:include page="../a_nav/nav.jsp">
 		<jsp:param name="active" value="로그인"/>
 	</jsp:include>
 
 	<!-- Page Content-->
+	<input type="hidden" id="result1" value="result1"/>
+	<input type="hidden" id="result2" value="result2"/>
 	<section class="py-5">
 		<div class="container">		
 			<div class="row">
-				<div class="col-lg-4 mb-4">
+				<div class="col-lg-8 mb-4">
+				<div class="blocks">
 					<h3>아이디 찾기</h3>
 					<br> <br>
-					<form method="post" id="frm1" name="frm1" action="/moa/member/loginFindProc.moa">
+					<form method="post" id="frm1" name="frm1" action="/moa/member/loginFindIdProc.moa">
 
 						<div class="control-group form-group">
 							<div class="controls">
@@ -71,48 +134,24 @@
 						</div>
 						<p class="help-block" id="mail1msg"></p>
 						
-												
 					</form>
 									
-					<button class="btn btn-primary w3-margin-bottom" id="fbtn">아이디 확인</button>	
+					<button class="btn btn-primary w3-margin-bottom" id="ibtn">아이디 확인</button>	
 					
 					
-					<form method="post" id="frm2" name="frm2" action="/moa/member/loginFindProc.moa">
+					
+					<form method="post" id="frm2" name="frm2" action="/moa/member/loginFindIdProc.moa">
 					<div class="control-group form-group">
 							<div class="controls">
 								<label for="idconfirm">고객님의 아이디는 :</label> <input class="form-control"
-									type="text" id="idconfirm" name="idconfirm" value="${DATA.id}" disabled>
+									type="text" id="idconfirm" name="idconfirm" value="">
 							<p class="help-block" id="idconfirmmsg"></p>
 							</div>
 						</div>							
-					</form>							
+					</form>	
 				</div>
-				
-				<div class="col-lg-4 mb-4">
-					<h3>비밀번호 찾기</h3>
-					<br> <br>
-					<form method="post" id="frm" name="frm" action="/moa/member/loginProc.moa">
-
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="id">아이디 :</label> <input class="form-control"
-									type="text" id="id" name="id">
-							<p class="help-block" id="idmsg"></p>
-							</div>
-						</div>
-						
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="pw">임시 패스워드 :</label> <input class="form-control"
-									type="password" id="pw" name="pw">
-							<p class="help-block" id="pwmsg"></p>
-							</div>
-						</div>						
-					</form>
 									
-					<button class="btn btn-primary" id="fbtn">임시 로그인</button>								
 				</div>
-				
 			</div>
 		</div>
 	</section>

@@ -7,6 +7,8 @@ public class MemberSQL {
 	public final int SEL_ID_INFO 	= 1003;
 	public final int SEL_TEL_INFO 	= 1004;
 	public final int SEL_MEMB_LIST 	= 1005;
+	public final int SEL_TEL_CHECK 	= 1006;
+	public final int SEL_IDTEL_CHECK 	= 1007;
 	
 	public final int EDIT_MEMB	 	= 2001;
 	
@@ -39,6 +41,16 @@ public class MemberSQL {
 			buff.append("WHERE ");
 			buff.append("isShow = 'Y' ");
 			buff.append("AND id = ? ");
+			break;
+			
+		case SEL_TEL_CHECK:
+			buff.append("SELECT ");
+			buff.append("count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("member ");
+			buff.append("WHERE ");
+			buff.append("isShow = 'Y' ");
+			buff.append("AND tel = ? ");
 			break;		
 			
 		case SEL_ID_INFO:
@@ -61,7 +73,18 @@ public class MemberSQL {
 			buff.append("AND name = ? ");
 			buff.append("AND tel = ? ");
 			break;	
-		
+			
+		case SEL_IDTEL_CHECK:
+			buff.append("SELECT ");
+			buff.append("count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("member ");
+			buff.append("WHERE ");
+			buff.append("isShow = 'Y' ");
+			buff.append("AND id = ? ");
+			buff.append("AND tel = ? ");
+			break;
+			
 		case SEL_MEMB_LIST:
 			buff.append("SELECT ");
 			buff.append("    * ");

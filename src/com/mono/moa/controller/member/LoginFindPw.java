@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mono.moa.controller.Controller;
 
-public class LoginFind implements Controller {
+public class LoginFindPw implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String view = "member/loginFind";
+		String view = "member/loginFindPw";
+		
+		
 		if(req.getSession().getAttribute("SID") != null) {
 			req.setAttribute("isRedirect", true);
 			view = "/moa/main.moa";
