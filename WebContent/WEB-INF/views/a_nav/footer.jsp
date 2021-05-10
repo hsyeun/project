@@ -3,7 +3,7 @@
 
 <footer>
     <div class="user-con">
-        <a class="f_logo" href="index.html">MOA</a>
+        <a class="f_logo" href="/moa/main.moa">MOA</a>
         <div class="f_content">
             <div class="policy">
                 <ul class="user-plc">
