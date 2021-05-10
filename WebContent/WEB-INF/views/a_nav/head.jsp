@@ -28,6 +28,15 @@
 <script src='/moa/js/calendar/interaction.main.js'></script>
 <script src='/moa/js/calendar/daygrid.main.js'></script>
 
+<!-- 메인페이지 그래프 -->
+<link href='/moa/css/chart.css' rel='stylesheet' />
+<script src="/moa/js/mainchart/highcharts.js"></script>
+<script src="/moa/js/mainchart/exporting.js"></script>
+<script src="/moa/js/mainchart/export-data.js"></script>
+<script src="/moa/js/mainchart/accessibility.js"></script>
+<script src="/moa/js/mainchart/chart.js"></script>
+
+
 <!-- 프로젝트  -->
 <script src="/moa/static/js/scripts.js"></script>
 <link href="/moa/static/css/styles.css" rel="stylesheet"> 

@@ -5,7 +5,13 @@
     font-size: 14px;
   }
 
+#wrap{
+	/* width:100%; height:600px; */
+	position: relative;
+}
   #calendar {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 550px;
+    /* margin: 0 auto; */
+    position: absolute;
+    right: 20%;
   }

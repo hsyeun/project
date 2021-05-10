@@ -150,28 +150,24 @@
 <hr class="my-0">
 
 <!-- Features Section-->
-<section class="py-5">
+<section class="py-5 user-source">
    
-<%-- 
       	<!-- 그래프 -->
         <jsp:include page="a_nav/chart.jsp">
 			<jsp:param name="" value="" />
 		</jsp:include>
---%>
 		
 		<!-- 달력 -->
-		<div class="calen">
-			<jsp:include page="./a_nav/calendar.jsp">
-				<jsp:param name="" value="" />
-			</jsp:include>
-		</div>
+		<jsp:include page="./a_nav/calendar.jsp">
+			<jsp:param name="" value="" />
+		</jsp:include>
 
 </section>
 <hr class="my-0">
 
 <!-- Page Content-->
 
-<section class="py-5">
+<section class="py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
@@ -191,7 +187,6 @@
         </div>
     </div>
 </section>
-<hr class="my-0">
 
 
 <!-- Footer-->

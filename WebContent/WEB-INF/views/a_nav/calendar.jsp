@@ -1,1 +1,1 @@
-<div id='calendar'></div>
+<div id="wrap"><div id='calendar'></div></div>
