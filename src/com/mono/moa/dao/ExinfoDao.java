@@ -55,7 +55,7 @@ public class ExinfoDao {
 			rs = pstmt.executeQuery();
 			rs.next();
 			eVO.setExino(rs.getInt("exino"));
-			eVO.setExiecno(rs.getInt("execino"));
+			eVO.setExiecno(rs.getInt("exiecno"));
 			eVO.setExiperson(rs.getString("exiperson"));
 			eVO.setExiname(rs.getString("exiname"));
 			eVO.setExisdate(rs.getDate("exisdate"));
@@ -63,8 +63,6 @@ public class ExinfoDao {
 			eVO.setExiprice(rs.getInt("exiprice"));
 			eVO.setExiage(rs.getString("exiage"));
 			eVO.setExiexpno(rs.getInt("exiexpno"));
-			eVO.setStartdate(eVO.setSdate(eVO.getExisdate()));
-			eVO.setEnddate(eVO.setSdate(eVO.getExiedate()));
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -144,6 +142,9 @@ public class ExinfoDao {
 					vo.setExiprice(rs.getInt("exiprice"));
 					vo.setExiage(rs.getString("exiage"));
 					vo.setExiexpno(rs.getInt("exiexpno"));
+					System.out.println("######## startdate : " + vo.setSdate(vo.getExisdate()));
+					vo.setStartdate(vo.setSdate(vo.getExisdate()));
+					vo.setEnddate(vo.setSdate(vo.getExiedate()));
 					
 					list.add(vo);
 				}
