@@ -33,25 +33,59 @@
                 <ol class="breadcrumb mb-4">
                     
                 </ol>
-                <!-- Content Row-->
-                <div class="row">
-                    <!-- Sidebar Column-->
-                    <div class="col-lg-3 mb-4">
-                    
-                        <jsp:include page="../a_nav/member/SideBar.jsp">
-								<jsp:param name="" value=""/>
-							</jsp:include>
-                   
-					</div>
-                    <!-- Content Column-->
-                    <div class="col-lg-9 mb-4">
-                        <h2>Section Heading</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
-                    </div>
+                
+                
+                <!-- 메인화면 -->
+						<fieldset disabled="" style="margin-left: 500px; width: 200px;">
+							<label class="form-label" for="disabledInput">회원님의 잔여 포인트</label>
+							<input class="form-control" id="disabledInput" type="text"
+								placeholder="10,000 P" disabled="">
+						</fieldset>
+
+
+
+						<div class="col-lg-4 col-sm-6 mb-4 por"
+							style="margin-left: 300px;">
+							<div class="card h-100">
+								<a href="#!"><img class="card-img-top"
+									src="https://via.placeholder.com/700x400" alt="..."></a>
+								<div class="card-body">
+									<h4 class="card-title">
+										<a href="#!">최근 본 전시</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-lg-4 col-sm-6 mb-4 por" style="margin-left: 30px;">
+							<div class="card h-100">
+								<a href="#!"><img class="card-img-top"
+									src="https://via.placeholder.com/700x400" alt="..."></a>
+								<div class="card-body">
+									<h4 class="card-title">
+										<a href="#!">최근 본 이벤트</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-6 mb-4 por"
+							style="margin-left: 300px;">
+							<div class="card h-100">
+								<a href="#!"><img class="card-img-top"
+									src="https://via.placeholder.com/700x400" alt="..."></a>
+								<div class="card-body">
+									<h4 class="card-title">
+										<a href="#!">찜목록</a>
+									</h4>
+									<button type="button" class="btn btn-outline-secondary">더보기</button>
+								</div>
+							</div>
+						</div>
                 </div>
             </div>
 		</div>
-	</div>
 	</section>
 
 <!-- Footer-->
