@@ -99,64 +99,56 @@
 	</jsp:include>
 
 	<!-- Page Content-->
-	<input type="hidden" id="result1" value="result1"/>
-	<input type="hidden" id="result2" value="result2"/>
+	<input type="hidden" id="result1" value="result1" />
+	<input type="hidden" id="result2" value="result2" />
 	<section class="py-5">
-		<div class="container">		
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 mb-4">
-				<div class="blocks">
-					<h3>아이디 찾기</h3>
-					<br> <br>
-					<form method="post" id="frm1" name="frm1" action="/moa/member/loginFindIdProc.moa">
-
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="name">이름 :</label> <input class="form-control"
-									type="text" id="name" name="name">
+				<div class="col-lg-6 mb-4">
+					<div class="blocks">
+						<h3>아이디 찾기</h3><br><br>					
+						<form method="post" id="frm1" name="frm1"
+							action="/moa/member/loginFindIdProc.moa">
+							
+							<label for="name">이름 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="name" name="name">
+							</div>
 							<p class="help-block" id="namemsg"></p>
+
+							<label for="tel">전화번호 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="tel" name="tel">
 							</div>
-						</div>
-						
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="tel">휴대폰번호 :</label> <input class="form-control"
-									type="text" id="tel" name="tel">
 							<p class="help-block" id="telmsg"></p>
+
+							<label for="mail1">메일인증번호 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="mail1" name="mail1">
+								<button class="btn btn-primary mb-3" type="button" id="mailbtn">이메일
+									발송</button>
 							</div>
-						</div>
-						
-						<label for="mail1">메일인증번호 : </label>
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="mail1" name="mail1">
-							<button class="btn btn-primary mb-3"  type="button"
-								id="mailbtn">이메일 발송</button>
-						</div>
-						<p class="help-block" id="mail1msg"></p>
-						
-					</form>
-									
-					<button class="btn btn-primary w3-margin-bottom" id="ibtn">아이디 확인</button>	
-					
-					
-					
-					<form method="post" id="frm2" name="frm2" action="/moa/member/loginFindIdProc.moa">
-					<div class="control-group form-group">
-							<div class="controls">
-								<label for="idconfirm">고객님의 아이디는 :</label> <input class="form-control"
-									type="text" id="idconfirm" name="idconfirm" value="">
+							<p class="help-block" id="mail1msg"></p>
+						</form>
+						<button class="btn btn-primary w3-margin-bottom" id="ibtn">아이디확인</button>
+
+						<form method="post" id="frm2" name="frm2"
+							action="/moa/member/loginFindIdProc.moa">
+							
+							<label for="idconfirm">고객님의 아이디는 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="idconfirm"
+									name="idconfirm" value="">
+							</div>
 							<p class="help-block" id="idconfirmmsg"></p>
-							</div>
-						</div>							
-					</form>	
-				</div>
-									
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-		<div class="modal" tabindex="-1">
+	<div class="modal" tabindex="-1">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">

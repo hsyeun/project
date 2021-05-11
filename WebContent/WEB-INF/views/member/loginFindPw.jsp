@@ -78,40 +78,38 @@
 
 	<!-- Page Content-->
 	<section class="py-5">
-		<div class="container">		
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 mb-4">
-				<div class="blocks">
-					<h3>패스워드 찾기</h3>
-					<br> <br>
-					<form method="post" id="frm1" name="frm1" action="/moa/member/loginFindIdProc.moa">
+				<div class="col-lg-6 mb-4">
+					<div class="blocks">
+						<h3>패스워드 찾기</h3>
+						<br> <br>
+						<form method="post" id="frm1" name="frm1"
+							action="/moa/member/loginFindIdProc.moa">
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="id">아이디 :</label> <input class="form-control"
-									type="text" id="id" name="id">
+							<label for="id">아이디 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="id" name="id">
+								<button class="btn btn-primary mb-3" type="button" id="idck"
+									disabled>중복체크</button>
+							</div>
 							<p class="help-block" id="idmsg"></p>
+
+							<label for="tel">전화번호 : </label>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="tel" name="tel">
 							</div>
-						</div>
-						
-						<div class="control-group form-group w3-margin-bottom">
-							<div class="controls">
-								<label for="tel">휴대폰번호 :</label> <input class="form-control"
-									type="text" id="tel" name="tel">
 							<p class="help-block" id="telmsg"></p>
-							</div>
-						</div>
-									
-					</form>									
-					<button class="btn btn-primary w3-margin-top" id="pbtn">임시비밀번호 발송</button>						
-				</div>
-									
+						</form>
+						<button class="btn btn-primary w3-margin-top" id="pbtn">임시비밀번호
+							발송</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-		<div class="modal" tabindex="-1">
+	<div class="modal" tabindex="-1">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">

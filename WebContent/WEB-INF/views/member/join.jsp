@@ -193,100 +193,89 @@
 	</jsp:include>
 
 	<!-- Page Content-->
-	
+
 	<section class="py-5">
 		<div class="container">
-		<!-- 이용약관 -->
-					<div id="joinCheck">	
-						<jsp:include page="joinCheck.jsp">
-							<jsp:param name="" value=""/> 
-						</jsp:include>
-					</div>	
+			
+			<!-- 이용약관 -->
+			<div id="joinCheck">
+				<jsp:include page="joinCheck.jsp">
+					<jsp:param name="" value="" />
+				</jsp:include>
+			</div>
+
 			<div class="row" id="joinForm">
-				<div class="col-lg-8 mb-4">	
+				<div class="col-lg-6 mb-4">
 					<h3>회원정보를 입력해주세요</h3>
 					<br> <br>
-					<form method="post" id="frm" name="frm" action="/moa/member/joinProc.moa">
+					<form method="post" id="frm" name="frm"
+						action="/moa/member/joinProc.moa">
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="name">이름 :</label> <input class="form-control"
-									type="text" id="name" name="name">
-							<p class="help-block" id="namemsg"></p>
-							</div>
+						<label for="name">이름 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="name" name="name">
 						</div>
+						<p class="help-block" id="namemsg"></p>
 
 						<label for="id">아이디 : </label>
 						<div class="input-group mb-3">
 							<input type="text" class="form-control" id="id" name="id">
-							<button class="btn btn-primary mb-3"  type="button"
-								id="idck" disabled>중복체크</button>
+							<button class="btn btn-primary mb-3" type="button" id="idck"
+								disabled>중복체크</button>
 						</div>
 						<p class="help-block" id="idmsg"></p>
-						
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="pw">비밀번호 :</label> <input class="form-control"
-									type="password" id="pw" name="pw">
-								<p class="help-block" id="pwmsg"></p>
-							</div>
+						<label for="pw">비밀번호 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="pw" name="pw">
 						</div>
+						<p class="help-block" id="pwmsg"></p>
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="repw">비밀번호 확인 :</label> <input class="form-control"
-									type="password" id="repw" name="repw">
-								<p class="help-block" id="repwmsg"></p>
-							</div>
+						<label for="repw">비밀번호 확인 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="repw" name="repw">
 						</div>
+						<p class="help-block" id="repwmsg"></p>
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="tel">전화번호 :</label> <input class="form-control"
-									type="text" id="tel" name="tel">
-								<p class="help-block" id="telmsg"></p>
-							</div>
+						<label for="tel">전화번호 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="tel" name="tel">
 						</div>
+						<p class="help-block" id="telmsg"></p>
 
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="email">이메일 :</label> <input class="form-control"
-									type="text" id="email" name="email">
-								<p class="help-block" id="emailmsg"></p>
-							</div>
+						<label for="email">이메일 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="email" name="email">
 						</div>
+						<p class="help-block" id="emailmsg"></p>
 
-						<div>성별 :</div>
+						<label for="gen">성별 : </label>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="gen" id="mgen"
-								value="M"> <label class="form-check-label"
-								for="mgen"> 남성 </label>
+								value="M"> <label class="form-check-label" for="mgen">
+								남성 </label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="gen" id="fgen"
 								value="F"> <label class="form-check-label" for="fgen">
 								여성 </label>
+						</div><br> 
+						
+						<label for="birth">생년월일 : </label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="birth" name="birth">
 						</div>
+						<p class="help-block" id="birthmsg"></p>
 
-						<br>
-						<div class="control-group form-group">
-							<div class="controls">
-								<label for="birth">생년월일 :</label> <input class="form-control"
-									type="text" id="birth" name="birth">
-								<p class="help-block" id="birthmsg"></p>
-							</div>
-						</div>
-					</form>
-					
+					</form><br>
 					<button class="btn btn-primary" id="sbtn">가입하기</button>
-				
+
 				</div>
 			</div>
 		</div>
 	</section>
 
-<!-- Footer-->
+	<!-- Footer-->
 <footer class="py-5 bg-light">
     <jsp:include page="../a_nav/footer.jsp">
 		<jsp:param name="" value="" />
