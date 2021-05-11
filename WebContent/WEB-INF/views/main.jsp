@@ -57,10 +57,10 @@
         <div class="row">
             
 <!-- 최근전시정보리스트 -->
-<c:forEach var="data" items="${LIST}">
+<c:forEach var="data" items="${LIST}" varStatus="idx">
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/650x500" alt="..."></a>
+                    <a href="#!"><img class="card-img-top" src="/moa/img/avatar/${idx.count}.jpg" alt="..."></a>
                     <div class="card-body">
                         <h4 class="card-title"><a href="#!">${data.exiname}</a></h4>
                         <p class="card-text">작가: ${data.exiperson}</p>
