@@ -4,7 +4,9 @@ public class ReviewSQL {
 	
 	public final int SEL_TOTAL_CNT		= 	1001;
 	public final int SEL_PAGE_LIST		= 	1002;
-	
+	public final int SEL_BNO_INFO		= 	1003;
+	public final int SEL_UPNO_INFO		= 	1004;
+
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
 		
@@ -15,10 +17,10 @@ public class ReviewSQL {
 			buff.append("FROM ");
 			buff.append("    iqboard ");
 			buff.append(" 		WHERE ");
-			buff.append("  mno = (select mno from member where id = ?) ");
+			buff.append("  iqmno = (select mno from member where id = ?) ");
+			buff.append("  AND iqupno IS NULL ");
 			break;
-			
-			
+				
 		case SEL_PAGE_LIST:
 			buff.append(" SELECT ");
 			buff.append("  rno, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, step");
@@ -33,7 +35,8 @@ public class ReviewSQL {
 			buff.append(" 	                FROM ");
 			buff.append(" 	                    iqboard");
 			buff.append(" 	                WHERE ");
-			buff.append(" 	                   isShow = 'Y' ");
+			buff.append(" 	                   iqupno IS NULL ");
+			buff.append(" 	                   AND isShow = 'Y' ");
 			buff.append(" 		               START WITH ");
 			buff.append(" 		                    iqupno IS NULL ");
 			buff.append(" 		                CONNECT BY ");
@@ -43,9 +46,27 @@ public class ReviewSQL {
 			buff.append(" 		            ) ");
 			buff.append(" 		    ) ");
 			buff.append(" 		WHERE ");
-			buff.append("  iqmno = (SELECT mno FROM member WHERE id = ?) AND ");
-			buff.append(" rno BETWEEN ? AND ? ");
+			buff.append("  iqmno = (SELECT mno FROM member WHERE id = ?) ");
+			buff.append(" AND rno BETWEEN ? AND ? ");
 			break;
+
+		case SEL_BNO_INFO:
+			buff.append("SELECT ");
+			buff.append("    * ");
+			buff.append("FROM ");
+			buff.append("    iqboard ");
+			buff.append(" 		WHERE ");
+			buff.append("  iqbno = ? ");
+			break;
+			
+		case SEL_UPNO_INFO:
+			buff.append("SELECT ");
+			buff.append("    * ");
+			buff.append("FROM ");
+			buff.append("    iqboard ");
+			buff.append(" 		WHERE ");
+			buff.append("  iqupno = ? ");
+			break;	
 		}
 			return buff.toString();
 	}	

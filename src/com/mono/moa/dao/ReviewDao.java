@@ -87,4 +87,73 @@ import com.mono.moa.vo.ReviewVO;
 				}
 			} 	return list;	
 		}
+		
+		
+		public ReviewVO getBnoInfo(String id, int bno) {
+			ReviewVO rVO = new ReviewVO();
+			
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.SEL_BNO_INFO);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setInt(1, bno);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+										
+					rVO.setBno(rs.getInt("iqbno"));
+					rVO.setMno(rs.getInt("iqmno"));
+					rVO.setUpno(rs.getInt("iqupno"));
+					rVO.setTitle(rs.getString("iqtitle"));
+					rVO.setBody(rs.getString("iqbody"));
+					rVO.setReply(rs.getString("reply"));
+					rVO.setSdate(rs.getDate("iqwdate"));
+
+				} 
+			}	catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					db.close(rs);
+					db.close(pstmt);
+					db.close(con);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} 	return rVO;	
+		}
+		
+		public ReviewVO getUpnoInfo(int bno) {
+			ReviewVO rVO = new ReviewVO();
+			
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.SEL_UPNO_INFO);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setInt(1, bno);
+				rs = pstmt.executeQuery();
+				rs.next();
+										
+					rVO.setBno(rs.getInt("iqbno"));
+					rVO.setMno(rs.getInt("iqmno"));
+					rVO.setUpno(rs.getInt("iqupno"));
+					rVO.setTitle(rs.getString("iqtitle"));
+					rVO.setBody(rs.getString("iqbody"));
+					rVO.setReply(rs.getString("reply"));
+					rVO.setSdate(rs.getDate("iqwdate"));
+
+			}	catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					db.close(rs);
+					db.close(pstmt);
+					db.close(con);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} 	return rVO;	
+		}
+		
 }
