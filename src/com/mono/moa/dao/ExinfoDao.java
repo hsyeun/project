@@ -94,7 +94,7 @@ public class ExinfoDao {
 					ExinfoVO vo = new ExinfoVO();
 					
 					vo.setExino(rs.getInt("exino"));
-					vo.setExiecno(rs.getInt("execino"));
+					vo.setExiecno(rs.getInt("exiecno"));
 					vo.setExiperson(rs.getString("exiperson"));
 					vo.setExiname(rs.getString("exiname"));
 					vo.setExisdate(rs.getDate("exisdate"));
@@ -142,7 +142,6 @@ public class ExinfoDao {
 					vo.setExiprice(rs.getInt("exiprice"));
 					vo.setExiage(rs.getString("exiage"));
 					vo.setExiexpno(rs.getInt("exiexpno"));
-					System.out.println("######## startdate : " + vo.setSdate(vo.getExisdate()));
 					vo.setStartdate(vo.setSdate(vo.getExisdate()));
 					vo.setEnddate(vo.setSdate(vo.getExiedate()));
 					
