@@ -18,7 +18,8 @@ public class QnaList implements Controller {
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String view = "review/qnaList";
 		
-		if(req.getSession().getAttribute("SID") == null) {
+		String sid= (String) req.getSession().getAttribute("SID");
+		if(sid == null) {
 			req.setAttribute("isRedirect", true);
 			view = "/moa/main.moa";
 		}
@@ -33,10 +34,10 @@ public class QnaList implements Controller {
 		
 		ReviewDao rDao = new ReviewDao();
 		
-		int total = rDao.getTotalCnt();
-		PageUtil page = new PageUtil(nowPage, total, 3, 3);
+		int total = rDao.getTotalCnt(sid);
+		PageUtil page = new PageUtil(nowPage, total, 5, 2);
 		
-		ArrayList<ReviewVO> list = rDao.getPageList(page);
+		ArrayList<ReviewVO> list = rDao.getPageList(sid, page);
 		req.setAttribute("LIST", list);
 		req.setAttribute("PAGE", page);
 		

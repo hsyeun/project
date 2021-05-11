@@ -7,12 +7,18 @@ import java.text.SimpleDateFormat;
 public class ReviewVO {
 
 	private int rno, bno, mno, upno;
-	private String id, name, title, body, sdate;
+	private String id, name, title, body, sdate, reply;
+	
 	private Date wdate;
 	private Time wtime;
 	
 	
-	
+	public String getReply() {
+		return reply;
+	}
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
 	public int getUpno() {
 		return upno;
 	}
@@ -89,10 +95,11 @@ public class ReviewVO {
 	public void setWtime(Time wtime) {
 		this.wtime = wtime;
 	}
-	
 	@Override
 	public String toString() {
 		return "ReviewVO [rno=" + rno + ", bno=" + bno + ", mno=" + mno + ", upno=" + upno + ", id=" + id + ", name="
-				+ name + ", title=" + title + ", body=" + body + ", sdate=" + sdate + "]";
+				+ name + ", title=" + title + ", body=" + body + ", sdate=" + sdate + ", reply=" + reply + "]";
 	}
+	
+
 }

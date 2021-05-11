@@ -33,7 +33,7 @@ public class JoinProc implements Controller {
 		if(cnt==1) {
 			req.getSession().setAttribute("SID", mVO.getId());	
 		} else {
-			view = "/moa/member/join.cafe";
+			view = "/moa/member/join.moa";
 		}
 		return view;
 	}
