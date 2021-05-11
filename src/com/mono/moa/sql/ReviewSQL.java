@@ -14,20 +14,22 @@ public class ReviewSQL {
 			buff.append("    count(*) cnt ");
 			buff.append("FROM ");
 			buff.append("    iqboard ");
+			buff.append(" 		WHERE ");
+			buff.append("  mno = (select mno from member where id = ?) ");
 			break;
 			
 			
 		case SEL_PAGE_LIST:
 			buff.append(" SELECT ");
-			buff.append("  rnum, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, step");
+			buff.append("  rno, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, step");
 			buff.append("    FROM ");
 			buff.append("       ( ");
 			buff.append("  SELECT ");
-			buff.append("  ROWNUM rnum, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, step ");
+			buff.append("  ROWNUM rno, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, step ");
 			buff.append(" 	        FROM ");
 			buff.append(" 	            ( ");
 			buff.append(" 	                SELECT ");
-			buff.append(" 	                    iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, level - 1 as step ");
+			buff.append(" 	                    iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, level - 1 as step ");
 			buff.append(" 	                FROM ");
 			buff.append(" 	                    iqboard");
 			buff.append(" 	                WHERE ");
@@ -41,7 +43,8 @@ public class ReviewSQL {
 			buff.append(" 		            ) ");
 			buff.append(" 		    ) ");
 			buff.append(" 		WHERE ");
-			buff.append(" rnum BETWEEN ? AND ? ");
+			buff.append("  iqmno = (SELECT mno FROM member WHERE id = ?) AND ");
+			buff.append(" rno BETWEEN ? AND ? ");
 			break;
 		}
 			return buff.toString();

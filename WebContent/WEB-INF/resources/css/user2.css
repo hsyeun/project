@@ -37,6 +37,12 @@
 .mgt20 {
 	margin-top: 20px;
 }
+.mgt30 {
+	margin-top: 30px;
+}
+.mgt40 {
+	margin-top: 40px;
+}
 .mgt60 {
 	margin-top: 60px;
 }
@@ -52,14 +58,27 @@
 .mgb60 {
 	margin-bottom: 60px;
 }
+.mgl0 {
+	margin-left: 0px;
+}
 .mgl10 {
 	margin-left: 10px;
 }
 .mgl20 {
 	margin-left: 20px;
 }
-.mgr20 {
-	margin-right: 20px;
+.mgl30 {
+	margin-left: 30px;
+}
+.mgl40 {
+	margin-left: 40px;
+}
+.mgl50 {
+	margin-left: 50px;
+}
+
+.mgr40 {
+	margin-right: 40px;
 }
 /* 패딩 클래스 */
 .pdAll20 {
@@ -84,6 +103,9 @@
 }
 .pdl20 {
 	padding-left: 20px;
+}
+.pdl40 {
+	padding-left: 40px;
 }
 .pdr20 {
 	padding-right: 20px;
@@ -190,3 +212,8 @@
 	resize: none;
 }
 
+.ftw {
+	font-size: 25px;
+	font-weight: bold;
+	
+}

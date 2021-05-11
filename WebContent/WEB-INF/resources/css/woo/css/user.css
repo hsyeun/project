@@ -1,3 +1,7 @@
+.por{
+	position:relative; 
+	bottom: 320px;
+}
 .mxw500 {
    max-width: 500px;
 }

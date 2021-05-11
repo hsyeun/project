@@ -24,14 +24,15 @@ import com.mono.moa.vo.ReviewVO;
 			rSQL = new ReviewSQL();
 		}
 		
-		public int getTotalCnt() {
+		public int getTotalCnt(String id) {
 			int cnt = 0;
 			con = db.getCon();
 			String sql = rSQL.getSQL(rSQL.SEL_TOTAL_CNT);
-			stmt = db.getSTMT(con);
+			pstmt = db.getPSTMT(con,sql);
 			
 			try {
-				rs = stmt.executeQuery(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
 				rs.next();
 				cnt = rs.getInt("cnt");
 			} catch (Exception e) {
@@ -48,7 +49,7 @@ import com.mono.moa.vo.ReviewVO;
 			return cnt;		
 		}
 		
-		public ArrayList<ReviewVO> getPageList(PageUtil page) {
+		public ArrayList<ReviewVO> getPageList(String id, PageUtil page) {
 			ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 			
 			con = db.getCon();
@@ -56,19 +57,22 @@ import com.mono.moa.vo.ReviewVO;
 			pstmt = db.getPSTMT(con, sql);
 			
 			try {
-				pstmt.setInt(1, page.getStartCont());
-				pstmt.setInt(2, page.getEndCont());
+				pstmt.setString(1, id);
+				pstmt.setInt(2, page.getStartCont());
+				pstmt.setInt(3, page.getEndCont());
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					
 					ReviewVO rVO = new ReviewVO();
 					
+					rVO.setRno(rs.getInt("rno"));
 					rVO.setBno(rs.getInt("iqbno"));
 					rVO.setMno(rs.getInt("iqmno"));
 					rVO.setUpno(rs.getInt("iqupno"));
 					rVO.setTitle(rs.getString("iqtitle"));
 					rVO.setBody(rs.getString("iqbody"));
-					rVO.setWdate(rs.getDate("iqwdate"));
+					rVO.setReply(rs.getString("reply"));
+					rVO.setSdate(rs.getDate("iqwdate"));
 					list.add(rVO);
 				} 
 			}	catch (Exception e) {
