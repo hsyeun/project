@@ -37,9 +37,9 @@
     <div class="user-con user-con-gnb">
         <div class="gnb">
             <ul class="user-gnb">
-                <li class="user-li user-orange"><a class="user-a" href="#">일반 전시</a></li>                  
-                <li class="user-li user-orange"><a class="user-a" href="#">미술전</a></li>
-                <li class="user-li user-orange"><a class="user-a" href="#">테마전</a></li>
+                <li class="user-li user-orange"><a class="user-a" href="/moa/menupage/menu1.moa">일반 전시</a></li>                  
+                <li class="user-li user-orange"><a class="user-a" href="/moa/menupage/menu2.moa">미술전</a></li>
+                <li class="user-li user-orange"><a class="user-a" href="/moa/menupage/menu3.moa">테마전</a></li>
             </ul>
         </div>
         <div class="user-ipt">

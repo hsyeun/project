@@ -138,6 +138,18 @@ nav .logo:hover{
 	left:0;
 } */
 
+.menu-h{
+	margin-bottom: 50px;
+}
+.user-paging{
+	position:relative;
+	left:0; top:0;
+}
+.user-paging-btn{
+	position:absolute;
+	left:50%; margin-left:-115px;
+}
+
 
 
 @media (min-width: 576px) {
