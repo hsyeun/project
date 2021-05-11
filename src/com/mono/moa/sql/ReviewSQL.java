@@ -6,6 +6,7 @@ public class ReviewSQL {
 	public final int SEL_PAGE_LIST		= 	1002;
 	public final int SEL_BNO_INFO		= 	1003;
 	public final int SEL_UPNO_INFO		= 	1004;
+	public final int ADD_QNA		= 	1005;
 
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -67,6 +68,17 @@ public class ReviewSQL {
 			buff.append(" 		WHERE ");
 			buff.append("  iqupno = ? ");
 			break;	
+			
+		case ADD_QNA:
+			buff.append("INSERT INTO ");
+			buff.append("iqboard ");
+			buff.append("    (iqbno, iqmno ,iqtitle, iqbody) ");
+			buff.append("VALUES( ");
+			buff.append("    (SELECT NVL(MAX(IQbno) + 1, 1001) FROM iqboard), ");
+			buff.append("    (SELECT mno FROM member where id = ?), ");
+			buff.append("    ?, ? ");
+			buff.append(") ");
+			break;
 		}
 			return buff.toString();
 	}	

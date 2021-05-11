@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.mono.moa.db.DBCP;
 import com.mono.moa.sql.ReviewSQL;
 import com.mono.moa.util.PageUtil;
+import com.mono.moa.vo.MemberVO;
 import com.mono.moa.vo.ReviewVO;
 
 	public class ReviewDao {
@@ -154,6 +155,27 @@ import com.mono.moa.vo.ReviewVO;
 					e.printStackTrace();
 				}
 			} 	return rVO;	
+		}
+		
+		public int addQna(String id, String title, String body) {
+			
+			int cnt = 0 ;
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.ADD_QNA);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setString(1, id);
+				pstmt.setString(2, title);
+				pstmt.setString(3, body);				
+				cnt = pstmt.executeUpdate();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				db.close(pstmt);
+				db.close(con);
+			}
+			return cnt;
 		}
 		
 }

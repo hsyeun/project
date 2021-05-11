@@ -57,9 +57,9 @@ $(document).ready(function() {
 										<th scope="col">등록일</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody class="w3-margin-top">
 									<tr>
-										<th scope="row">${SID}문의글</th>
+										<th scope="row">${SID}님의 문의글</th>
 										<td colspan=2>${DATA.body}</td>
 										<td>${DATA.sdate}</td>
 									</tr>

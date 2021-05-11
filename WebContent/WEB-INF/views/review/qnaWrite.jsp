@@ -10,55 +10,23 @@
 </head>
 
 <script>
-$(document).ready(function() {
-	if(${PAGE.startPage} == 1){
-		$('#pre').removeClass('page-item');
-	}
-	if(${PAGE.endPage} == ${PAGE.totalPage}){
-		$('#nex').removeClass('page-item');
-	}	
-	if($('#pnum${PAGE.nowPage}>a').html()== ${PAGE.nowPage}){
-		$('#pnum${PAGE.nowPage}>a').addClass('w3-blue');
-	}
-	
-	$('.page-item').click(function(){
-		var sid = $(this).attr('id');
+$(document).ready(function(){
+	$('#sbtn').click(function(){
 		
-		switch(sid){
-		case 'pre':
-				$('#nowPage').val('${PAGE.startPage - 1}');
-			break;
-		case 'nex':
-				$('#nowPage').val('${PAGE.endPage + 1}');
-			break;
-		default:
-			tmp=$(this).children().html();
-				$('#nowPage').val(tmp);
-				break;
+		if(!$('#title').val()){
+			alert('제목을 입력하세요');
+			return;
 		}
-		$('#frm').attr('action', '/moa/review/qnaList.moa');
-		$('#frm').submit();
-	});
-	
-	$('.trow').click(function(){		
-		$('#nowPage').val(${PAGE.nowPage});
-		
-		var bno = $(this).attr('id');
-		bno = bno.substring(1);
-		$('#bno').val(bno);
-		$('#frm').submit();
+		if(!$('#body').val()){
+			alert('내용을 작성하세요');
+			return;
+		}
+		$('#frm').submit();	
 	});
 });
 </script>
 
 <body>
-
-<form method="POST" action="/moa/review/qnaListDetail.moa" id="frm" name="frm">
-		<input type="hidden" name="nowPage" id="nowPage">
-		<input type="hidden" name="bno" id="bno">
-</form>
-
-
 <!-- Navigator -->
 	<jsp:include page="../a_nav/nav.jsp">
 		<jsp:param name="active" value="마이페이지"/>
@@ -67,61 +35,43 @@ $(document).ready(function() {
 	<!-- Page Content-->
 	<section class="py-5">
 		<div class="container">
-
 			<div class="row">
-				<div class="col-lg-12 mb-4">
+				<div class="col-lg-612 mb-4">
 					<!-- Page Heading/Breadcrumbs-->
 					<h1>My Page</h1>
 					<ol class="breadcrumb mb-4">
+
 					</ol>
 					<!-- Content Row-->
 					<div class="row">
-						<!-- Sidebar Column-->
 						<jsp:include page="../a_nav/member/SideBar.jsp">
 							<jsp:param name="" value="" />
 						</jsp:include>
 						<!-- Content Column-->
-						<div class="col-lg-8 mb-4">
+						<div class="col-lg-6 mb-4">
+							<h3>1:1 문의글 작성</h3>
+							<br>
+							<form method="post" id="frm" name="frm"
+								action="/moa/review/qnaWriteProc.moa">
+								<label for="title">제목 : </label>
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" id="title" name="title"
+										>
+								</div>
+								<p class="help-block" id="titlemsg"></p>
 
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th scope="col">글번호</th>
-										<th scope="col">제목</th>
-										<th scope="col">상태</th>
-										<th scope="col">등록일</th>
-									</tr>
-								</thead>
-								
-								<tbody>
-<c:forEach var="data" items="${LIST}" varStatus="idx">
+								<div class="controls">
+									<label for="body">내용:</label>
+									<textarea class="form-control" id="body" name="body" rows="10"
+										cols="100" required=""
+										data-validation-required-message="Please enter your message"
+										maxlength="999" style="resize: none"></textarea>
+									<div class="help-block"></div>
+								</div>
+								<br>
+							</form>
+							<button class="btn btn-primary" id="sbtn">저장</button>
 
-										<tr class="trow" id="b${data.bno}">
-											<th scope="row">${data.bno}</th>
-											<td>${data.title}</td>
-											<td>${data.reply.equals('Y') ? '답변완료' : '미답변'}</td>
-											<td>${data.sdate}</td>
-										</tr>
-
-</c:forEach>
-								</tbody>
-								
-							</table>
-							<ul class="pagination justify-content-center">
-								<li class="page-item" id="pre"><a class="page-link"
-									href="#" aria-label="Previous"> <span aria-hidden="true">«</span>
-										<span class="sr-only">Previous</span>
-								</a></li>
-								<c:forEach var="page" begin="${PAGE.startPage}"
-									end="${PAGE.endPage}">
-									<li class="page-item" id="pnum${page}"><a
-										class="page-link" href="#">${page}</a></li>
-								</c:forEach>
-								<li class="page-item" id="nex"><a class="page-link"
-									href="#" aria-label="Next"> <span aria-hidden="true">»</span>
-										<span class="sr-only">Next</span>
-								</a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
