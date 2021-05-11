@@ -55,33 +55,23 @@
     <div class="container">
         <!-- <h2 class="mb-4">Portfolio Heading</h2> -->
         <div class="row">
+            
+<!-- 최근전시정보리스트 -->
+<c:forEach var="data" items="${LIST}">
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
+                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/650x500" alt="..."></a>
                     <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project One</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                        <h4 class="card-title"><a href="#!">${data.exiname}</a></h4>
+                        <p class="card-text">작가: ${data.exiperson}</p>
+                        <p class="card-text">시작날짜: ${data.startdate}</p>
+                        <p class="card-text">종료날짜: ${data.enddate}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Two</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Three</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                    </div>
-                </div>
-            </div>
+</c:forEach>
+
+
         </div>
     </div>
 </section>

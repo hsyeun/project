@@ -42,7 +42,7 @@
                 <li class="user-li user-orange"><a class="user-a" href="/moa/menupage/menu3.moa">테마전</a></li>
             </ul>
         </div>
-        <div class="user-ipt">
+        <div class="user-ipt" onclick="location.href='/moa/subpage/searchpage.moa';">
             <input class="user-input" type="text" placeholder="검색어를 입력하세요.">
         </div>
     </div>
