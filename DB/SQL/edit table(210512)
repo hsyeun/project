@@ -1,0 +1,4 @@
+--0512 nboard 테이블 수정
+UPDATE NBOARD SET code = 'N' WHERE nno = 1001;
+UPDATE NBOARD SET isShow = 'Y' ;
+
