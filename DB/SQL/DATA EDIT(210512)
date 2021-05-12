@@ -1,0 +1,156 @@
+--idir 컬럼 글자수 변경
+ALTER TABLE image modify idir varchar2(30);
+
+--idir 데이터 변경
+update image set idir = 'moa/img/exh_img_title' where ino >= 1001;
+
+--이미지 파일 이름
+ALTER TABLE image
+ADD imgname varchar2(50);
+
+--전시정보 참조 번호
+ALTER TABLE image
+ADD imgno number(5);
+
+--노출여부 컬럼 추가
+Alter table image
+add isshow char(1);
+
+--제약조건 추가
+alter table image
+modify imgno constraint IMG_FKNO_FK references exinfo(exino);
+
+alter table image
+rename constraint IMG_FKNO_FK to IMG_IMGNO_FK;
+
+alter table image
+modify isshow default 'Y' 
+    constraint IMG_SHOW_CK check(isshow in ('Y', 'N'));
+
+-----------------------------------------------------------
+
+
+--imgname 컬럼에 파일이름 데이터 입력
+update image set imgname = '/delight.jpg' where ino = 1001;
+
+update image set imgname = '/resonance.jpg' where ino = 1002;
+
+update image set imgname = '/hyunju.jpg' where ino = 1003;
+
+update image set imgname = '/gerstein.jpg' where ino = 1004;
+
+update image set imgname = '/Minteakki.jpg' where ino = 1005;
+
+update image set imgname = '/borderless-site.gif' where ino = 1006;
+
+update image set imgname = '/bologna.jpg' where ino = 1007;
+
+update image set imgname = '/humanshape.jpg' where ino = 1008;
+
+update image set imgname = '/matis.jpg' where ino = 1009;
+
+update image set imgname = '/yeon.jpg' where ino = 1010;
+
+update image set imgname = '/super-nature.jpg' where ino = 1011;
+
+update image set imgname = '/ominous-premonition.jpg' where ino = 1012;
+
+update image set imgname = '/trip.jpg' where ino = 1013;
+
+update image set imgname = '/oopsyang.jpg' where ino = 1014;
+
+update image set imgname = '/Youyerim.png' where ino = 1015;
+
+update image set imgname = '/Leemyoungmi.jpg' where ino = 1016;
+
+update image set imgname = '/the-nature-of-art.jpg' where ino = 1017;
+
+update image set imgname = '/LeeHyunju.jpg' where ino = 1018;
+
+update image set imgname = '/JeanJullien.gif' where ino = 1019;
+
+update image set imgname = '/tactics.jpg' where ino = 1020;
+
+update image set imgname = '/Chohaena.jpg' where ino = 1021;
+
+update image set imgname = '/moment-Incheon.png' where ino = 1022;
+
+update image set imgname = '/invite.jpg' where ino = 1023;
+
+update image set imgname = '/friendly-animals.jpg' where ino = 1024;
+
+
+--imgno 컬럼에 참조 번호 데이터 입력
+update image set imgno = 10014 where ino = 1001;
+
+update image set imgno = 10008 where ino = 1002;
+
+update image set imgno = 10017 where ino = 1003;
+update image set isavename = '김현주 : its your paradise' where ino = 1003;
+
+update image set imgno = 10021 where ino = 1004;
+
+update image set imgno = 10023 where ino = 1005;
+update image set isavename = '민택기 : 多彩하여 多彩하니' where ino = 1005;
+
+update image set imgno = 10009 where ino = 1006;
+
+update image set imgno = 10004 where ino = 1007;
+
+update image set imgno = 10007 where ino = 1008;
+
+update image set imgno = 10016 where ino = 1009;
+
+update image set imgno = 10013 where ino = 1010;
+
+update image set imgno = 10019 where ino = 1011;
+
+update image set imgno = 10006 where ino = 1012;
+
+--update image set imgno = '/trip.jpg' where ino = 1013;
+
+update image set imgno = 10001 where ino = 1014;
+
+update image set imgno = 10011 where ino = 1015;
+
+update image set imgno = 10002 where ino = 1016;
+
+update image set imgno = 10020 where ino = 1017;
+
+update image set imgno = 10003 where ino = 1018;
+
+update image set imgno = 10005 where ino = 1019;
+
+update image set imgno = 10015 where ino = 1020;
+
+update image set imgno = 10012 where ino = 1021;
+
+--update image set imgno = '/moment-Incheon.png' where ino = 1022;
+
+update image set imgno = 10010 where ino = 1023;
+
+update image set imgno = 10018 where ino = 1024;
+
+
+--isshow에 데이터 추가
+update image set isshow = 'Y' where ino >= 1001;
+update image set isshow = 'N' where ino = 1013;
+update image set isshow = 'N' where ino = 1022;
+
+
+--데이터 추가
+INSERT INTO
+    image(ino, isavename, idir, imgname, imgno, isshow)
+VALUES(
+        (SELECT NVL(MAX(ino) + 1, 1001) FROM image),
+        '가정의 달 기념전 : 일상은 아름다워', 'moa/img/exh_img_title', '/beautiful-life.jpg', 10022, 'Y'
+);
+
+--nn 제약조건 추가
+alter table image
+modify imgname constraint IMG_IMGNAME_NN not null;
+
+alter table image
+modify isshow constraint IMG_SHOW_NN not null;
+
+commit;
