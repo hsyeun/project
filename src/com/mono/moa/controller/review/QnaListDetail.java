@@ -31,7 +31,7 @@ public class QnaListDetail implements Controller {
 		ReviewVO rVO = rDao.getBnoInfo(bno);
 		
 		ReviewVO uVO = null;
-		if(rVO.getUpno()==0) {
+		if(rVO.getReply().equals("Y")) {
 			uVO = rDao.getUpnoInfo(bno);
 		}
 		

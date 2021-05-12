@@ -12,40 +12,31 @@
 <script>
 $(document).ready(function() {
 	
-	$('#nowPage').val('${PAGE}');
-	$('#bno').val('${DATA.bno}');
-	
 	$('#wbtn').click(function(){
-		$('#frm').attr('action', '/moa/review/qnaWrite.moa');
+		$('#nowPage').val('${PAGE}');
+		$('#bno').val('${DATA.bno}');
+		var stitle = $('#body').val();
+		$('#reply').val(stitle);
 		$('#frm').submit();
 	});
 	
 	$('#ebtn').click(function(){
-		if('${DATA1.body}'){
-			alert('답변이 완료된 게시글은 수정하실 수 없습니다.');
-			return;
-		}
-		$('#frm').attr('action', '/moa/review/qnaEdit.moa');
-		$('#frm').submit();
+		
 	});
 	
 	$('#dbtn').click(function(){
-		if('${DATA1.body}'){
-			alert('답변이 완료된 게시글은 수정하실 수 없습니다.');
-			return;
-		}
-		$('#frm').attr('action', '/moa/review/qnaDel.moa');
-		$('#frm').submit();
+	
 	});
-
+	
 });
 </script>
 
 <body>
 
-<form method="post" action="/moa/review/qnaList.moa" id="frm" name="frm">
+<form method="post" action="/moa/review/qnaWriteProcAdmin.moa" id="frm" name="frm">
 		<input type="hidden" name="nowPage" id="nowPage">
 		<input type="hidden" name="bno" id="bno">
+		<input type="hidden" name="reply" id="reply">
 </form>
 
 
@@ -66,7 +57,7 @@ $(document).ready(function() {
 					<!-- Content Row-->
 					<div class="row">
 						<!-- Sidebar Column-->
-						<jsp:include page="../a_nav/member/SideBar.jsp">
+						<jsp:include page="SideBar.jsp">
 							<jsp:param name="" value="" />
 						</jsp:include>
 						<!-- Content Column-->
@@ -82,7 +73,7 @@ $(document).ready(function() {
 								</thead>
 								<tbody class="w3-margin-top">
 									<tr>
-										<th scope="row">${SID}님의 문의내용</th>
+										<th scope="row">ID : ${DATA2}</th>
 										<td colspan=2>${DATA.body}</td>
 										<td>${DATA.sdate}</td>
 									</tr>
@@ -93,7 +84,11 @@ $(document).ready(function() {
 									</tr>
 								</tbody>
 							</table>
-								<button class="btn btn-primary" id="wbtn">글작성</button>
+							
+							<textarea name="body" id="body"  rows="7"
+							class="w3-col w3-input w3-round w3-border noresize" placeholder="글내용 입력!">${DATA.body}</textarea><br>
+								
+								<button class="btn btn-primary" id="wbtn">답변등록</button>
 								<button class="btn btn-primary" id="ebtn">수정</button>
 								<button class="btn btn-primary" id="dbtn">삭제</button>
 						</div>

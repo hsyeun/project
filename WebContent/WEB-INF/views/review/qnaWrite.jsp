@@ -11,6 +11,7 @@
 
 <script>
 $(document).ready(function(){
+
 	$('#sbtn').click(function(){
 		
 		if(!$('#title').val()){
