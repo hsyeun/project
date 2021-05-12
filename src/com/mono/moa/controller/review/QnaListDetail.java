@@ -24,16 +24,20 @@ public class QnaListDetail implements Controller {
 			view = "/moa/main.moa";
 		}
 		
-		int spage = Integer.parseInt(req.getParameter("nowPage"));
+		String nowPage = req.getParameter("nowPage");
 		int bno = Integer.parseInt(req.getParameter("bno"));
 			
 		ReviewDao rDao = new ReviewDao();
-		ReviewVO rVO = rDao.getBnoInfo(sid, bno);
-		ReviewVO uVO = rDao.getUpnoInfo(bno);
+		ReviewVO rVO = rDao.getBnoInfo(bno);
+		
+		ReviewVO uVO = null;
+		if(rVO.getUpno()==0) {
+			uVO = rDao.getUpnoInfo(bno);
+		}
 		
 		req.setAttribute("DATA1", uVO);
 		req.setAttribute("DATA", rVO);
-		req.setAttribute("PAGE", spage);
+		req.setAttribute("PAGE", nowPage);
 		
 		return view;
 	}

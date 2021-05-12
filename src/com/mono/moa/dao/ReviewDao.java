@@ -90,7 +90,7 @@ import com.mono.moa.vo.ReviewVO;
 		}
 		
 		
-		public ReviewVO getBnoInfo(String id, int bno) {
+		public ReviewVO getBnoInfo(int bno) {
 			ReviewVO rVO = new ReviewVO();
 			
 			con = db.getCon();
@@ -168,6 +168,46 @@ import com.mono.moa.vo.ReviewVO;
 				pstmt.setString(1, id);
 				pstmt.setString(2, title);
 				pstmt.setString(3, body);				
+				cnt = pstmt.executeUpdate();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				db.close(pstmt);
+				db.close(con);
+			}
+			return cnt;
+		}
+		
+		
+		public int editInfo(String title, String body ,int bno) {
+			
+			int cnt = 0 ;
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.EDIT_INFO);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setString(1, title);
+				pstmt.setString(2, body);
+				pstmt.setInt(3, bno);
+				cnt = pstmt.executeUpdate();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				db.close(pstmt);
+				db.close(con);
+			}
+			return cnt;
+		}
+		public int delQna(int bno) {
+			
+			int cnt = 0 ;
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.DEL_QNA);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setInt(1, bno);
 				cnt = pstmt.executeUpdate();
 			} catch(Exception e) {
 				e.printStackTrace();

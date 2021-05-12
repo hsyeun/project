@@ -12,20 +12,27 @@ import com.mono.moa.dao.ReviewDao;
 import com.mono.moa.util.PageUtil;
 import com.mono.moa.vo.ReviewVO;
 
-public class QnaWrite implements Controller {
+public class QnaDel implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "review/qnaWrite";
+		String view = "review/qnaList";
 		
 		String sid= (String) req.getSession().getAttribute("SID");
 		if(sid == null) {
 			req.setAttribute("isRedirect", true);
 			view = "/moa/main.moa";
 		}
+			
+		ReviewDao rDao = new ReviewDao();
 		
-		String spage = req.getParameter("nowPage");
+		int bno = Integer.parseInt(req.getParameter("bno"));
+		String nowPage = req.getParameter("nowPage");
 		
+		rDao.delQna(bno);
+		
+		req.setAttribute("nowPage", nowPage);
+
 		return view;
 	}
 

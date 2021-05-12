@@ -57,7 +57,7 @@
 
 						<label for="pw">패스워드 : </label>
 						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="pw" name="pw">
+							<input type="password" class="form-control" id="pw" name="pw">
 						</div>
 						<p class="help-block" id="pwmsg"></p>
 					</form>

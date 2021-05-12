@@ -11,13 +11,16 @@
 
 <script>
 $(document).ready(function() {
-	if(${PAGE.startPage} == 1){
+	
+	$('#nowPage').val('${PAGE.nowPage}');
+	
+	if('${PAGE.startPage}' == 1){
 		$('#pre').removeClass('page-item');
 	}
-	if(${PAGE.endPage} == ${PAGE.totalPage}){
+	if('${PAGE.endPage}' == '${PAGE.totalPage}'){
 		$('#nex').removeClass('page-item');
 	}	
-	if($('#pnum${PAGE.nowPage}>a').html()== ${PAGE.nowPage}){
+	if($('#pnum${PAGE.nowPage}>a').html()== '${PAGE.nowPage}'){
 		$('#pnum${PAGE.nowPage}>a').addClass('w3-blue');
 	}
 	
@@ -40,12 +43,18 @@ $(document).ready(function() {
 		$('#frm').submit();
 	});
 	
-	$('.trow').click(function(){		
-		$('#nowPage').val(${PAGE.nowPage});
-		
+	$('.trow').click(function(){					
 		var bno = $(this).attr('id');
 		bno = bno.substring(1);
 		$('#bno').val(bno);
+		$('#frm').submit();
+	});
+	
+	$('#wbtn').click(function(){
+		var bno = $(this).attr('id');
+		bno = bno.substring(1);
+		$('#bno').val(bno);
+		$('#frm').attr('action', '/moa/review/qnaWrite.moa');
 		$('#frm').submit();
 	});
 });
@@ -104,9 +113,9 @@ $(document).ready(function() {
 										</tr>
 
 </c:forEach>
-								</tbody>
-								
+								</tbody>								
 							</table>
+							<button class="btn btn-primary" id="wbtn">글작성</button>
 							<ul class="pagination justify-content-center">
 								<li class="page-item" id="pre"><a class="page-link"
 									href="#" aria-label="Previous"> <span aria-hidden="true">«</span>

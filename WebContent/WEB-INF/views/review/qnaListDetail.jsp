@@ -11,16 +11,31 @@
 
 <script>
 $(document).ready(function() {
-	$('#qna').click(function(){
-		$('#nowPage').val('${PAGE}');
+	
+	$('#nowPage').val(${PAGE});
+	$('#bno').val(${DATA.bno});
+	
+	$('#wbtn').click(function(){
+		$('#frm').attr('action', '/moa/review/qnaWrite.moa');
 		$('#frm').submit();
 	});
+	
+	$('#ebtn').click(function(){
+		$('#frm').attr('action', '/moa/review/qnaEdit.moa');
+		$('#frm').submit();
+	});
+	
+	$('#dbtn').click(function(){
+		$('#frm').attr('action', '/moa/review/qnaDel.moa');
+		$('#frm').submit();
+	});
+	
 });
 </script>
 
 <body>
 
-<form method="GET" action="/moa/review/qnaList.moa" id="frm" name="frm">
+<form method="post" action="/moa/review/qnaList.moa" id="frm" name="frm">
 		<input type="hidden" name="nowPage" id="nowPage">
 		<input type="hidden" name="bno" id="bno">
 </form>
@@ -59,7 +74,7 @@ $(document).ready(function() {
 								</thead>
 								<tbody class="w3-margin-top">
 									<tr>
-										<th scope="row">${SID}님의 문의글</th>
+										<th scope="row">${SID}님의 문의내용</th>
 										<td colspan=2>${DATA.body}</td>
 										<td>${DATA.sdate}</td>
 									</tr>
@@ -70,7 +85,9 @@ $(document).ready(function() {
 									</tr>
 								</tbody>
 							</table>
-							
+								<button class="btn btn-primary" id="wbtn">글작성</button>
+								<button class="btn btn-primary" id="ebtn">수정</button>
+								<button class="btn btn-primary" id="dbtn">삭제</button>
 						</div>
 					</div>
 					
