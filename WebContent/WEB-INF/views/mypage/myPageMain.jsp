@@ -14,6 +14,7 @@
 <script>
 	$(document).ready(function() {
 	});
+	
 </script>
 
 <body>
@@ -36,14 +37,14 @@
 					<!-- Content Row-->
 					<!-- Sidebar Column-->
 					<div class="row ">
-						
-							<jsp:include page="../a_nav/member/SideBar.jsp">
-								<jsp:param name="" value="" />
-							</jsp:include>
 
-						
+						<jsp:include page="../a_nav/member/SideBar.jsp">
+							<jsp:param name="" value="" />
+						</jsp:include>
+
+
 						<!-- Content Column-->
-						
+
 						<fieldset disabled="" style="margin-left: 500px; width: 200px;">
 							<label class="form-label" for="disabledInput">회원님의 잔여 포인트</label>
 							<input class="form-control" id="disabledInput" type="text"

@@ -30,7 +30,7 @@
                 <li class="user-li"><a class="user-a" href="/moa/member/join.moa">회원가입</a></li>
                 <li class="user-li"><a class="user-a" href="/moa/mypage/myPageMain.moa">마이페이지</a></li>
                 <li class="user-li"><a class="user-a" href="/moa/board/allboardlist.moa">고객센터</a></li>
-                <li class="user-li"><a class="user-a" href="#">이벤트</a></li>
+                <li class="user-li"><a class="user-a" href="/moa/subpage/eventpage.moa">이벤트</a></li>
             </ul>
         </div>
     </div>

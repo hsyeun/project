@@ -1,0 +1,58 @@
+--컬럼추가
+ALTER TABLE EXPLACE
+ADD EXPDIR varchar2(50);
+
+ALTER TABLE EXPLACE
+ADD EXPIMGNAME varchar2(50);
+
+-- EXPDIR 이미지 경로 데이터입력
+update EXPLACE set EXPDIR = '/moa/img/place/' where expno >= 1001;
+
+-- EXPDIR 이미지 이름 데이터입력
+update EXPLACE set expimgname = 'place-01.png' where expno = 1001;
+
+update EXPLACE set expimgname = 'place-02.png' where expno = 1002;
+
+update EXPLACE set expimgname = 'place-03.png' where expno = 1003;
+
+update EXPLACE set expimgname = 'place-04.png' where expno = 1004;
+
+update EXPLACE set expimgname = 'place-04.png' where expno = 1004;
+
+update EXPLACE set expimgname = 'place-05.png' where expno = 1005;
+
+update EXPLACE set expimgname = 'place-06.png' where expno = 1006;
+
+update EXPLACE set expimgname = 'place-07.png' where expno = 1007;
+
+update EXPLACE set expimgname = 'place-08.png' where expno = 1008;
+
+update EXPLACE set expimgname = 'place-09.png' where expno = 1009;
+
+update EXPLACE set expimgname = 'place-10.png' where expno = 1010;
+
+update EXPLACE set expimgname = 'place-11.png' where expno = 1011;
+
+update EXPLACE set expimgname = 'place-12.png' where expno = 1012;
+
+update EXPLACE set expimgname = 'place-13.png' where expno = 1013;
+
+update EXPLACE set expimgname = 'place-14.png' where expno = 1014;
+
+update EXPLACE set expimgname = 'place-15.png' where expno = 1015;
+
+update EXPLACE set expimgname = 'place-16.png' where expno = 1016;
+
+update EXPLACE set expimgname = 'place-17.png' where expno = 1017;
+
+update EXPLACE set expimgname = 'place-18.png' where expno = 1018;
+
+update EXPLACE set expimgname = 'place-19.png' where expno = 1019;
+
+update EXPLACE set expimgname = 'place-20.png' where expno = 1020;
+
+update EXPLACE set expimgname = 'place-21.png' where expno = 1021;
+
+update EXPLACE set expimgname = 'place-22.png' where expno = 1022;
+
+update EXPLACE set expimgname = 'place-23.png' where expno = 1023;
