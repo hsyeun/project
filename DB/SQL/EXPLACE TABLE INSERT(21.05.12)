@@ -1,3 +1,4 @@
+--우병환
 --컬럼추가
 ALTER TABLE EXPLACE
 ADD EXPDIR varchar2(50);
@@ -56,3 +57,5 @@ update EXPLACE set expimgname = 'place-21.png' where expno = 1021;
 update EXPLACE set expimgname = 'place-22.png' where expno = 1022;
 
 update EXPLACE set expimgname = 'place-23.png' where expno = 1023;
+
+commit;
