@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mono.moa.controller.Controller;
 
-public class sang implements Controller {
+public class Jun implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "exhibit/sang";
+		String view = "exhibit/jun";
 		return view;
 	}
 
