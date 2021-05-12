@@ -153,4 +153,10 @@ modify imgname constraint IMG_IMGNAME_NN not null;
 alter table image
 modify isshow constraint IMG_SHOW_NN not null;
 
+
+--조회수 컬럼 추가
+alter table exinfo add exiclick number default 0;
+
+
+
 commit;
