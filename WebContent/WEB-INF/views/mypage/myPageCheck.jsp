@@ -36,16 +36,14 @@
                 <!-- Content Row-->
                 <div class="row">
                     <!-- Sidebar Column-->
-                    <div class="col-lg-3 mb-4">
                     
                         <jsp:include page="../a_nav/member/SideBar.jsp">
 								<jsp:param name="" value=""/>
 							</jsp:include>
                    
-					</div>
                     <!-- Content Column-->
                     <div class="col-lg-9 mb-4">
-                        <h3>구매 확인/취소</h3>
+                        <h3>구매 확인/취소 > </h3>
 			<table class="table table-hover w3-center" border="1" summary="게시판 목록">
 				<thead class="w3-text-center">
 					<tr>

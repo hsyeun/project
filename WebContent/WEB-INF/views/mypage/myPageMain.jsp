@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
-<link rel="stylesheet" type="text/css" href="/moa/css/woo/css/user.css">
+<link rel="stylesheet" type="text/css" href="/moa/css/user2.css">
 
 <head>
 <jsp:include page="../a_nav/head.jsp">
@@ -36,14 +36,14 @@
 					<!-- Content Row-->
 					<!-- Sidebar Column-->
 					<div class="row ">
-						<div class="col-lg-3 mb-4">
-
+						
 							<jsp:include page="../a_nav/member/SideBar.jsp">
 								<jsp:param name="" value="" />
 							</jsp:include>
 
-						</div>
+						
 						<!-- Content Column-->
+						
 						<fieldset disabled="" style="margin-left: 500px; width: 200px;">
 							<label class="form-label" for="disabledInput">회원님의 잔여 포인트</label>
 							<input class="form-control" id="disabledInput" type="text"

@@ -36,16 +36,14 @@
                 <!-- Content Row-->
                 <div class="row">
                     <!-- Sidebar Column-->
-                    <div class="col-lg-3 mb-4">
                     
                         <jsp:include page="../a_nav/member/SideBar.jsp">
 								<jsp:param name="" value=""/>
 							</jsp:include>
                    
-					</div>
                     <!-- Content Column-->
                     <div class="col-lg-9 mb-4">
-                        <h2 class="w3-margin-bottom" ">찜목록</h2>
+                        <h2 class="w3-margin-bottom" ">찜목록 > </h2>
 		<div class="row d-flex"">
 
 			<div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">

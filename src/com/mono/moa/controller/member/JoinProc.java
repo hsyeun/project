@@ -6,9 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mono.moa.controller.Controller;
-import com.mono.moa.dao.MemberDao;
-import com.mono.moa.vo.MemberVO;
+import com.mono.moa.controller.*;
+import com.mono.moa.dao.*;
+import com.mono.moa.vo.*;
 
 public class JoinProc implements Controller {
 
@@ -25,13 +25,15 @@ public class JoinProc implements Controller {
 		mVO.setBirth(req.getParameter("birth"));
 		
 		MemberDao mDao = new MemberDao();
+		PointDao pDao = new PointDao();
 		int cnt = 0;
 		cnt = mDao.addMember(mVO);
 
 		String view = "/moa/main.moa";
 		req.setAttribute("isRedirect", true);
 		if(cnt==1) {
-			req.getSession().setAttribute("SID", mVO.getId());	
+			req.getSession().setAttribute("SID", mVO.getId());
+			cnt = pDao.getPoint(mVO.getId());
 		} else {
 			view = "/moa/member/join.moa";
 		}

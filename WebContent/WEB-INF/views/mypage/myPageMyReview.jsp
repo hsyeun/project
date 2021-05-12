@@ -35,13 +35,11 @@
 					<!-- Content Row-->
 					<div class="row">
 						<!-- Sidebar Column-->
-						<div class="col-lg-3 mb-4">
 
 							<jsp:include page="../a_nav/member/SideBar.jsp">
 								<jsp:param name="" value="" />
 							</jsp:include>
 
-						</div>
 						<!-- Content Column-->
 						<div class="col-lg-9 mb-4">
 							<h3 style="">나의 리뷰</h3>

@@ -12,7 +12,7 @@ public class MyPage implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "member/myPage";
+		String view = "mypage/myPageMain.moa";
 		if(req.getSession().getAttribute("SID") == null) {
 			req.setAttribute("isRedirect", true);
 			view = "/moa/main.moa";
