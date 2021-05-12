@@ -95,11 +95,47 @@
 	컨트롤러	:	com.mono.moa.controller.member.MyInfoDelProc
 	뷰			:	/WEB-INF/views/main.jsp
 
-14. 나의 1:1문의 폼보기
-	요청내용	:	http://localhost/moa/review/qna.moa
+14. 나의 1:1문의 리스트 폼보기
+	요청내용	:	http://localhost/moa/review/qnaList.moa
 	파라미터	:	무
-	컨트롤러	:	com.mono.moa.controller.review.Qna
-	뷰			:	/WEB-INF/views/review/qna.jsp
+	컨트롤러	:	com.mono.moa.controller.review.QnaList
+	뷰			:	/WEB-INF/views/review/qnaList.jsp
+	
+15. 나의 1:1문의 리스트 상세보기
+	요청내용	:	http://localhost/moa/review/qnaListDetal.moa
+	파라미터	:	무
+	컨트롤러	:	com.mono.moa.controller.review.QnaListDetal
+	뷰			:	/WEB-INF/views/review/qnaListDetal.jsp
+	
+16. 나의 1:1문의 작성 폼보기
+	요청내용	:	http://localhost/moa/review/qnaWrite.moa
+	파라미터	:	무
+	컨트롤러	:	com.mono.moa.controller.review.QnaWrite
+	뷰			:	/WEB-INF/views/review/qnaWrite.jsp
+	
+17. 나의 1:1문의 작성 처리
+	요청내용	:	http://localhost/moa/review/qnaWriteProc.moa
+	파라미터	:	title, body
+	컨트롤러	:	com.mono.moa.controller.review.QnaWriteProc
+	뷰			:	/WEB-INF/views/review/qnaList.jsp
+	
+18. 나의 1:1문의 수정 폼보기
+	요청내용	:	http://localhost/moa/review/qnaEdit.moa
+	파라미터	:	bmno
+	컨트롤러	:	com.mono.moa.controller.review.QnaEdit
+	뷰			:	/WEB-INF/views/review/qnaWriteEdit.jsp
+	
+19. 나의 1:1문의 수정 처리
+	요청내용	:	http://localhost/moa/review/qnaEditProc.moa
+	파라미터	:	bmno
+	컨트롤러	:	com.mono.moa.controller.review.QnaEditProc
+	뷰			:	/WEB-INF/views/review/qnaList.jsp
+
+20. 나의 1:1문의 삭제
+	요청내용	:	http://localhost/moa/review/qnaDel.moa
+	파라미터	:	bno
+	컨트롤러	:	com.mono.moa.controller.review.QnaDel
+	뷰			:	/WEB-INF/views/review/qnaList.jsp		
 
 #####################진                석##########################################
 
