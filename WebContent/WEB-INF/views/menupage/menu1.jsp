@@ -6,6 +6,26 @@
 		<jsp:param name="" value="" />
 	</jsp:include>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('li').click(function(){
+			var spage = $(this).html();
+			
+			switch(spage){
+			case '&laquo;':
+				$('#nowPage').val('${PAGE.startPage - 1}');
+				break;
+			case '&raquo;':
+				$('#nowPage').val('${PAGE.endPage + 1}');
+				break;
+			default:
+				$('#nowPage').val(spage);
+			}
+			$('#frm').attr('action', '/moa/menupage/menu1.moa');
+			$('#frm').submit();
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -15,116 +35,72 @@
 	</jsp:include>
 
 <!-- 메뉴별 페이지 -->
+
+<form method="POST" action="/moa/menupage/menu1.moa" id="frm" name="frm">
+	<input type="hidden" name="nowPage" id="nowPage">
+</form>
+
+
 <section class="py-5 bg-light inGnbPage">
     <div class="container menu-h">
         <h2 class="mb-4">일반 전시</h2>
         <div class="row">
+                
+<c:forEach var="data" items="${LIST}">
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
+                    <a href="#!"><img class="card-img-top" src="${data.idir}${data.imgname}" alt="poster"></a>
                     <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project One</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                        <h4 class="card-title"><a href="#!">${data.exiname}</a></h4>
+                        <p class="card-text">작가: ${data.exiperson}</p>
+                        <p class="card-text">시작날짜: ${data.startdate}</p>
+                        <p class="card-text">종료날짜: ${data.enddate}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Two</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Three</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Four</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Five</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Six</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Four</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Five</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="#!"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="#!">Project Six</a></h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-                    </div>
-                </div>
-            </div>
+</c:forEach>
+
         </div>
         
+        <!-- 페이징 처리 -->
         <div class="user-paging">
 		  <ul class="pagination user-paging-btn"">
+		  
+		  <c:if test="${PAGE.startPage == 1}">
 		    <li class="page-item disabled">
-		      <a class="page-link" href="#">&laquo;</a>
+		      <a class="page-link pageLink">&laquo;</a>
 		    </li>
+		  </c:if>
+		  <c:if test="${PAGE.startPage != 1}">
+		    <li class="page-item disabled">
+		      <a class="page-link pageLink">&laquo;</a>
+		    </li>
+		  </c:if>
+
+<c:forEach var="page" begin="${PAGE.startPage}" end="${PAGE.endPage}">
+		  <c:if test="${PAGE.nowPage == page}">
 		    <li class="page-item active">
-		      <a class="page-link" href="#">1</a>
+		      <a class="page-link pageLink">${page}</a>
 		    </li>
+		  </c:if>
+		  <c:if test="${PAGE.nowPage != page}">
 		    <li class="page-item">
-		      <a class="page-link" href="#">2</a>
+		      <a class="page-link pageLink">${page}</a>
 		    </li>
+		  </c:if>
+</c:forEach>
+		  
+		  <c:if test="${PAGE.endPage == PAGE.totalPage}">
 		    <li class="page-item">
-		      <a class="page-link" href="#">3</a>
+		      <a class="page-link pageLink">&raquo;</a>
 		    </li>
+		  </c:if>
+		  <c:if test="${PAGE.endPage != PAGE.totalPage}">
 		    <li class="page-item">
-		      <a class="page-link" href="#">4</a>
+		      <a class="page-link pageLink">&raquo;</a>
 		    </li>
-		    <li class="page-item">
-		      <a class="page-link" href="#">5</a>
-		    </li>
-		    <li class="page-item">
-		      <a class="page-link" href="#">&raquo;</a>
-		    </li>
+		  </c:if>
+		  
 		  </ul>
 		</div>
     </div>

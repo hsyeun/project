@@ -45,3 +45,6 @@
 
 <!-- 검색페이지 -->
 <link href="/moa/css/search.css" rel="stylesheet"> 
+
+<!-- 마이페이지 -->
+<link rel="stylesheet" type="text/css" href="/moa/css/user2.css">

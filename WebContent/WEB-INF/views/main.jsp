@@ -53,7 +53,7 @@
 <!-- 전시 목록 -->
 <section class="py-5 bg-light">
     <div class="container">
-        <!-- <h2 class="mb-4">Portfolio Heading</h2> -->
+        <h2 class="mb-4">최근 전시회</h2>
         <div class="row">
             
 <!-- 최근전시정보리스트 -->

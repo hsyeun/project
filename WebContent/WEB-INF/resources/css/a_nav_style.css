@@ -150,6 +150,10 @@ nav .logo:hover{
 	left:50%; margin-left:-115px;
 }
 
+.pageLink{
+	cursor:pointer!important;
+}
+
 
 
 @media (min-width: 576px) {

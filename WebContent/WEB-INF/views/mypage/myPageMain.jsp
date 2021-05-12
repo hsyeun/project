@@ -11,12 +11,6 @@
 </jsp:include>
 </head>
 
-<script>
-	$(document).ready(function() {
-	});
-	
-</script>
-
 <body>
 	<!-- Navigator -->
 	<jsp:include page="../a_nav/nav.jsp">

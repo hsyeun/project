@@ -21,7 +21,7 @@ public class ExinfoDao {
 		eSQL = new ExhibitSQL();
 	}
 	
-	// 총게시물 갯수 조회 전담 처리함수
+	// 총게시물 개수 조회 전담 처리함수
 	public int getTotal() {
 		int cnt = 0;
 		con = db.getCon();

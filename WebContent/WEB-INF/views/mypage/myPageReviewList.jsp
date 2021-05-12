@@ -59,6 +59,7 @@
 		name="frm">
 		<input type="hidden" name="nowPage" id="nowPage"> <input
 			type="hidden" name="bno" id="bno">
+	</form>
 		<!-- Navigator -->
 		<jsp:include page="../a_nav/nav.jsp">
 			<jsp:param name="active" value="마이페이지" />
