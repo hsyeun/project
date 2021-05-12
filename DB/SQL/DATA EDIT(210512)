@@ -146,7 +146,7 @@ VALUES(
         '가정의 달 기념전 : 일상은 아름다워', 'moa/img/exh_img_title', '/beautiful-life.jpg', 10022, 'Y'
 );
 
---nn 제약조건 추가
+--이미지 테이블에 nn 제약조건 추가
 alter table image
 modify imgname constraint IMG_IMGNAME_NN not null;
 
@@ -154,9 +154,17 @@ alter table image
 modify isshow constraint IMG_SHOW_NN not null;
 
 
---조회수 컬럼 추가
+--전시정보 테이블에 조회수 컬럼 추가
 alter table exinfo add exiclick number default 0;
 
+
+--이미지 테이블 데이터 내용 수정
+update
+    image
+set
+    idir = '/' || idir || '/',
+    imgname = substr(imgname, 2)
+;
 
 
 commit;

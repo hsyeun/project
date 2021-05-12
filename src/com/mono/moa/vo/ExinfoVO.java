@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ExinfoVO {
 	private int exino, exiecno, exiprice, exiexpno;
-	private String exiperson, exiname, exiage, startdate, enddate; 
+	private String exiperson, exiname, exiage, startdate, enddate, idir, imgname; 
 	private Date exisdate, exiedate;
 	public int getExino() {
 		return exino;
@@ -77,6 +77,18 @@ public class ExinfoVO {
 	}
 	public void setEnddate(String enddate) {
 		this.enddate = enddate;
+	}
+	public String getIdir() {
+		return idir;
+	}
+	public void setIdir(String idir) {
+		this.idir = idir;
+	}
+	public String getImgname() {
+		return imgname;
+	}
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
 	}
 	@Override
 	public String toString() {

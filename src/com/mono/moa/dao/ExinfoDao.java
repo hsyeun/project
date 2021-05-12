@@ -142,6 +142,8 @@ public class ExinfoDao {
 					vo.setExiprice(rs.getInt("exiprice"));
 					vo.setExiage(rs.getString("exiage"));
 					vo.setExiexpno(rs.getInt("exiexpno"));
+					vo.setIdir(rs.getString("idir"));
+					vo.setImgname(rs.getString("imgname"));
 					vo.setStartdate(vo.setSdate(vo.getExisdate()));
 					vo.setEnddate(vo.setSdate(vo.getExiedate()));
 					

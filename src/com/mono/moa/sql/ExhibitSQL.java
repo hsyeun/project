@@ -42,19 +42,21 @@ public class ExhibitSQL {
 			break;
 		case SEL_LATEST_INFO:
 			buff.append("SELECT ");
-			buff.append("	exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno ");
+			buff.append("	exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno, idir, imgname ");
 			buff.append("FROM ");
 			buff.append("	( ");
 			buff.append("		SELECT ");
-			buff.append("    		ROWNUM rno, exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno ");
+			buff.append("    		ROWNUM rno, exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno, idir, imgname ");
 			buff.append("		FROM ");
 			buff.append("    		( ");
 			buff.append("				SELECT ");
-			buff.append("		    	    exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno ");
+			buff.append("		    	    exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno, idir, imgname ");
 			buff.append("		    	FROM ");
-			buff.append("					exinfo ");
+			buff.append("					exinfo, image ");
 			buff.append("				WHERE ");
-			buff.append("					isshow = 'Y' ");
+			buff.append("					imgno = exino ");
+			buff.append("					AND exinfo.isshow = 'Y' ");
+			buff.append("					AND image.isshow = 'Y' ");
 			buff.append("				ORDER BY ");
 			buff.append("					exisdate DESC ");
 			buff.append("			) ");
