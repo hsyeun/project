@@ -309,4 +309,4 @@ ALTER TABLE point DROP CONSTRAINT PNT_RETENP_NN;
 ---EVT 테이블 컬럼명 변경--
 ALTER TABLE event RENAME COLUMN evtexno TO evtexino;
 --------------------------------------
-CCOMMIT;
+COMMIT;
