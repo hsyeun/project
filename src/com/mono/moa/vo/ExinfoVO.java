@@ -4,7 +4,7 @@ import java.text.*;
 import java.util.*;
 
 public class ExinfoVO {
-	private int exino, exiecno, exiprice, exiexpno;
+	private int exino, exiecno, exiprice, exiexpno, exiclick;
 	private String exiperson, exiname, exiage, startdate, enddate, idir, imgname; 
 	private Date exisdate, exiedate;
 	public int getExino() {
@@ -30,6 +30,12 @@ public class ExinfoVO {
 	}
 	public void setExiexpno(int exiexpno) {
 		this.exiexpno = exiexpno;
+	}
+	public int getExiclick() {
+		return exiclick;
+	}
+	public void setExiclick(int exiclick) {
+		this.exiclick = exiclick;
 	}
 	public String getExiperson() {
 		return exiperson;
@@ -93,7 +99,9 @@ public class ExinfoVO {
 	@Override
 	public String toString() {
 		return "exino=" + exino + ", exiecno=" + exiecno + ", exiprice=" + exiprice + ", exiexpno=" + exiexpno
-				+ ", exiperson=" + exiperson + ", exiname=" + exiname + ", exiage=" + exiage + ", exisdate=" + exisdate
-				+ ", exiedate=" + exiedate;
+				+ ", exiclick=" + exiclick + ", exiperson=" + exiperson + ", exiname=" + exiname + ", exiage=" + exiage
+				+ ", startdate=" + startdate + ", enddate=" + enddate + ", idir=" + idir + ", imgname=" + imgname
+				+ ", exisdate=" + exisdate + ", exiedate=" + exiedate;
 	}
+
 }
