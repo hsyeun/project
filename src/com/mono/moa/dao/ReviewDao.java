@@ -219,6 +219,7 @@ import com.mono.moa.vo.ReviewVO;
 			}
 			return cnt;
 		}
+
 		
 		/* admin -----------------------------------------------------*/
 		
@@ -338,6 +339,46 @@ import com.mono.moa.vo.ReviewVO;
 			int cnt = 0 ;
 			con = db.getCon();
 			String sql = rSQL.getSQL(rSQL.EDIT_ADMIN_REPLY);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setInt(1, upno);
+				cnt = pstmt.executeUpdate();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				db.close(pstmt);
+				db.close(con);
+			}
+			return cnt;
+		}
+		
+		
+		public int EditAdminQna(int upno, String reply) {
+			
+			int cnt = 0 ;
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.EDIT_ADMIN_QNA);
+			pstmt = db.getPSTMT(con, sql);
+			
+			try {
+				pstmt.setString(1, reply);	
+				pstmt.setInt(2, upno);						
+				cnt = pstmt.executeUpdate();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				db.close(pstmt);
+				db.close(con);
+			}
+			return cnt;
+		}	
+		
+		public int delAdminReply(int upno) {
+			
+			int cnt = 0 ;
+			con = db.getCon();
+			String sql = rSQL.getSQL(rSQL.DEL_ADMIN_REPLY);
 			pstmt = db.getPSTMT(con, sql);
 			
 			try {

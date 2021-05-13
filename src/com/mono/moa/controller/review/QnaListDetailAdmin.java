@@ -16,6 +16,7 @@ public class QnaListDetailAdmin implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String view = "review/qnaListDetailAdmin";
 		
 		String sid= (String) req.getSession().getAttribute("SID");
@@ -34,11 +35,12 @@ public class QnaListDetailAdmin implements Controller {
 		if(rVO.getReply().equals("Y")) {
 			uVO = rDao.getUpnoInfo(bno);
 		}
-	
-		req.setAttribute("DATA", rVO);
-		req.setAttribute("DATA1", uVO);
-		req.setAttribute("DATA2", rDao.getAdminMnoId(rVO.getMno()));
-		req.setAttribute("PAGE", nowPage);
+		
+		rVO.setId(rDao.getAdminMnoId(rVO.getMno()));
+		req.setAttribute("DATA1", rVO);
+		req.setAttribute("DATA2", uVO);
+		
+		req.setAttribute("nowPage", nowPage);
 		return view;
 	}
 

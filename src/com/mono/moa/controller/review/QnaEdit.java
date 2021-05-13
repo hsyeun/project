@@ -29,7 +29,7 @@ public class QnaEdit implements Controller {
 		ReviewDao rDao = new ReviewDao();
 		ReviewVO rVO = rDao.getBnoInfo(bno);
 		req.setAttribute("DATA", rVO);
-		req.setAttribute("PAGE", nowPage);
+		req.setAttribute("nowPage", nowPage);
 		
 		return view;
 	}

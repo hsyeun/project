@@ -12,8 +12,13 @@
 <script>
 $(document).ready(function() {
 	
-	$('#nowPage').val('${PAGE}');
+	$('#nowPage').val('${nowPage}');
 	$('#bno').val('${DATA.bno}');
+	
+	$('#lbtn').click(function(){
+		$('#frm').attr('action', '/moa/review/qnaList.moa');
+		$('#frm').submit();
+	});
 	
 	$('#wbtn').click(function(){
 		$('#frm').attr('action', '/moa/review/qnaWrite.moa');
@@ -93,6 +98,7 @@ $(document).ready(function() {
 									</tr>
 								</tbody>
 							</table>
+								<button class="btn btn-primary w3-margin-bottom" id="lbtn">리스트 보기</button> <br>
 								<button class="btn btn-primary" id="wbtn">글작성</button>
 								<button class="btn btn-primary" id="ebtn">수정</button>
 								<button class="btn btn-primary" id="dbtn">삭제</button>

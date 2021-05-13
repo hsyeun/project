@@ -21,6 +21,8 @@ public class ReviewSQL {
 	public final int SEL_ADMIN_MNO_ID			= 	5003;
 	public final int ADD_ADMIN_QNA				= 	5004;
 	public final int EDIT_ADMIN_REPLY			= 	5005;
+	public final int EDIT_ADMIN_QNA				= 	5006;
+	public final int DEL_ADMIN_REPLY			= 	5007;
 
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -136,6 +138,7 @@ public class ReviewSQL {
 			buff.append(" 	                FROM ");
 			buff.append(" 	                    iqboard");
 			buff.append(" 	                   WHERE iqmno != 1013");			
+			buff.append(" 	                   AND isShow = 'Y' ");			
 			buff.append(" 		               START WITH ");
 			buff.append(" 		                    iqupno IS NULL ");
 			buff.append(" 		                CONNECT BY ");
@@ -173,6 +176,22 @@ public class ReviewSQL {
 			buff.append("    reply='Y' ");
 			buff.append("WHERE ");
 			buff.append("    iqbno = ? ");
+			break;
+
+		case EDIT_ADMIN_QNA:
+			buff.append("UPDATE iqboard ");
+			buff.append("SET ");
+			buff.append("    iqbody = ? ");
+			buff.append("WHERE ");
+			buff.append("    iqupno = ? ");
+			break;
+			
+		case DEL_ADMIN_REPLY:
+			buff.append("UPDATE iqboard ");
+			buff.append("SET ");
+			buff.append("    isShow = 'N' ");
+			buff.append("WHERE ");
+			buff.append("    iqupno = ? ");
 			break;
 		}
 			return buff.toString();

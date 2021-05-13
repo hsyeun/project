@@ -12,12 +12,11 @@ import com.mono.moa.dao.ReviewDao;
 import com.mono.moa.util.PageUtil;
 import com.mono.moa.vo.ReviewVO;
 
-public class QnaList implements Controller {
+public class QnaEditProcAdmin implements Controller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		String view = "review/qnaList";
+		String view = "review/qnaListAdmin";
 		
 		String sid= (String) req.getSession().getAttribute("SID");
 		if(sid == null) {
@@ -35,13 +34,19 @@ public class QnaList implements Controller {
 		
 		ReviewDao rDao = new ReviewDao();
 		
-		int total = rDao.getTotalCnt(sid);
+		int upno = Integer.parseInt(req.getParameter("bno"));
+		String reply = req.getParameter("reply");
+		// reply = reply.replaceAll("\r\n", "");
+		
+		rDao.EditAdminQna(upno, reply);
+		
+		int total = rDao.getAdminTotalCnt();
 		PageUtil page = new PageUtil(nowPage, total, 1, 3);
 		
-		ArrayList<ReviewVO> list = rDao.getPageList(sid, page);
+		ArrayList<ReviewVO> list = rDao.getAdminPageList(page);
 		req.setAttribute("LIST", list);
 		req.setAttribute("PAGE", page);
-		
+
 		return view;
 	}
 

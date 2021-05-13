@@ -11,6 +11,13 @@
 
 <script>
 $(document).ready(function(){
+	$('#nowPage').val('${nowPage}');
+	
+	$('#lbtn').click(function(){
+		$('#frm2').attr('action', '/moa/review/qnaList.moa');
+		$('#frm2').submit();
+	});
+	
 	$('#sbtn').click(function(){
 		
 		if(!$('#title1').val()){
@@ -25,7 +32,6 @@ $(document).ready(function(){
 		$('#bno').val(${DATA.bno});
 		$('#title').val($('#title1').val());
 		$('#body').val($('#body1').val());
-		$('#nowPage').val('${PAGE}');
 		$('#frm2').submit();	
 	});
 });
@@ -82,6 +88,7 @@ $(document).ready(function(){
 								</div>
 								<br>
 							</form>
+							<button class="btn btn-primary" id="lbtn">리스트 보기</button>
 							<button class="btn btn-primary" id="sbtn">저장</button>
 						
 

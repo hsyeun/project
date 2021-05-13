@@ -10,13 +10,9 @@
 <script>
 	$(document).ready(function() {		
 		
-		 if ('${MSG}' == 'fail') {
-			$('.modal').css('display', 'block');
-			$('.modalbtn').click(function(){
-			$('.modal').css('display', 'none');	
-			});
-		}
-		
+		if( '${MSG}' == 'false') {
+			 alert('아이디와 비번을 확인하세요');
+		 }
 		
 		$('#sbtn').click(function(){
 			$('#frm').submit();
@@ -76,22 +72,7 @@
 		</div>
 	</section>
 
-	<div class="modal" tabindex="-1">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">로그인 실패</h5>
-		        <button type="button" class="btn-close modalbtn" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      <div class="modal-body">
-		        <p>아이디와 패스워드를 확인하세요</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary modalbtn" data-bs-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+	
 
 <!-- Footer-->
 <footer class="py-5 bg-light">

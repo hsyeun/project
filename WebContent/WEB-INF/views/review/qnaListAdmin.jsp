@@ -50,13 +50,7 @@ $(document).ready(function() {
 		$('#frm').submit();
 	});
 	
-	$('#wbtn').click(function(){
-		var bno = $(this).attr('id');
-		bno = bno.substring(1);
-		$('#bno').val(bno);
-		$('#frm').attr('action', '/moa/review/qnaWriteAdmin.moa');
-		$('#frm').submit();
-	});
+	
 });
 </script>
 
@@ -103,16 +97,6 @@ $(document).ready(function() {
 								</thead>
 								
 								<tbody>
-<c:if test="${data.id eq 'admin'}">					
-	<c:forEach var="data" items="${LIST}" varStatus="idx">
-											<tr class="trow" id="b${data.bno}">
-												<th scope="row">${data.bno}</th>
-												<td>${data.title}</td>
-												<td>${data.reply.equals('Y') ? '답변완료' : '미답변'}</td>
-												<td>${data.sdate}</td>
-											</tr>
-	</c:forEach>								
-</c:if>
 															
 <c:forEach var="data" items="${LIST}" varStatus="idx">
 										<tr class="trow" id="b${data.bno}">

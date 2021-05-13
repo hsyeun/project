@@ -32,7 +32,7 @@ public class LoginProc implements Controller {
 			req.setAttribute("isRedirect", true);
 		} else {
 			view = "/member/login";
-			req.setAttribute("MSG", "fail");
+			req.setAttribute("MSG", "false");
 		}
 		return view;	
 	}

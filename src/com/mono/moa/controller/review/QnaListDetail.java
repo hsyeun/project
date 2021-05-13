@@ -37,7 +37,7 @@ public class QnaListDetail implements Controller {
 		
 		req.setAttribute("DATA1", uVO);
 		req.setAttribute("DATA", rVO);
-		req.setAttribute("PAGE", nowPage);
+		req.setAttribute("nowPage", nowPage);
 		
 		return view;
 	}

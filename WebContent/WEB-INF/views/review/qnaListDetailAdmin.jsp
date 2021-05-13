@@ -12,21 +12,32 @@
 <script>
 $(document).ready(function() {
 	
+	$('#nowPage').val('${nowPage}');
+	$('#bno').val('${DATA1.bno}');
+	
+	if(!($('#body').val() == " ")){
+		$('.tmp1').css('display', 'none');
+	} else {
+		$('.tmp2').css('display', 'none');
+	}
+	
 	$('#wbtn').click(function(){
-		$('#nowPage').val('${PAGE}');
-		$('#bno').val('${DATA.bno}');
 		var stitle = $('#body').val();
 		$('#reply').val(stitle);
 		$('#frm').submit();
 	});
 	
 	$('#ebtn').click(function(){
-		
+		$('#reply').val($('#body').val());
+		$('#frm').attr('action', '/moa/review/qnaEditProcAdmin.moa');
+		$('#frm').submit();
 	});
 	
 	$('#dbtn').click(function(){
-	
+		$('#frm').attr('action', '/moa/review/qnaDelAdmin.moa');
+		$('#frm').submit();
 	});
+
 	
 });
 </script>
@@ -66,31 +77,32 @@ $(document).ready(function() {
 							<table class="table">
 								<thead>
 									<tr>
-										<th scope="col">글번호(${DATA.bno})</th>
-										<th scope="col" colspan=2>제목 : ${DATA.title}</th>
+										<th scope="col">글번호(${DATA1.bno})</th>
+										<th scope="col" colspan=2>제목 : ${DATA1.title}</th>
 										<th scope="col">등록일</th>
 									</tr>
 								</thead>
 								<tbody class="w3-margin-top">
 									<tr>
-										<th scope="row">ID : ${DATA2}</th>
-										<td colspan=2>${DATA.body}</td>
-										<td>${DATA.sdate}</td>
+										<th scope="row">ID : ${DATA1.id}</th>
+										<td colspan=2>${DATA1.body}</td>
+										<td>${DATA1.sdate}</td>
 									</tr>
 									<tr>
 										<th scope="row">관리자 답변</th>
-										<td colspan=2>${DATA1.body}</td>
-										<td>${DATA1.sdate}</td>
+										<td colspan=2></td>
+										<td>${DATA2.sdate}</td>
 									</tr>
 								</tbody>
 							</table>
 							
 							<textarea name="body" id="body"  rows="7"
-							class="w3-col w3-input w3-round w3-border noresize" placeholder="글내용 입력!">${DATA.body}</textarea><br>
+							class="w3-col w3-input w3-round w3-border noresize w3-margin-bottom" 
+							> ${DATA2.body}</textarea><br>
 								
-								<button class="btn btn-primary" id="wbtn">답변등록</button>
-								<button class="btn btn-primary" id="ebtn">수정</button>
-								<button class="btn btn-primary" id="dbtn">삭제</button>
+								<button class="btn btn-primary tmp1" id="wbtn">답변등록</button>
+								<button class="btn btn-primary tmp2" id="dbtn">삭제</button>
+								<button class="btn btn-primary tmp2" id="ebtn">수정</button>
 						</div>
 					</div>
 					

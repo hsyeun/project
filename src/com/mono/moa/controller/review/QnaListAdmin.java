@@ -35,7 +35,7 @@ public class QnaListAdmin implements Controller {
 		ReviewDao rDao = new ReviewDao();
 		
 		int total = rDao.getAdminTotalCnt();
-		PageUtil page = new PageUtil(nowPage, total, 3, 3);
+		PageUtil page = new PageUtil(nowPage, total, 1, 3);
 		
 		ArrayList<ReviewVO> list = rDao.getAdminPageList(page);
 		req.setAttribute("LIST", list);
