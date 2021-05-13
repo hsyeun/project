@@ -64,7 +64,7 @@
         
         <!-- 페이징 처리 -->
         <div class="user-paging">
-		  <ul class="pagination user-paging-btn"">
+		  <ul class="pagination user-paging-btn">
 		  
 		  <c:if test="${PAGE.startPage == 1}">
 		    <li class="page-item disabled">

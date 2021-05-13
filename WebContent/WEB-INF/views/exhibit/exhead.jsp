@@ -38,14 +38,18 @@
 	                        	</h5>
 	                        </div>
                         </div>
+	                <div class="btn">
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='#' ">구매하기</button>
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='#' ">찜하기</button>
+						</div>
 	                </div>
 	             </div>
 	                    <hr />
                         <!-- button -->
                         <div class="btn">
-                        	<button type="button" class="btn btn-secondary" onclick="location.href='sang.html' ">상세 내용</button>
-                        	<button type="button" class="btn btn-secondary" onclick="location.href='jun.html' ">전시 위치</button>
-                        	<button type="button" class="btn btn-secondary" onclick="location.href='kwan.html' ">관람자 리뷰</button>
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='sang.moa' ">상세 내용</button>
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='jun.moa' ">전시 위치</button>
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='kwan.moa' ">관람자 리뷰</button>
 						</div>
                     <hr />
               

@@ -76,7 +76,7 @@
         </div>
         
         <div class="user-paging">
-		  <ul class="pagination user-paging-btn"">
+		  <ul class="pagination user-paging-btn">
 		    <li class="page-item disabled">
 		      <a class="page-link" href="#">&laquo;</a>
 		    </li>
