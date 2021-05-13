@@ -115,15 +115,15 @@
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <div class="card h-100">
                     <h4 class="card-header">공지사항</h4>
-                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
-                    <div class="card-footer"><a class="btn btn-primary" href="#!">더보기</a></div>
+                    <div class="card-body"><p class="card-text">공지사항.</p></div>
+                    <div class="card-footer"><a class="btn btn-primary" href="/moa/board/allboardlist.moa">더보기</a></div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card h-100">
                     <h4 class="card-header">이벤트</h4>
-                    <div class="card-body"><p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p></div>
-                    <div class="card-footer"><a class="btn btn-primary" href="#!">더보기</a></div>
+                    <div class="card-body"><p class="card-text">이벤트.</p></div>
+                    <div class="card-footer"><a class="btn btn-primary" href="/moa/subpage/eventpage.moa">더보기</a></div>
                 </div>
             </div>
         </div>
