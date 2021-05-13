@@ -23,15 +23,26 @@ public class QnaDel implements Controller {
 			req.setAttribute("isRedirect", true);
 			view = "/moa/main.moa";
 		}
-			
+		
+		String spage = req.getParameter("nowPage");
+		int nowPage;
+		try {
+			nowPage = Integer.parseInt(spage);
+		} catch (Exception e) {
+			nowPage = 1;
+		}
+		
 		ReviewDao rDao = new ReviewDao();
 		
-		int bno = Integer.parseInt(req.getParameter("bno"));
-		String nowPage = req.getParameter("nowPage");
+		int total = rDao.getTotalCnt(sid);
+		PageUtil page = new PageUtil(nowPage, total, 1, 3);
 		
+		ArrayList<ReviewVO> list = rDao.getPageList(sid, page);
+		req.setAttribute("LIST", list);
+		req.setAttribute("PAGE", page);
+
+		int bno = Integer.parseInt(req.getParameter("bno"));	
 		rDao.delQna(bno);
-		
-		req.setAttribute("nowPage", nowPage);
 
 		return view;
 	}

@@ -7,7 +7,7 @@
 	      <a class="list-group-item" href="/moa/mypage/myPageJim.moa">찜 목록</a>
 	      <a class="list-group-item" href="/moa/mypage/myPageReviewList.moa">리뷰 리스트</a>
 	      <a class="list-group-item" href="#">리뷰 작성</a>
-	      <a class="list-group-item" href="/moa/review/qnaList.moa">1:1 문의</a>
+	      <a class="list-group-item" href="/moa/review/qnaListAdmin.moa">1:1 문의</a>
 	      <a class="list-group-item" href="/moa/member/myInfo.moa">회원정보 보기</a>
 	      <a class="list-group-item" href="/moa/member/myInfoEdit.moa">회원정보 수정</a>
 	      <a class="list-group-item" href="/moa/member/myInfoDel.moa">회원탈퇴</a>   

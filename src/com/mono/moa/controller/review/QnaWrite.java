@@ -24,7 +24,8 @@ public class QnaWrite implements Controller {
 			view = "/moa/main.moa";
 		}
 		
-		String spage = req.getParameter("nowPage");
+		String nowPage = req.getParameter("nowPage");
+		req.setAttribute("nowPage", nowPage);
 		
 		return view;
 	}

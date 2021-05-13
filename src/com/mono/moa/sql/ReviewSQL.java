@@ -6,9 +6,21 @@ public class ReviewSQL {
 	public final int SEL_PAGE_LIST		= 	1002;
 	public final int SEL_BNO_INFO		= 	1003;
 	public final int SEL_UPNO_INFO		= 	1004;
-	public final int ADD_QNA			= 	1005;
-	public final int DEL_QNA			= 	1006;
-	public final int EDIT_INFO			= 	1007;
+	
+	public final int EDIT_INFO			= 	2001;
+	
+	public final int DEL_QNA			= 	3001;
+	
+	public final int ADD_QNA			= 	4001;
+
+	
+	/* admin ------------------------------------------------------*/
+	
+	public final int SEL_ADMIN_TOTAL_CNT		= 	5001;
+	public final int SEL_ADMIN_PAGE_LIST		= 	5002;
+	public final int SEL_ADMIN_MNO_ID			= 	5003;
+	public final int ADD_ADMIN_QNA				= 	5004;
+	public final int EDIT_ADMIN_REPLY			= 	5005;
 
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -97,6 +109,70 @@ public class ReviewSQL {
 			buff.append("	isShow = 'N' ");
 			buff.append("WHERE ");
 			buff.append("	iqbno = ? ");
+			break;
+			
+			/* admin ------------------------------------------------------*/
+			
+		case SEL_ADMIN_TOTAL_CNT:
+			buff.append("SELECT ");
+			buff.append("    count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("    iqboard ");
+			buff.append("    WHERE iqmno != 1013 ");
+			break;
+			
+			
+		case SEL_ADMIN_PAGE_LIST:
+			buff.append(" SELECT ");
+			buff.append("  rno, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, step");
+			buff.append("    FROM ");
+			buff.append("       ( ");
+			buff.append("  SELECT ");
+			buff.append("  ROWNUM rno, iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, step ");
+			buff.append(" 	        FROM ");
+			buff.append(" 	            ( ");
+			buff.append(" 	                SELECT ");
+			buff.append(" 	                    iqbno, iqtitle, iqbody, iqmno, iqupno, iqwdate, reply, level - 1 as step ");
+			buff.append(" 	                FROM ");
+			buff.append(" 	                    iqboard");
+			buff.append(" 	                   WHERE iqmno != 1013");			
+			buff.append(" 		               START WITH ");
+			buff.append(" 		                    iqupno IS NULL ");
+			buff.append(" 		                CONNECT BY ");
+			buff.append(" 		                    PRIOR iqbno = iqupno ");
+			buff.append(" 		                ORDER SIBLINGS BY ");
+			buff.append(" 		                    iqwdate DESC ");
+			buff.append(" 		            ) ");
+			buff.append(" 		    ) ");
+			buff.append(" 		WHERE ");
+			buff.append(" rno BETWEEN ? AND ? ");
+			break;
+			
+		case SEL_ADMIN_MNO_ID:
+			buff.append("SELECT ");
+			buff.append("    id ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("    WHERE mno = ? ");
+			break;
+			
+		case ADD_ADMIN_QNA:
+			buff.append("INSERT INTO ");
+			buff.append("iqboard ");
+			buff.append("    (iqbno, iqmno , iqupno, iqbody, iqtitle) ");
+			buff.append("VALUES( ");
+			buff.append("    (SELECT NVL(MAX(IQbno) + 1, 10001) FROM iqboard), ");
+			buff.append("    1013, ");
+			buff.append("    ?, ?, 'admin' ");
+			buff.append(") ");
+			break;
+			
+		case EDIT_ADMIN_REPLY:
+			buff.append("UPDATE iqboard ");
+			buff.append("SET ");
+			buff.append("    reply='Y' ");
+			buff.append("WHERE ");
+			buff.append("    iqbno = ? ");
 			break;
 		}
 			return buff.toString();
