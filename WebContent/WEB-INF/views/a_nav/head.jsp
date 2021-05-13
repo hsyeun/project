@@ -42,6 +42,7 @@
 <script src="/moa/static/js/scripts.js"></script>
 <link href="/moa/static/css/styles.css" rel="stylesheet"> 
 <link href="/moa/static/css/user.css" rel="stylesheet"> 
+<script type="text/javascript" src="/moa/js/w3color.js"></script>
 
 <!-- 검색페이지 -->
 <link href="/moa/css/search.css" rel="stylesheet"> 

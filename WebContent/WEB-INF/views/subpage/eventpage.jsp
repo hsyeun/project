@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link rel="stylesheet" type="text/css" href="/moa/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/moa/css/user2.css">
-<script type="text/javascript" src="/moa/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/moa/js/w3color.js"></script>
+  <jsp:include page="../a_nav/head.jsp">
+      <jsp:param name="" value="" />
+   </jsp:include>
 <style type="text/css">
 .hr2{
 	border: 0;
@@ -15,9 +14,6 @@
 	text-decoration: line-through;
 }
 </style>
-   <jsp:include page="../a_nav/head.jsp">
-      <jsp:param name="" value="" />
-   </jsp:include>
 </head>   
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -36,9 +32,19 @@
 			$(this).css('text-decoration','none')
 		});
 		
+		$('.w3-button.pbtn').click(function(){
+	    	 var pno =$(this).html();
+	    	 
+	    	 if(pno =='&lt;'){
+	    		 pno = '${PAGE.startPage -1}';
+	    	 }else if(pno == '&gt;'){
+	    		 pno ='${PAGE.endPage + 1}';
+	    	 }
+	    	 $('#nowPage').val(pno);
+	    	 $('#frm').submit();
+	      });
 		
-		
-		$(document).ready(function() {
+	/* 	$(document).ready(function() {
 			if(${PAGE.startPage} == 1){
 				$('#pre').removeClass('page-item');
 			}
@@ -69,26 +75,25 @@
 			});
 			
 			$('.trow').click(function(){		
-				$('#nowPage').val(${PAGE.nowPage});
+				$('#nowPage').val( '${PAGE.nowPage}');
 				
 				var bno = $(this).attr('id');
 				bno = bno.substring(1);
 				$('#bno').val(bno);
 				$('#frm').submit();
-			});
+			}); */
 	});
 </script>
 <body>
-<form method="POST" action="/moa/review/qnaListDetail.moa" id="frm" name="frm">
-		<input type="hidden" name="nowPage" id="nowPage">
-		<input type="hidden" name="bno" id="bno">
-</form>
 <!-- Navigator -->
    <jsp:include page="../a_nav/nav.jsp">
       <jsp:param name="" value="" />
    </jsp:include>
    
-   
+   <form method="POST" action="/moa/subpage/eventpage.moa" id="frm" name="frm">
+  		<input type="hidden" name="nowPage" id="nowPage" value="${PAGE.nowPage}">
+  		<input type="hidden" name="bno" id="bno">
+  </form> 
 
 	<div class="w3-content mxw900 ">
       <hr class="w3-darkgrey ">
@@ -99,18 +104,20 @@
          <hr class="hr2 w3-margin-top">
       </div>
       <div class="w3-content w3-margin w3-center">
-    
+   <c:forEach var="data" items="${LIST}">    
       <div class="w3-content inblock  w3-round w3-margin-top  w3-padding w3-text-left">
-		 <div class="w3-margin-right">
-		  <img src="../img/exh_img_title/yeon.jpg" class="img-rounded w3-round" alt="Cinque Terre" width="200" height="236"> 
-		  <h5 class="w3-margin-top w3-margin-left w3-text-grey title">부드러운 미래</h5>
-		  <p class=" w3-margin-top w3-margin-left">수연 개인전</p>            
-		  <p class=" w3-margin-left inblock won"> 20000</p>            
-		  <p class=" w3-margin-left inblock">10000</p>            
-		  <p class=" w3-margin-left w3-text-grey">2021.05.05 ~ 2021.07.15</p>            
-		</div>
+			 <div class="w3-margin-right">
+			  <img src="${data.idir}${data.imgname}" class="img-rounded w3-round" alt="Cinque Terre" width="200" height="236"> 
+			  <h5 class="w3-margin-top w3-margin-left w3-text-grey title">${data.exiname}</h5>
+			  <p class=" w3-margin-top w3-margin-left">${data.exiperson}</p>            
+			  <p class=" w3-margin-left inblock won"> ${data.exiprice}</p>            
+			  <p class=" w3-margin-left inblock">10000</p>            
+			  <p class=" w3-margin-left w3-text-grey">${data.sdate}</p>            
+			</div>
       </div>
-      <div class="w3-content inblock  w3-round w3-margin-top  w3-padding w3-text-left">
+   </c:forEach>   
+      
+<!--        <div class="w3-content inblock  w3-round w3-margin-top  w3-padding w3-text-left">
 		 <div class="w3-margin-left ">
 		  <img src="../img/exh_img_title/delight.jpg" class="img-rounded w3-round" alt="Cinque Terre" width="200" height="236"> 
 		  <h5 class="w3-margin-top w3-margin-left w3-text-grey title">서울 딜라이트 2021</h5>
@@ -128,28 +135,58 @@
 		  <p class="w3-margin-left inblock">10000</p>            
 		  <p class="w3-margin-left w3-text-grey">2021.05.15 ~ 2021.08.15</p>            
 		</div>
+      </div>  -->
       
+      
+    </div>
+  </div>
+      
+        <!-- 페이징 처리 -->
+      <div class="w3-center w3-margin-top w3-margin-bottom ">
+      <div class="w3-bar w3-border w3-round w3-margin-top">
+    <c:if test="${PAGE.startPage == 1 }">    
+            <span class="w3-bar-item w3-border-right ">&lt;</span>
+    </c:if>
+    <c:if test ="${PAGE.startPage != 1 }" >     
+            <span class="w3-bar-item w3-button w3-border-right pbtn">&lt;</span>
+  	</c:if>
+  <c:forEach var="page" begin="${PAGE.startPage}" end="${PAGE.endPage }">
+     <c:if test="${PAGE.nowPage == page }">       
+            <span class="w3-bar-item w3-button w3-border-right pbtn"id="pagpre">${page }</span>
+     </c:if>
+     <c:if test="${PAGE.nowPage != page }">     
+            <span class="w3-bar-item w3-button pbtn" id="pagnext">${page}</span>
+     </c:if>
+  </c:forEach>  
+     <c:if test="${PAGE.endPage == PAGE.totalPage }">
+            <span class="w3-bar-item w3-border-left ">&gt;</span>
+     </c:if> 
+      <c:if test="${PAGE.endPage != PAGE.totalPage }">  
+            <span class="w3-bar-item w3-button w3-border-left pbtn">&gt;</span>
+      </c:if>   
+         </div>
       </div>
-     	<ul class="pagination justify-content-center">
-								<li class="page-item" id="pre"><a class="page-link"
-									href="#" aria-label="Previous"> <span aria-hidden="true">«</span>
-										<span class="sr-only">Previous</span>
-								</a></li>
-								<c:forEach var="page" begin="${PAGE.startPage}"
-									end="${PAGE.endPage}">
-									<li class="page-item" id="pnum${page}"><a
-										class="page-link" href="#">${page}</a></li>
-								</c:forEach>
-								<li class="page-item" id="nex"><a class="page-link"
-									href="#" aria-label="Next"> <span aria-hidden="true">»</span>
-										<span class="sr-only">Next</span>
-								</a></li>
-							</ul>
-     	
+      
+     <%-- 	<ul class="pagination justify-content-center">
+			<li class="page-item" id="pre"><a class="page-link"
+				href="#" aria-label="Previous"> <span aria-hidden="true">«</span>
+					<span class="sr-only">Previous</span>
+			</a></li>
+			<c:forEach var="page" begin="${PAGE.startPage}"
+				end="${PAGE.endPage}">
+				<li class="page-item" id="pnum${page}"><a
+					class="page-link" href="#">${page}</a></li>
+			</c:forEach>
+			<li class="page-item" id="nex"><a class="page-link"
+				href="#" aria-label="Next"> <span aria-hidden="true">»</span>
+					<span class="sr-only">Next</span>
+			</a></li>
+		</ul>
+	
      </div>
       <hr class="hr2 w3-margin-top w3-margin-bottom">
       <hr class="w3-darkgrey w3-margin-top w3-margin-bottom">
-	</div>
+	</div> --%>
    
   <!-- Footer-->
    <footer class="py-5 bg-dark">

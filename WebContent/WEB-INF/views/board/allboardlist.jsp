@@ -3,19 +3,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link rel="stylesheet" type="text/css" href="/moa/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/moa/css/user2.css">
-<script type="text/javascript" src="/moa/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/moa/js/w3color.js"></script>
+   <jsp:include page="../a_nav/head.jsp">
+      <jsp:param name="" value="" />
+   </jsp:include>
+
 <style type="text/css">
 select{
    border-style: none;
    
 }
 </style>
-   <jsp:include page="../a_nav/head.jsp">
-      <jsp:param name="" value="" />
-   </jsp:include>
 </head>   
 <script type="text/javascript">
    $(document).ready(function(){
@@ -45,7 +42,6 @@ select{
       $('.body').css('display','none');
       $('.blist').click(function(){
     	  var result = $(this).hasClass('N');
-    	  alert(result);
     	  $(this).children().last().stop().slideToggle(500);
       });
       
@@ -54,7 +50,9 @@ select{
     	 if(result == 'faq'){
     		 $('.N').css('display', 'none');
     		 $('.F').css('display', 'block');
-    	 } else {
+    	 } else if(result == 'NF'){
+    		 $('.F, .N').css('display', 'block');
+    	 }else {
     		 $('.F').css('display', 'none');
     		 $('.N').css('display', 'block');
     	 }
@@ -76,7 +74,7 @@ select{
          <div class="w3-content m3 w3-margin-top w3-margin-bottom inblock">
             <h1 class="w3-col w3-margin-top w3-margin-left mgb60 inblock w3-left ">고객센터</h1>
                <select class="w3-margin-left w3-border w3-border-light-grey w3-round seb" name="board" id="board">
-                   <option>분류</option>
+                   <option value="NF">분류</option>
                    <option value="notice">공지사항</option>
                    <option value="faq">FAQ</option>
                </select>

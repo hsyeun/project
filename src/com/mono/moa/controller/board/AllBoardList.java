@@ -32,7 +32,7 @@ public class AllBoardList implements Controller {
 		
 		ArrayList<BoardVO> list = bDao.getList(page);
 		
-		System.out.println("################ : " + list.get(0).getNbody());
+		/* System.out.println("################ : " + list.get(0).getNbody()); */
 		
 		/* String code = bDao.getBoardList(); */
 		
