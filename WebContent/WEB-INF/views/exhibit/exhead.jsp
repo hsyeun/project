@@ -39,7 +39,7 @@
 	                        </div>
                         </div>
 	                <div class="btn">
-                        	<button type="button" class="btn btn-secondary" onclick="location.href='#' ">구매하기</button>
+                        	<button type="button" class="btn btn-secondary" onclick="location.href='../subpage/paypage.moa' ">구매하기</button>
                         	<button type="button" class="btn btn-secondary" onclick="location.href='#' ">찜하기</button>
 						</div>
 	                </div>
