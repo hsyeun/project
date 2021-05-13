@@ -220,12 +220,12 @@
 								<label for="gen">성별 :</label>
 								<div class="form-check">
 									<input class="form-check-input" type="radio" name="gen"
-										id="mgen" value="M" disabled> <label
+										id="mgen" value="M"> <label
 										class="form-check-label" for="mgen"> 남성 </label>
 								</div>
 								<div class="form-check">
 									<input class="form-check-input" type="radio" name="gen"
-										id="fgen" value="F" disabled> <label
+										id="fgen" value="F"> <label
 										class="form-check-label" for="fgen"> 여성 </label>
 								</div><br>
 								

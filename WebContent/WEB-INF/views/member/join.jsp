@@ -31,7 +31,7 @@
 	}		
 	$('#id').keyup(function() {
 		if (idCk()) {
-			$('#idmsg').removeClass('w3-text-red').addClass('w3-text-green').html('유효한 아이디 입니다. 아이디 중복체크를 해주세요');
+			$('#idmsg').removeClass('w3-text-red').addClass('w3-text-orange').html('유효한 아이디 입니다. 아이디 중복체크를 해주세요');
 			$('#idck').addClass('w3-button');
 			$('#idck').prop('disabled', false);
 		} else {
@@ -51,7 +51,7 @@
 				},
 				success : function(data) {
 					if (data.result == 'OK') {
-						$('#idmsg').removeClass('w3-text-red').addClass('w3-text-blue').html('*** 사용 가능한 아이디 입니다. ***');
+						$('#idmsg').removeClass('w3-text-orange').addClass('w3-text-blue').html('*** 사용 가능한 아이디 입니다. ***');
 						} else {
 						$('#idmsg').removeClass('w3-text-blue').addClass('w3-text-red').html('*** 중복된 아이디 입니다. ***');
 					}

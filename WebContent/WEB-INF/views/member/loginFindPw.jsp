@@ -90,8 +90,7 @@
 							<label for="id">아이디 : </label>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" id="id" name="id">
-								<button class="btn btn-primary mb-3" type="button" id="idck"
-									disabled>중복체크</button>
+								
 							</div>
 							<p class="help-block" id="idmsg"></p>
 

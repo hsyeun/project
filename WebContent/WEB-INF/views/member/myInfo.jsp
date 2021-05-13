@@ -65,14 +65,14 @@ $(document).ready(function() {
 
 								<label for="pw">비밀번호 :</label>
 								<div class="input-group mb-3">
-									<input type="text" class="form-control" id="pw" name="pw"
+									<input type="password" class="form-control" id="pw" name="pw"
 										value="${DATA.pw}" disabled>
 								</div>
 								<p class="help-block" id="pwmsg"></p>
 
 								<label for="repw">비밀번호 확인:</label>
 								<div class="input-group mb-3">
-									<input type="text" class="form-control" id="repw" name="repw"
+									<input type="password" class="form-control" id="repw" name="repw"
 										value="${DATA.pw}" disabled>
 								</div>
 								<p class="help-block" id="repwmsg"></p>
