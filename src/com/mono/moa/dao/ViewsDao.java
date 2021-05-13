@@ -17,7 +17,7 @@ import com.mono.moa.sql.kieun.*;
  *
  */
 
-public class KieunDao {
+public class ViewsDao {
 	private DBCP db;
 	private Connection con;
 	private Statement stmt;
@@ -25,7 +25,7 @@ public class KieunDao {
 	private ResultSet rs;
 	private KESQL kSql;
 	
-	public KieunDao() {
+	public ViewsDao() {
 		db = new DBCP();
 		kSql = new KESQL();
 	}
