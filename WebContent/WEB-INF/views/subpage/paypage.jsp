@@ -5,7 +5,7 @@
 <html lang="ko"><head>
 	<jsp:include page="../a_nav/head.jsp">
 		<jsp:param name="" value="" />
-	</jsp:include>
+		</jsp:include>
 	   <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content />
@@ -17,6 +17,7 @@
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        
 </head>	
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -24,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="/moa/css/user2.css">
 <script type="text/javascript" src="/moa/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/moa/js/w3color.js"></script>
+
 <style type="text/css">
 .imgbox{
 		width: 260px;
@@ -49,6 +51,7 @@
 }
 
 </style>
+	
 <script type="text/javascript">
 
 </script>
@@ -166,7 +169,7 @@
     <jsp:include page="../a_nav/footer.jsp">
 		<jsp:param name="" value="" />
 	</jsp:include> 
-</footer>
-	--%>
+</footer> --%>
+	
 </body>
 </html>

@@ -29,6 +29,36 @@ select{
          $(this).css('text-decoration','none');
          });
       });
+      
+      $('.w3-button.pbtn').click(function(){
+    	 var pno =$(this).html();
+    	 
+    	 if(pno =='&lt;'){
+    		 pno = '${PAGE.startPage -1}';
+    	 }else if(pno == '&gt;'){
+    		 pno ='${PAGE.endPage + 1}';
+    	 }
+    	 $('#nowPage').val(pno);
+    	 $('#frm').submit();
+      });
+      
+      $('.body').css('display','none');
+      $('.blist').click(function(){
+    	  var result = $(this).hasClass('N');
+    	  alert(result);
+    	  $(this).children().last().stop().slideToggle(500);
+      });
+      
+      $('#board').change(function(){
+    	 var result = $(this).val();
+    	 if(result == 'faq'){
+    		 $('.N').css('display', 'none');
+    		 $('.F').css('display', 'block');
+    	 } else {
+    		 $('.F').css('display', 'none');
+    		 $('.N').css('display', 'block');
+    	 }
+      });
    });
 </script>
 <body>
@@ -36,16 +66,19 @@ select{
    <jsp:include page="../a_nav/nav.jsp">
       <jsp:param name="" value="" />
    </jsp:include>
-   
+  <form method="POST" action="/moa/board/allboardlist.moa" id="frm" name="frm">
+  		<input type="hidden" name="nowPage" id="nowPage" value="${PAGE.nowPage}">
+  		<input type="hidden" name="bno" id="bno">
+  </form> 
    <div class="w3-content mxw800  ">
       <hr class="w3-darkgrey ">
       <div class="w3-content mxw800 ">
          <div class="w3-content m3 w3-margin-top w3-margin-bottom inblock">
             <h1 class="w3-col w3-margin-top w3-margin-left mgb60 inblock w3-left ">고객센터</h1>
-               <select class="w3-margin-left w3-border w3-border-light-grey w3-round seb" name="board">
-                   <option value="rboard">분류</option>
-                   <option value="rboard">공지사항</option>
-                   <option value="fboard">FAQ</option>
+               <select class="w3-margin-left w3-border w3-border-light-grey w3-round seb" name="board" id="board">
+                   <option>분류</option>
+                   <option value="notice">공지사항</option>
+                   <option value="faq">FAQ</option>
                </select>
          </div>
       </div>
@@ -57,38 +90,46 @@ select{
             <span class="w3-col m6 "> 제목 </span>         
             <span class="w3-col m3"> 작성일</span>         
       </div>
-      <div class="w3-col w3-center w3-border-bottom w3-padding">
-            <span class="w3-col m2"> 10002 </span>         
-            <span class="w3-col m1"> 공지사항 </span>         
-            <span class="w3-col m6 title" id="title"> 리뉴얼 안내 </span>         
-            <span class="w3-col m3"> 2021-04-21</span>         
+ <c:forEach var="data" items="${LIST}">     
+      <div class="w3-col w3-center w3-border-bottom w3-padding blist ${data.code}" id="${data.nno}">
+            <span class="w3-col m2"> ${data.nno } </span>         
+            <span class="w3-col m1">
+            	<c:if test="${data.code eq 'N'}">
+            		공지사항
+            	</c:if>
+            	<c:if test="${data.code eq 'F'}">
+            		FAQ
+            	</c:if>
+            </span>         
+            <span class="w3-col m6 title" > ${data.ntitle} </span> 
+            <span class="w3-col m3"> ${data.wdate }</span>         
+            <span class="w3-col mgt20 w3-border w3-border-light-grey body" > ${data.nbody }</span>       
       </div>
-      
-            <div class="w3-col w3-center w3-border-bottom w3-padding">
-            <span class="w3-col m2"> 10002 </span>         
-            <span class="w3-col m1"> FAQ</span>         
-            <span class="w3-col m6 title" id="title"> 유효기간 지난 티켓 환불 문의 </span>         
-            <span class="w3-col m3"> 2021-04-11</span>         
-      </div>
-      <div class="w3-col w3-center w3-border-bottom w3-padding">
-            <span class="w3-col m2"> 10001 </span>         
-            <span class="w3-col m1"> 공지사항</span>         
-            <span class="w3-col m6 title" id="title"> 사이트 개편 안내 </span>         
-            <span class="w3-col m3"> 2021-03-28</span>         
-      </div>
-      <div class="w3-col w3-center w3-border-bottom w3-padding">
-            <span class="w3-col m2"> 10001 </span>         
-            <span class="w3-col m1"> FAQ</span>         
-            <span class="w3-col m6 title" id="title"> 환불 관련 정책 </span>         
-            <span class="w3-col m3"> 2021-02-28</span>         
-   </div>
+ </c:forEach>    
+
    <!-- 페이징 처리 -->
       <div class="w3-center w3-margin-top w3-margin-bottom ">
-         <div class="w3-bar w3-border w3-round w3-margin-top">
-            <span class="w3-bar-item w3-border-right"><</span>
-            <span class="w3-bar-item w3-button w3-border-right">1</span>
-            <span class="w3-bar-item w3-button">2</span>
-            <span class="w3-bar-item w3-border-left ">></span>
+      <div class="w3-bar w3-border w3-round w3-margin-top">
+    <c:if test="${PAGE.startPage == 1 }">    
+            <span class="w3-bar-item w3-border-right ">&lt;</span>
+    </c:if>
+    <c:if test ="${PAGE.startPage != 1 }" >     
+            <span class="w3-bar-item w3-button w3-border-right pbtn">&lt;</span>
+  	</c:if>
+  <c:forEach var="page" begin="${PAGE.startPage}" end="${PAGE.endPage }">
+     <c:if test="${PAGE.nowPage == page }">       
+            <span class="w3-bar-item w3-button w3-border-right pbtn"id="pagpre">${page }</span>
+     </c:if>
+     <c:if test="${PAGE.nowPage != page }">     
+            <span class="w3-bar-item w3-button pbtn" id="pagnext">${page}</span>
+     </c:if>
+  </c:forEach>  
+     <c:if test="${PAGE.endPage == PAGE.totalPage }">
+            <span class="w3-bar-item w3-border-left ">&gt;</span>
+     </c:if> 
+      <c:if test="${PAGE.endPage != PAGE.totalPage }">  
+            <span class="w3-bar-item w3-button w3-border-left pbtn">&gt;</span>
+      </c:if>   
          </div>
       </div>
    </div>
