@@ -1,13 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko"><head>
+<html lang="ko">
+<head>
 	<jsp:include page="../a_nav/head.jsp">
 		<jsp:param name="" value="" />
 	</jsp:include>
+</head>
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('#nowPage').val('${PAGE.nowPage}');
+		
+		if('${PAGE.startPage}' == 1){
+			$('').removeClass('page-item');	
+		}
+		if('${PAGE.endPage}' == '${PAGE.totalPage}'){
+			$('').removeClass('page-item');	
+		}
+		if($('#pnum${PAGE.nowPage}>a').html()== '${PAGE.nowPage}'){
+			$('#pnum${PAGE.nowPage}>a').addClass('w3-blue');
+		}
+		
 		$('li').click(function(){
 			var spage = $(this).html();
 			
@@ -26,7 +40,6 @@
 		});
 	});
 </script>
-</head>
 <body>
 
 <!-- Navigator -->
@@ -66,16 +79,12 @@
         <div class="user-paging">
 		  <ul class="pagination user-paging-btn">
 		  
-		  <c:if test="${PAGE.startPage == 1}">
+		    <li class="page-item disabled"  id="pre">
+		      <a class="page-link pageLink">&laquo;</a>
+		    </li>
 		    <li class="page-item disabled">
 		      <a class="page-link pageLink">&laquo;</a>
 		    </li>
-		  </c:if>
-		  <c:if test="${PAGE.startPage != 1}">
-		    <li class="page-item disabled">
-		      <a class="page-link pageLink">&laquo;</a>
-		    </li>
-		  </c:if>
 
 <c:forEach var="page" begin="${PAGE.startPage}" end="${PAGE.endPage}">
 		  <c:if test="${PAGE.nowPage == page}">
