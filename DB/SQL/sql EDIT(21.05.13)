@@ -1,0 +1,21 @@
+--0513------------------------------------------------------- 
+--이벤트 데이터 추가
+INSERT INTO
+   event( evtno, evtexino, evtcode, evtcontent, sdate, edate, isShow)
+VALUES(
+            (SELECT NVL(MAX(evtno) +1, 1001) FROM event),10010,'P','1+1 이벤트',
+            TO_DATE('2021-05-10 00:00:00','YYYY-MM-DD hh24:mi:ss'),TO_DATE('2021-09-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+            'Y'
+);
+INSERT INTO
+   event( evtno, evtexino, evtcode, evtcontent, sdate, edate, isShow)
+VALUES(
+            (SELECT NVL(MAX(evtno) +1, 1001) FROM event),10023,'P','1+1 이벤트',
+            TO_DATE('2021-05-13 00:00:00','YYYY-MM-DD hh24:mi:ss'),TO_DATE('2021-08-30 00:00:00','YYYY-MM-DD hh24:mi:ss'),
+            'Y'
+);
+
+--진석형님 db 추가
+
+ALTER TABLE iqboard
+ADD reply char(1) default 'N' constraint IQB_REP_CK check(reply in ('Y', 'N'));
