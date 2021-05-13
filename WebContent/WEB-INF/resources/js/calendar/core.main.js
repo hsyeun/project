@@ -385,7 +385,7 @@ Docs & License: https://fullcalendar.io/
                 handler.call(matchedChild, ev, matchedChild);
             }
         }
-        window.onload = function(){container.addEventListener(eventType, realHandler)};
+        container.addEventListener(eventType, realHandler);
         return function () {
             container.removeEventListener(eventType, realHandler);
         };
@@ -6623,7 +6623,7 @@ Docs & License: https://fullcalendar.io/
         });
         // Public API for rendering
         // -----------------------------------------------------------------------------------------------------------------
-        window.onload = function(){ Calendar.prototype.render = function () {
+        Calendar.prototype.render = function () {
             if (!this.component) {
                 this.component = new CalendarComponent(this.el);
                 this.renderableEventStore = createEmptyEventStore();
@@ -6633,7 +6633,7 @@ Docs & License: https://fullcalendar.io/
             else {
                 this.requestRerender();
             }
-        } };
+        };
         Calendar.prototype.destroy = function () {
             if (this.component) {
                 this.unbindHandlers();
@@ -6648,7 +6648,7 @@ Docs & License: https://fullcalendar.io/
         };
         // Handlers
         // -----------------------------------------------------------------------------------------------------------------
-        window.onload = function(){ Calendar.prototype.bindHandlers = function () {
+        Calendar.prototype.bindHandlers = function () {
             var _this = this;
             // event delegation for nav links
             this.removeNavLinkListener = listenBySelector(this.el, 'click', 'a[data-goto]', function (ev, anchorEl) {
@@ -6668,7 +6668,7 @@ Docs & License: https://fullcalendar.io/
                     }
                     _this.zoomTo(dateMarker, viewType);
                 }
-            }) };
+            });
             if (this.opt('handleWindowResize')) {
                 window.addEventListener('resize', this.windowResizeProxy = debounce(// prevents rapid calls
                 this.windowResize.bind(this), this.opt('windowResizeDelay')));

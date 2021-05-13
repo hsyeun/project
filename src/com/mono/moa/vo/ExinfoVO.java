@@ -103,5 +103,43 @@ public class ExinfoVO {
 				+ ", startdate=" + startdate + ", enddate=" + enddate + ", idir=" + idir + ", imgname=" + imgname
 				+ ", exisdate=" + exisdate + ", exiedate=" + exiedate;
 	}
-
+	
+	
+	// json 문자열 반환 함수
+	public String getJson() {
+		// 꺼낼 데이터
+		//	exino, exiecno, exiperson, exiname, exisdate
+		
+		SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+		
+		StringBuffer buff = new StringBuffer();
+		buff.append("{");
+		buff.append("	'exino': " + exino + ", ");
+		buff.append("	'exiecno': " + exiecno + ", ");
+		buff.append("	'exiperson': '" + exiperson + "', ");
+		buff.append("	'exiname': '" + exiname + "', ");
+		buff.append("	'exisdate': '" + form.format(exisdate) + "'");
+		buff.append("}");
+		
+		return buff.toString();
+	}
+	// json 문자열 반환 함수
+	public String getJsonStr() {
+		// 꺼낼 데이터
+		//	exino, exiecno, exiperson, exiname, exisdate
+		
+		SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+		
+		StringBuffer buff = new StringBuffer();
+		buff.append("{");
+		/*
+		 * buff.append("	'url': '/moa/exhibit/sang.moa?exino=" + exino + "', ");
+		 */		
+		buff.append("title: '" + exiname + "', ");
+		buff.append("url: 'exhibit/sang.moa', ");
+		buff.append("start: '" + form.format(exisdate) + "'");
+		buff.append("}");
+		
+		return buff.toString();
+	}
 }

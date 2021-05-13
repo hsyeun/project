@@ -40,6 +40,9 @@ public class Main implements Controller {
 			req.setAttribute("LIST", list);
 		}
 		
+		ExinfoDao calDao = new ExinfoDao();
+		ArrayList<String> elist = calDao.getJson();
+		req.setAttribute("ARR", elist);
 //		req.setAttribute("DATA", eVO);
 		
 		return view;

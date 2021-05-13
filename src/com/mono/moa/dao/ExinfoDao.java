@@ -73,91 +73,156 @@ public class ExinfoDao {
 		
 		return eVO;
 	}
+	
+	// 테마 분류별 전시 정보조회 db 작업전담 처리함수
+	public ExinfoVO getTmInfo(int exiecno) {
+		ExinfoVO eVO = new ExinfoVO();
+		
+		con = db.getCon();
+		String sql = eSQL.getSQL(eSQL.SEL_EXIE_INFO);
+		
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, exiecno);
+			rs = pstmt.executeQuery();
+			rs.next();
+			eVO.setExino(rs.getInt("exino"));
+			eVO.setExiecno(rs.getInt("exiecno"));
+			eVO.setExiperson(rs.getString("exiperson"));
+			eVO.setExiname(rs.getString("exiname"));
+			eVO.setExisdate(rs.getDate("exisdate"));
+			eVO.setExiedate(rs.getDate("exiedate"));
+			eVO.setExiprice(rs.getInt("exiprice"));
+			eVO.setExiage(rs.getString("exiage"));
+			eVO.setExiexpno(rs.getInt("exiexpno"));
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		return eVO;
+	}
+	
+	// 달력 db 불러오기 작업전담 처리함수
+	public ArrayList<String> getJson() {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		con = db.getCon();
+		String sql = eSQL.getSQL(eSQL.SEL_EXI_INFO_CAL);
+		
+		stmt = db.getSTMT(con);
+		try {
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				ExinfoVO eVO = new ExinfoVO();
+				eVO.setExino(rs.getInt("exino"));
+				eVO.setExiecno(rs.getInt("exiecno"));
+				eVO.setExiperson(rs.getString("exiperson"));
+				eVO.setExiname(rs.getString("exiname"));
+				eVO.setExisdate(rs.getDate("exisdate"));
+				
+				String str = eVO.getJsonStr();
+				/* System.out.println("str : " + str); */
+				list.add(str);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(stmt);
+			db.close(con);
+		}
+		
+		return list;
+	}
 		
 		
-		/*
-		// 메인페이지용 최근 전시정보 조회 전담처리함수
-		public ExinfoVO getLatest(int exino) {
-			ArrayList<ExinfoVO> list = new ArrayList<ExinfoVO>();
+	/*
+	// 메인페이지용 최근 전시정보 조회 전담처리함수
+	public ExinfoVO getLatest(int exino) {
+		ArrayList<ExinfoVO> list = new ArrayList<ExinfoVO>();
+		
+		con = db.getCon();
+		String sql = eSQL.getSQL(eSQL.SEL_LATEST_INFO);
+		
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, page.getStartCont());
+			pstmt.setInt(2, page.getEndCont());
 			
-			con = db.getCon();
-			String sql = eSQL.getSQL(eSQL.SEL_LATEST_INFO);
+			rs = pstmt.executeQuery();
 			
-			pstmt = db.getPSTMT(con, sql);
-			try {
-				pstmt.setInt(1, page.getStartCont());
-				pstmt.setInt(2, page.getEndCont());
+			while(rs.next()) {
+				ExinfoVO vo = new ExinfoVO();
 				
-				rs = pstmt.executeQuery();
+				vo.setExino(rs.getInt("exino"));
+				vo.setExiecno(rs.getInt("exiecno"));
+				vo.setExiperson(rs.getString("exiperson"));
+				vo.setExiname(rs.getString("exiname"));
+				vo.setExisdate(rs.getDate("exisdate"));
+				vo.setExiedate(rs.getDate("exiedate"));
+				vo.setExiprice(rs.getInt("exiprice"));
+				vo.setExiage(rs.getString("exiage"));
+				vo.setExiexpno(rs.getInt("exiexpno"));
 				
-				while(rs.next()) {
-					ExinfoVO vo = new ExinfoVO();
-					
-					vo.setExino(rs.getInt("exino"));
-					vo.setExiecno(rs.getInt("exiecno"));
-					vo.setExiperson(rs.getString("exiperson"));
-					vo.setExiname(rs.getString("exiname"));
-					vo.setExisdate(rs.getDate("exisdate"));
-					vo.setExiedate(rs.getDate("exiedate"));
-					vo.setExiprice(rs.getInt("exiprice"));
-					vo.setExiage(rs.getString("exiage"));
-					vo.setExiexpno(rs.getInt("exiexpno"));
-					
-					list.add(vo);
-				}
-			} catch(Exception e) {
-				e.printStackTrace();
-			} finally {
-				db.close(rs);
-				db.close(pstmt);
-				db.close(con);
+				list.add(vo);
 			}
-			
-			return list;
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
 		}
-		*/
-		// 메인페이지용 최근 전시정보 조회 전담처리함수
-		public ArrayList<ExinfoVO> getLatest(PageUtil page) {
-			ArrayList<ExinfoVO> list = new ArrayList<ExinfoVO>();
+		
+		return list;
+	}
+	*/
+	// 메인페이지용 최근 전시정보 조회 전담처리함수
+	public ArrayList<ExinfoVO> getLatest(PageUtil page) {
+		ArrayList<ExinfoVO> list = new ArrayList<ExinfoVO>();
+		
+		con = db.getCon();
+		String sql = eSQL.getSQL(eSQL.SEL_LATEST_INFO);
+		
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, page.getStartCont());
+			pstmt.setInt(2, page.getEndCont());
 			
-			con = db.getCon();
-			String sql = eSQL.getSQL(eSQL.SEL_LATEST_INFO);
+			rs = pstmt.executeQuery();
 			
-			pstmt = db.getPSTMT(con, sql);
-			try {
-				pstmt.setInt(1, page.getStartCont());
-				pstmt.setInt(2, page.getEndCont());
+			while(rs.next()) {
+				ExinfoVO vo = new ExinfoVO();
 				
-				rs = pstmt.executeQuery();
+				vo.setExino(rs.getInt("exino"));
+				vo.setExiecno(rs.getInt("exiecno"));
+				vo.setExiperson(rs.getString("exiperson"));
+				vo.setExiname(rs.getString("exiname"));
+				vo.setExisdate(rs.getDate("exisdate"));
+				vo.setExiedate(rs.getDate("exiedate"));
+				vo.setExiprice(rs.getInt("exiprice"));
+				vo.setExiage(rs.getString("exiage"));
+				vo.setExiexpno(rs.getInt("exiexpno"));
+				vo.setIdir(rs.getString("idir"));
+				vo.setImgname(rs.getString("imgname"));
+				vo.setStartdate(vo.setSdate(vo.getExisdate()));
+				vo.setEnddate(vo.setSdate(vo.getExiedate()));
 				
-				while(rs.next()) {
-					ExinfoVO vo = new ExinfoVO();
-					
-					vo.setExino(rs.getInt("exino"));
-					vo.setExiecno(rs.getInt("exiecno"));
-					vo.setExiperson(rs.getString("exiperson"));
-					vo.setExiname(rs.getString("exiname"));
-					vo.setExisdate(rs.getDate("exisdate"));
-					vo.setExiedate(rs.getDate("exiedate"));
-					vo.setExiprice(rs.getInt("exiprice"));
-					vo.setExiage(rs.getString("exiage"));
-					vo.setExiexpno(rs.getInt("exiexpno"));
-					vo.setIdir(rs.getString("idir"));
-					vo.setImgname(rs.getString("imgname"));
-					vo.setStartdate(vo.setSdate(vo.getExisdate()));
-					vo.setEnddate(vo.setSdate(vo.getExiedate()));
-					
-					list.add(vo);
-				}
-			} catch(Exception e) {
-				e.printStackTrace();
-			} finally {
-				db.close(rs);
-				db.close(pstmt);
-				db.close(con);
+				list.add(vo);
 			}
-			
-			return list;
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
 		}
+		
+		return list;
+	}
 		
 }

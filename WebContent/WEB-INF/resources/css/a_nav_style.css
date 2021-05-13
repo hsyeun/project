@@ -130,8 +130,8 @@ nav .logo:hover{
 
 .user-source{
 	height: 600px;
-	position: relative;
-	top:0; left:0;
+	/* position: relative;
+	top:0; left:0; */
 }
 /* .user-chart figure{
 	position: absolute;

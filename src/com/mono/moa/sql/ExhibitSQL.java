@@ -2,9 +2,11 @@ package com.mono.moa.sql;
 
 public class ExhibitSQL {
 	public final int SEL_EXI_INFO		= 1001;
-	public final int SEL_LATEST_INFO	= 1002;
-	public final int SEL_LATESTONE_INFO	= 1003;
-	public final int SEL_TOTAL			= 1004;
+	public final int SEL_EXIE_INFO		= 1002;
+	public final int SEL_LATEST_INFO	= 1003;
+	public final int SEL_LATESTONE_INFO	= 1004;
+	public final int SEL_TOTAL			= 1005;
+	public final int SEL_EXI_INFO_CAL	= 1006;
 	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -18,6 +20,23 @@ public class ExhibitSQL {
 			buff.append("	exinfo ");
 			buff.append("WHERE ");
 			buff.append("	exino = ? ");
+			buff.append("	AND isshow = 'Y' ");
+			break;
+		case SEL_EXI_INFO_CAL:
+			buff.append("SELECT ");
+			buff.append("	exino, exiecno, exiperson, exiname, exisdate ");
+			buff.append("FROM ");
+			buff.append("	exinfo ");
+			buff.append("WHERE ");
+			buff.append("	isshow = 'Y' ");
+			break;
+		case SEL_EXIE_INFO:
+			buff.append("SELECT ");
+			buff.append("	exino, exiecno, exiperson, exiname, exisdate, exiedate, exiprice, exiage, exiexpno ");
+			buff.append("FROM ");
+			buff.append("	exinfo ");
+			buff.append("WHERE ");
+			buff.append("	exiecno = ? ");
 			buff.append("	AND isshow = 'Y' ");
 			break;
 		case SEL_TOTAL:

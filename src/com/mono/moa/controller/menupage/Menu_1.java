@@ -18,11 +18,11 @@ public class Menu_1 implements Controller {
 		String view = "menupage/menu1";
 
 		String spage = req.getParameter("nowPage");
-		int nowPage = 1;
+		int nowPage;
 		try {
 			nowPage = Integer.parseInt(spage);
 		} catch(Exception e){
-			
+			nowPage = 1;
 		}
 		
 		ExinfoDao eDao = new ExinfoDao();
@@ -31,7 +31,7 @@ public class Menu_1 implements Controller {
 		
 		PageUtil page = new PageUtil(nowPage, total, 9, 3);
 		
-		System.out.println("########## start page : " + page.getStartPage());
+		/* System.out.println("########## start page : " + page.getStartPage()); */
 		
 		String sno = req.getParameter("exino");
 		

@@ -13,27 +13,28 @@
 		$('#nowPage').val('${PAGE.nowPage}');
 		
 		if('${PAGE.startPage}' == 1){
-			$('').removeClass('page-item');	
+			$('#pre').removeClass('page-item');
 		}
 		if('${PAGE.endPage}' == '${PAGE.totalPage}'){
-			$('').removeClass('page-item');	
-		}
+			$('#nex').removeClass('page-item');
+		}	
 		if($('#pnum${PAGE.nowPage}>a').html()== '${PAGE.nowPage}'){
 			$('#pnum${PAGE.nowPage}>a').addClass('w3-blue');
 		}
 		
-		$('li').click(function(){
-			var spage = $(this).html();
+		$('.page-item').click(function(){
+			var sid = $(this).attr('id');
 			
-			switch(spage){
-			case '&laquo;':
-				$('#nowPage').val('${PAGE.startPage - 1}');
+			switch(sid){
+			case 'pre':
+					$('#nowPage').val('${PAGE.startPage - 1}');
 				break;
-			case '&raquo;':
-				$('#nowPage').val('${PAGE.endPage + 1}');
+			case 'nex':
+					$('#nowPage').val('${PAGE.endPage + 1}');
 				break;
 			default:
-				$('#nowPage').val(spage);
+				tmp=$(this).children().html();
+					$('#nowPage').val(tmp);
 			}
 			$('#frm').attr('action', '/moa/menupage/menu1.moa');
 			$('#frm').submit();
@@ -77,40 +78,21 @@
         
         <!-- 페이징 처리 -->
         <div class="user-paging">
-		  <ul class="pagination user-paging-btn">
-		  
-		    <li class="page-item disabled"  id="pre">
-		      <a class="page-link pageLink">&laquo;</a>
-		    </li>
-		    <li class="page-item disabled">
-		      <a class="page-link pageLink">&laquo;</a>
-		    </li>
-
-<c:forEach var="page" begin="${PAGE.startPage}" end="${PAGE.endPage}">
-		  <c:if test="${PAGE.nowPage == page}">
-		    <li class="page-item active">
-		      <a class="page-link pageLink">${page}</a>
-		    </li>
-		  </c:if>
-		  <c:if test="${PAGE.nowPage != page}">
-		    <li class="page-item">
-		      <a class="page-link pageLink">${page}</a>
-		    </li>
-		  </c:if>
-</c:forEach>
-		  
-		  <c:if test="${PAGE.endPage == PAGE.totalPage}">
-		    <li class="page-item">
-		      <a class="page-link pageLink">&raquo;</a>
-		    </li>
-		  </c:if>
-		  <c:if test="${PAGE.endPage != PAGE.totalPage}">
-		    <li class="page-item">
-		      <a class="page-link pageLink">&raquo;</a>
-		    </li>
-		  </c:if>
-		  
-		  </ul>
+		<ul class="pagination justify-content-center">
+				<li class="page-item" id="pre"><a class="page-link"
+					href="#" aria-label="Previous"> <span aria-hidden="true">«</span>
+						<span class="sr-only">Previous</span>
+				</a></li>
+				<c:forEach var="page" begin="${PAGE.startPage}"
+					end="${PAGE.endPage}">
+					<li class="page-item" id="pnum${page}"><a
+						class="page-link" href="#">${page}</a></li>
+				</c:forEach>
+				<li class="page-item" id="nex"><a class="page-link"
+					href="#" aria-label="Next"> <span aria-hidden="true">»</span>
+						<span class="sr-only">Next</span>
+				</a></li>
+			</ul>
 		</div>
     </div>
 </section>
