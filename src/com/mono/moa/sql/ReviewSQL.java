@@ -89,7 +89,7 @@ public class ReviewSQL {
 		case ADD_QNA:
 			buff.append("INSERT INTO ");
 			buff.append("iqboard ");
-			buff.append("    (iqbno, iqmno ,iqtitle, iqbody) ");
+			buff.append("    (iqbno, iqmno , iqtitle, iqbody) ");
 			buff.append("VALUES( ");
 			buff.append("    (SELECT NVL(MAX(IQbno) + 1, 10001) FROM iqboard), ");
 			buff.append("    (SELECT mno FROM member where id = ?), ");
@@ -121,6 +121,8 @@ public class ReviewSQL {
 			buff.append("FROM ");
 			buff.append("    iqboard ");
 			buff.append("    WHERE iqmno != 1013 ");
+			buff.append("  AND iqupno IS NULL ");
+			buff.append("  AND isShow = 'Y' ");
 			break;
 			
 			

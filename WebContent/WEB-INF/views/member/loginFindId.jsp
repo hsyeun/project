@@ -24,7 +24,6 @@
 			return;
 		}
 		if(telCk()){
-			alert('인증번호가 정상 발송되었습니다.');
 			$.ajax({
 				url : '/moa/member/loginFindIdProc.cls',
 				type : 'post',
@@ -35,8 +34,9 @@
 				},
 				success : function(data) {
 					if(data.result == 'NoCnt'){
-						alert('일치하는 휴대폰번호가 없습니다');
+						alert('일치하는 회원정보가 없습니다');
 					} else {
+						alert('인증번호가 정상 발송되었습니다.');				
 						$('#result1').val(data.result1);
 						$('#result2').val(data.result2);
 					}
@@ -166,7 +166,7 @@
 		</div>
 
 <!-- Footer-->
-<footer class="py-5 bg-light">
+<footer class="py-5 bg-blight">
     <jsp:include page="../a_nav/footer.jsp">
 		<jsp:param name="" value="" />
 	</jsp:include>

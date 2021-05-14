@@ -34,11 +34,12 @@ $(document).ready(function() {
 	});
 	
 	$('#dbtn').click(function(){
-		$('#frm').attr('action', '/moa/review/qnaDelAdmin.moa');
-		$('#frm').submit();
-	});
-
-	
+		var result = confirm('정말로 삭제 하시겠습니까?');
+		if(result){
+			$('#frm').attr('action', '/moa/review/qnaDelAdmin.moa');
+			$('#frm').submit();
+		}	
+	});	
 });
 </script>
 
@@ -112,7 +113,7 @@ $(document).ready(function() {
 	</section>
 
 	<!-- Footer-->
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-blight">
     <jsp:include page="../a_nav/footer.jsp">
 		<jsp:param name="" value="" />
 	</jsp:include>

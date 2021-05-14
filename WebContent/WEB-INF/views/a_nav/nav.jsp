@@ -12,9 +12,11 @@
 		}
 		
 		switch('<%=active%>'){
-		case '로그인' : $('.navShow').children().eq(0).addClass('active'); break;
-		case '회원가입' : $('.navShow').children().eq(2).addClass('active'); break;
-		case '마이페이지' : $('.navShow').children().eq(3).addClass('active'); break;
+		case '로그인' : $('.navShow').children().eq(0).addClass('w3-light-grey').children().addClass('w3-text-pink'); break;
+		case '회원가입' : $('.navShow').children().eq(2).addClass('w3-light-grey').children().addClass('w3-text-pink'); break;
+		case '마이페이지' : $('.navShow').children().eq(3).addClass('w3-light-grey').children().addClass('w3-text-pink'); break;
+		case '고객센터' : $('.navShow').children().eq(3).addClass('w3-light-grey').children().addClass('w3-text-pink'); break;
+		case '이벤트' : $('.navShow').children().eq(3).addClass('w3-light-grey').children().addClass('w3-text-pink'); break;
 		}
 	});
 	
