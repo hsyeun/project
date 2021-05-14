@@ -86,7 +86,7 @@
 
 							<!-- Content Column-->
 							<div class="col-lg-9 mb-4">
-								<h2 class="w3-margin-bottom"">리뷰 리스트 ></h2>
+								<h2 class="w3-margin-bottom"">리뷰 작성 ></h2>
 								<div class="row d-flex"">
 
 									<div

@@ -42,7 +42,7 @@
 
 						<!-- Content Column-->
 						<div class="col-lg-9 mb-4">
-							<h3 style="">나의 리뷰</h3>
+							<h3 style="">리뷰 리스트</h3>
 							<table class="table table-hover w3-center" border="1"
 								summary="게시판 목록">
 								<thead class="w3-text-center">
