@@ -7,8 +7,10 @@
 사용 언어 : JAVA(JDK 1.8), Oracle SQL(11g Express), Html5, CSS3, Javascript, JSP&Servlet <br>
 사용 기술 : JDBC, MVC모델2, jQuery, Ajax, Mail API <br><br>
 
-# 스토리보드
+# 프로젝트 상세
 
-# 테이블 명세
+## 스토리보드
 
-# 구동 화면
+## 테이블 명세
+
+## 구동 화면
