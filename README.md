@@ -7,13 +7,13 @@
 사용 언어 : JAVA(JDK 1.8), Oracle SQL(11g Express), Html5, CSS3, Javascript, JSP&Servlet <br>
 사용 기술 : JDBC, MVC모델2, jQuery, Ajax, Mail API <br><br>
 
-# 프로젝트 상세
+# 프로젝트 상세 내용
 
-### 주제
+## 주제
 
-### 목적
+## 목적
 
-### 구현 목표
+## 구현 목표
 
 ## 스토리보드
 
